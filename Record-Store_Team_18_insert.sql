@@ -1,10 +1,12 @@
 -- Employees
 INSERT INTO EMPLOYEE VALUES
-  (1, "Ian Skelskey", 1);
+  (1, "Ian Skelskey", 1),
+  (2, "Andrew Tonn", 2);
 
 -- Locations
 INSERT INTO LOCATION VALUES
-  (8675309, "120 Jenny Lane, San Francisco, California 94102", "Tutone Music Shop", 1);
+  (8675309, "120 Jenny Lane, San Francisco, California 94102", "Tutone Music Shop", 1),
+  (5553214, "322 Jesse Street, Springfield, Massachusetts 01020", "Rick's Record Shop", 2);
 
 -- Albums
 INSERT INTO ALBUM VALUES
