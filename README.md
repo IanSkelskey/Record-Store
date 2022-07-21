@@ -94,6 +94,8 @@ CREATE TABLE SONG_FEATURE_LIST
 ```
 ## Environment
 
+Java, Gradle, JDBC, etc?
+
 ## Steps for Execution
 
 1. 
