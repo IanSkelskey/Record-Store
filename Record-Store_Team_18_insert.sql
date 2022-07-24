@@ -1,3 +1,16 @@
+/*
+Order of inserts will be important based on dependancies. Please follow this ORDER
+1. Artist table inserts
+2. Album table inserts
+3. Song table inserts
+4. SongFeatureList
+5. SongGenreList
+6. MemberOf
+7. LOCATION
+8. EMPLOYEE
+9. Inventory
+*/
+
 -- Employees
 INSERT INTO EMPLOYEE VALUES
   (1, "Ian Skelskey", 1),
