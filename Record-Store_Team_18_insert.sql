@@ -12,19 +12,19 @@ Order of inserts will be important based on dependancies. Please follow this ORD
 */
 
 -- Employees
-INSERT INTO EMPLOYEE VALUES
-  (1, "Ian Skelskey", 1),
-  (2, "Andrew Tonn", 2);
+INSERT INTO EMPLOYEE (Name, LocationID) VALUES
+  ("Ian Skelskey", 1),
+  ("Andrew Tonn", 2);
 
 -- Locations
-INSERT INTO LOCATION VALUES
-  (8675309, "120 Jenny Lane, San Francisco, California 94102", "Tutone Music Shop", 1),
-  (5553214, "322 Jesse Street, Springfield, Massachusetts 01020", "Rick's Record Shop", 2);
+INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
+  ("Tutone Music Shop", 8608675309, "120 Jenny Lane, San Francisco, California 94102"),
+  ("Rick's Record Shop", 8605553214 "322 Jesse Street, Springfield, Massachusetts 01020");
 
 -- Albums
-INSERT INTO ALBUM VALUES
-	(1, "In My Room", "2016-07-01", 17.58),
-	(2, "Fleet Foxes", "2008-06-03", 13.98);
+INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
+	("In My Room", "2016-07-01", 17.58),
+	("Fleet Foxes", "2008-06-03", 13.98);
 
 -- Artists
 INSERT INTO ARTIST VALUES
