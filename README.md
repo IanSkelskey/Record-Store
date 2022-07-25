@@ -14,6 +14,6 @@ Project designed for SER322: Database Management at Arizona State University by 
 ## Collaborators
 
 - [Andrew Tonn](https://github.com/attonn7)
-- [Steven Sabile](https://github.com/sstabile)
+- [Steven Stabile](https://github.com/sstabile)
 - [Nathanael Swecker](https://github.com/ndswecker)
 - [Ian Skelskey](https://github.com/IanSkelskey)
