@@ -14,12 +14,14 @@ Order of inserts will be important based on dependancies. Please follow this ORD
 -- Employees
 INSERT INTO EMPLOYEE (Name, LocationID) VALUES
   ("Ian Skelskey", 1),
-  ("Andrew Tonn", 2);
+  ("Andrew Tonn", 2),
+  ("Graef Von Grundeltaag", );
 
 -- Locations
 INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
   ("Tutone Music Shop", 8608675309, "120 Jenny Lane, San Francisco, California 94102"),
-  ("Rick's Record Shop", 8605553214 "322 Jesse Street, Springfield, Massachusetts 01020");
+  ("Rick's Record Shop", 8605553214 "322 Jesse Street, Springfield, Massachusetts 01020"),
+  ("Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447");
 
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
@@ -73,15 +75,15 @@ INSERT INTO GENRE (GenreName, Description) VALUES
 	("Pop", "A type of music, usually played on electronic instruments, that is popular with many people because it consists of short songs with a strong beat and simple tunes that are easy to remember."),
 	("Electronic Rock", "Electronic rock is a music genre that involves a combination of rock music and electronic music, featuring instruments typically found within both genres."),
 	("Disco", "Disco is a genre of dance music and a subculture that emerged in the 1970s from the United States' urban nightlife scene. Its sound is typified by four-on-the-floor beats, syncopated basslines, string sections, horns, electric piano, synthesizers, and electric rhythm guitars."),
-	("Dance-pop",""),
-	("Synth-pop", ""),
-	("Electro-pop", ""),
-	("Mariachi", ""),
-	("House", ""),
-	("Techno", ""),
-	("R&B/Soul", ""),
-	("Glam Metal", ""),
-	("Country Rock", "");
+	("Dance-pop","Generally characterised by strong beats with easy, uncomplicated song structures which are generally more similar to pop music than the more free-form dance genre, with an emphasis on melody as well as catchy tunes."),
+	("Synth-pop", "A type of pop music featuring heavy use of synthesizers and other electronic instruments, originating in the early 1980s."),
+	("Electro-pop", "A style of popular music characterized by the use of electronically created sounds, with a synthesizer as the primary instrument."),
+	("Mariachi", "A type of traditional Mexican folk music, typically performed by a small group of strolling musicians dressed in native costume."),
+	("House", "House is a music genre characterized by a repetitive four-on-the-floor beat and a typical tempo of 120 beats per minute."),
+	("Techno", "A style of fast, heavy electronic dance music, typically with few or no vocals."),
+	("R&B/Soul", "Short for rhythm and blues. A kind of pop music of African American origin with a soulful vocal style featuring improvisation."),
+	("Glam Metal", "Glam metal is a subgenre of heavy metal that features pop-influenced hooks and guitar riffs, upbeat rock anthems, and slow power ballads."),
+	("Country Rock", "Country rock is a subgenre of popular music, formed from the fusion of rock and country.");
 
 -- Song Genre
 INSERT INTO SONG_GENRE_LIST VALUES

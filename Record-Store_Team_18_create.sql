@@ -54,7 +54,7 @@ CREATE TABLE SongGenreList
 
 CREATE TABLE Artist
 (
-  ArtistID INT NOT NULL,
+  ArtistID INT NOT NULL AUTO_INCREMENT,
   StageName VARCHAR(30) NOT NULL,
   SoloFlag Boolean NOT NULL,
   ArtistName VARCHAR(50),
