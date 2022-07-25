@@ -1,34 +1,16 @@
 /*
-Order of inserts will be important based on dependancies. Please follow this ORDER
-1. Artist table inserts
-2. Album table inserts
-3. Song table inserts
-4. SongFeatureList
-5. SongGenreList
-6. MemberOf
-7. LOCATION
-8. EMPLOYEE
-9. Inventory
+    Order of inserts will be important based on dependencies. Please follow this ORDER
+    1. Artist table inserts
+    2. Album table inserts
+    3. Song table inserts
+    4. SongFeatureList
+    5. Genre
+    6. SongGenreList
+    7. MemberOf
+    8. LOCATION
+    9. EMPLOYEE
+    10. Inventory
 */
-
--- Employees
-INSERT INTO EMPLOYEE (Name, LocationID) VALUES
-  ("Ian Skelskey", 1),
-  ("Andrew Tonn", 2),
-  ("Graef Von Grundeltaag", );
-
--- Locations
-INSERT INTO LOCATION (LocationID, LocationName, PhoneNumber, Address) VALUES
-  (1, "Tutone Music Shop", 8608675309, "120 Jenny Lane, San Francisco, California 94102"),
-  (2, "Rick's Record Shop", 8605553214 "322 Jesse Street, Springfield, Massachusetts 01020"),
-  (3, "Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447");
-
--- Albums
-INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
-	("In My Room", "2016-07-01", 17.58),
-	("Fleet Foxes", "2008-06-03", 13.98),
-	("Montero", "2021-09-17", 12.99),
-	("Born This Way", "2011-05-23", 7.99);
 
 -- Artists
 INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Established)VALUES
@@ -41,8 +23,16 @@ INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
 	("Megan Thee Stallion", true, "Megan Jovon Ruth Pete", "1995-02-15", false, null),
 	("Miley Cyrus", true, "Miley Ray Cyrus", "1992-11-23", false, null);
 
+-- Albums
+INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
+	("In My Room", "2016-07-01", 17.58),
+	("Fleet Foxes", "2008-06-03", 13.98),
+	("Montero", "2021-09-17", 12.99),
+	("Born This Way", "2011-05-23", 7.99);
+
 -- Songs
 INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
+-- In My Room
 	(1, "Woke Up Today", 280, "Lyrics", 1),
     (2, "In My Room", 289, "Lyrics", 1),
     (3, "Hideaway", 412, "Lyrics", 1),
@@ -129,3 +119,18 @@ INSERT INTO SONG_GENRE_LIST VALUES
     (9, "Jazz"),
     (10, "Jazz"),
     (11, "Jazz");
+
+-- MemberOf
+
+-- Locations
+INSERT INTO LOCATION (LocationID, LocationName, PhoneNumber, Address) VALUES
+  (1, "Tutone Music Shop", 8608675309, "120 Jenny Lane, San Francisco, California 94102"),
+  (2, "Rick's Record Shop", 8605553214 "322 Jesse Street, Springfield, Massachusetts 01020"),
+  (3, "Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447");
+
+-- Employees
+INSERT INTO EMPLOYEE (Name, LocationID) VALUES
+  ("Ian Skelskey", 1),
+  ("Andrew Tonn", 2),
+  ("Graef Von Grundeltaag", );
+
