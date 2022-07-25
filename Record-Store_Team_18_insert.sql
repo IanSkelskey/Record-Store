@@ -24,11 +24,20 @@ INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
 	("In My Room", "2016-07-01", 17.58),
-	("Fleet Foxes", "2008-06-03", 13.98);
+	("Fleet Foxes", "2008-06-03", 13.98),
+	("Montero", "2021-09-17", 12.99),
+	("Born This Way", "2011-05-23", 7.99);
 
 -- Artists
-INSERT INTO ARTIST VALUES
-    (1, "Jacob Collier", "1994-08-02", "Jacob Collier");
+INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Established)VALUES
+    (1, "Jacob Collier", "1994-08-02", "Jacob Collier"),
+	("Lady Gaga", true, "Stefani Joanne Angelina Germanotta", "1986-03-28", false, null),
+	("Lil Nas X", true, "Montero Lamar Hill", "1999-04-09", false, null),
+	("Jack Harlow", true, "Jack Thomas Harlow", "1998-03-13", false, null),
+	("Doja Cat", true, "Amala Ratna Zandile Dlamini", "1995-10-21", false, null),
+	("Elton John", true, "Sir Elton Hercules John", "1947-03-25", false, null),
+	("Megan Thee Stallion", true, "Megan Jovon Ruth Pete", "1995-02-15", false, null),
+	("Miley Cyrus", true, "Miley Ray Cyrus", "1992-11-23", false, null);
 
 -- Songs
 INSERT INTO SONG VALUES
@@ -59,8 +68,20 @@ INSERT INTO SONG_FEATURE_LIST VALUES
     (1, 11);
 
 -- Genres
-INSERT INTO GENRE VALUES
-	("Jazz music is a broad style of music characterized by complex harmony, syncopated rhythms, and a heavy emphasis on improvisation.", "Jazz");
+INSERT INTO GENRE (GenreName, Description) VALUES
+	("Jazz music is a broad style of music characterized by complex harmony, syncopated rhythms, and a heavy emphasis on improvisation.", "Jazz"),
+	("Pop", "A type of music, usually played on electronic instruments, that is popular with many people because it consists of short songs with a strong beat and simple tunes that are easy to remember."),
+	("Electronic Rock", "Electronic rock is a music genre that involves a combination of rock music and electronic music, featuring instruments typically found within both genres."),
+	("Disco", "Disco is a genre of dance music and a subculture that emerged in the 1970s from the United States' urban nightlife scene. Its sound is typified by four-on-the-floor beats, syncopated basslines, string sections, horns, electric piano, synthesizers, and electric rhythm guitars."),
+	("Dance-pop",""),
+	("Synth-pop", ""),
+	("Electro-pop", ""),
+	("Mariachi", ""),
+	("House", ""),
+	("Techno", ""),
+	("R&B/Soul", ""),
+	("Glam Metal", ""),
+	("Country Rock", "");
 
 -- Song Genre
 INSERT INTO SONG_GENRE_LIST VALUES
