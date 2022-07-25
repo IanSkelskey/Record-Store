@@ -14,7 +14,7 @@
 
 -- Artists
 INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Established) VALUES
-    (1, "Jacob Collier", "1994-08-02", "Jacob Collier"),
+    ("Jacob Collier", true, "Jacob Collier", "1994-08-02", false, null),
 	("Lady Gaga", true, "Stefani Joanne Angelina Germanotta", "1986-03-28", false, null),
 	("Lil Nas X", true, "Montero Lamar Hill", "1999-04-09", false, null),
 	("Jack Harlow", true, "Jack Thomas Harlow", "1998-03-13", false, null),
@@ -44,7 +44,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Flintstones", 1, "00:03:10"),
     ("In The Real Early Morning", 1, "00:06:09"),
     ("Don't You Know", 1, "00:09:10"),
--- Born This Way Album
+-- Born This Way Album (12-25)
 	("Marry The Night", 4, "00:04:24"),
 	("Born This Way", 4, "00:04:20"),
 	("Government Hooker", 4, "00:04:14"),
@@ -78,6 +78,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
 
 -- Song Features
 INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
+-- In My Room (SONGID 1-11)
 	(1, 1),
     (1, 2),
     (1, 3),
