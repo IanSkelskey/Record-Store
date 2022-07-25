@@ -121,7 +121,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Dark Horse", 6, "00:03:54"),
     ("Far East Man", 6, "00:05:52"),
     ("It Is 'He' (Jai Sri Krishna)", 6, "00:04:50"),
-    -- Young Americans (70-77)
+-- Young Americans (70-77)
     ("Young Americans", 7, "00:05:11"),
     ("Win", 7, "00:04:44"),
     ("Fascination", 7, "00:05:45"),
@@ -195,7 +195,7 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (67,16),
     (68,16),
     (69,16),
-    -- Young Americans album (SongID 70-77)
+-- Young Americans album (SongID 70-77)
     (70, 17),
     (71, 17),
     (72, 17),
@@ -228,6 +228,7 @@ INSERT INTO GENRE (GenreName, Description) VALUES
 
 -- Song Genre
 INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
+-- In My Room (1-11)
     (1, "Jazz"),
     (2, "Jazz"),
     (3, "Jazz"),
@@ -239,6 +240,29 @@ INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
     (9, "Jazz"),
     (10, "Jazz"),
     (11, "Jazz"),
+-- Fleet Foxes (41-51)
+    (41, "Folk"),
+    (42, "Folk"),
+    (43, "Folk"),
+    (44, "Folk"),
+    (45, "Folk"),
+    (46, "Folk"),
+    (47, "Folk"),
+    (48, "Folk"),
+    (49, "Folk"),
+    (50, "Folk"),
+    (51, "Folk"),
+    (41, "Rock-n-Roll"),
+    (42, "Rock-n-Roll"),
+    (43, "Rock-n-Roll"),
+    (44, "Rock-n-Roll"),
+    (45, "Rock-n-Roll"),
+    (46, "Rock-n-Roll"),
+    (47, "Rock-n-Roll"),
+    (48, "Rock-n-Roll"),
+    (49, "Rock-n-Roll"),
+    (50, "Rock-n-Roll"),
+    (51, "Rock-n-Roll"),
 -- Damn the Torpedoes album (52-60)
     (52, "Rock-n-Roll"),
     (53, "Rock-n-Roll"),
