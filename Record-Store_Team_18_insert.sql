@@ -96,9 +96,27 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Your Protector", 2, "00:04:09"),
     ("Meadowlarks", 2, "00:03:11"),
     ("Blue Ridge Mountains", 2, "00:04:25"),
-    ("Oliver James", 2, "00:03:23");
-    -- Damn the Torpedoes Album (52-)
-    -- Dark Horse (-)
+    ("Oliver James", 2, "00:03:23"),
+-- Damn the Torpedoes Album (52-60)
+    ("Refugee", 5, "00:03:22"),
+    ("Here Comes My Girl", 5, "00:04:27"),
+    ("Even the Losers", 5, "00:03:59"),
+    ("Shadow of a Doubt (A Complex Kid)", 5, "00:04:25"),
+    ("Century City", 5, "00:03:45"),
+    ("Don't Do Me Like That", 5, "00:02:44"),
+    ("You Tell Me", 5, "00:04:35"),
+    ("What Are You Doin' in My Life", 5, "00:03:27"),
+    ("Louisiana Rain", 5, "00:05:54"),
+-- Dark Horse (61-69)
+    ("Hari's on Tour (Express)", 6, "00:04:43"),
+    ("Simply Shady", 6, "00:04:38"),
+    ("So Sad", 6, "00:05:00"),
+    ("Bye Bye, Love", 6, "00:04:08"),
+    ("Māya Love", 6, "00:04:24"),
+    ("Ding Dong, Ding Dong", 6, "00:03:40"),
+    ("Dark Horse", 6, "00:03:54"),
+    ("Far East Man", 6, "00:05:52"),
+    ("It Is 'He' (Jai Sri Krishna)", 6, "00:04:50");
 
 -- Song Features
 INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
@@ -143,7 +161,27 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (22,2),
     (23,2),
     (24,2),
-    (25,2);
+    (25,2),
+-- Damn the Torpedoes album (SongID 52-60)
+    (52,15),
+    (53,15),
+    (54,15),
+    (55,15),
+    (56,15),
+    (57,15),
+    (58,15),
+    (59,15),
+    (60,15),
+-- Dark Horse album (SongID 61-69)
+    (61,16),
+    (62,16),
+    (63,16),
+    (64,16),
+    (65,16),
+    (66,16),
+    (67,16),
+    (68,16),
+    (69,16);
 
 -- Genres
 INSERT INTO GENRE (GenreName, Description) VALUES
@@ -159,7 +197,8 @@ INSERT INTO GENRE (GenreName, Description) VALUES
     ("Techno", "A style of fast, heavy electronic dance music, typically with few or no vocals."),
     ("R&B/Soul", "Short for rhythm and blues. A kind of pop music of African American origin with a soulful vocal style featuring improvisation."),
     ("Glam Metal", "Glam metal is a subgenre of heavy metal that features pop-influenced hooks and guitar riffs, upbeat rock anthems, and slow power ballads."),
-    ("Country Rock", "Country rock is a subgenre of popular music, formed from the fusion of rock and country.");
+    ("Country Rock", "Country rock is a subgenre of popular music, formed from the fusion of rock and country."),
+    ("Rock-n-Roll", "Rock/Rock-n-Roll is a broad genre of popular music that originated as 'rock and roll' in the United States in the late 1940s and early 1950s, developing into a range of different styles in the mid-1960s and later, particularly in the United States and the United Kingdom.");
 
 -- Song Genre
 INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
@@ -173,7 +212,27 @@ INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
     (8, "Jazz"),
     (9, "Jazz"),
     (10, "Jazz"),
-    (11, "Jazz");
+    (11, "Jazz"),
+-- Damn the Torpedoes album (52-60)
+    (52, "Rock-n-Roll"),
+    (53, "Rock-n-Roll"),
+    (54, "Rock-n-Roll"),
+    (55, "Rock-n-Roll"),
+    (56, "Rock-n-Roll"),
+    (57, "Rock-n-Roll"),
+    (58, "Rock-n-Roll"),
+    (59, "Rock-n-Roll"),
+    (60, "Rock-n-Roll"),
+-- Dark Horse album (61-69)
+    (61, "Rock-n-Roll"),
+    (62, "Rock-n-Roll"),
+    (63, "Rock-n-Roll"),
+    (64, "Rock-n-Roll"),
+    (65, "Rock-n-Roll"),
+    (66, "Rock-n-Roll"),
+    (67, "Rock-n-Roll"),
+    (68, "Rock-n-Roll"),
+    (69, "Rock-n-Roll");
 
 -- MemberOf
 
