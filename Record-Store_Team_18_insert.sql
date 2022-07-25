@@ -258,7 +258,7 @@ INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
     (68, "Rock-n-Roll"),
     (69, "Rock-n-Roll"),
 -- Young Americans album (70-77)
-	(70, "Pop"),
+    (70, "Pop"),
     (71, "Pop"),
     (72, "Pop"),
     (73, "Pop"),
