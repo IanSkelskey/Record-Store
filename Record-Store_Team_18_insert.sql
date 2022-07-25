@@ -32,18 +32,18 @@ INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
 
 -- Songs
 INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
--- In My Room
-	(1, "Woke Up Today", 280, "Lyrics", 1),
-    (2, "In My Room", 289, "Lyrics", 1),
-    (3, "Hideaway", 412, "Lyrics", 1),
-    (4, "You And I", 260, "Lyrics", 1),
-    (5, "Down The Line", 398, "Lyrics", 1),
-    (6, "Now And Then I Think About You", 53, "Lyrics", 1),
-    (7, "Saviour", 368, "Lyrics", 1),
-    (8, "Hajanga", 362, "Lyrics", 1),
-    (9, "Flintstones", 190, "Lyrics", 1),
-    (10, "In The Real Early Morning", 369, "Lyrics", 1),
-    (11, "Don't You Know", 550, "Lyrics", 1),
+-- In My Room (1-11)
+	("Woke Up Today", 1, "00:04:40"),
+    ("In My Room", 1, "00:04:49"),
+    ("Hideaway", 1, "00:06:52"),
+    ("You And I", 1, "00:04:20"),
+    ("Down The Line", 1, "00:06:38"),
+    ("Now And Then I Think About You", 1, "00:00:53"),
+    ("Saviour", 1, "00:06:08"),
+    ("Hajanga", 1, "00:06:02"),
+    ("Flintstones", 1, "00:03:10"),
+    ("In The Real Early Morning", 1, "00:06:09"),
+    ("Don't You Know", 1, "00:09:10"),
 -- Born This Way Album
 	("Marry The Night", 4, "00:04:24"),
 	("Born This Way", 4, "00:04:20"),
@@ -123,10 +123,10 @@ INSERT INTO SONG_GENRE_LIST VALUES
 -- MemberOf
 
 -- Locations
-INSERT INTO LOCATION (LocationID, LocationName, PhoneNumber, Address) VALUES
-  (1, "Tutone Music Shop", 8608675309, "120 Jenny Lane, San Francisco, California 94102"),
-  (2, "Rick's Record Shop", 8605553214 "322 Jesse Street, Springfield, Massachusetts 01020"),
-  (3, "Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447");
+INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
+  ("Tutone Music Shop", "8608675309", "120 Jenny Lane, San Francisco, California 94102"),
+  ("Rick's Record Shop", "8605553214", "322 Jesse Street, Springfield, Massachusetts 01020"),
+  ("Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447");
 
 -- Employees
 INSERT INTO EMPLOYEE (Name, LocationID) VALUES
