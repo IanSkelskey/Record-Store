@@ -32,7 +32,8 @@ INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
     ("George Harrison", true, "George Harrison", "1943-02-25", false, null),
     ("David Bowie", true, "David Robert Jones", "1947-01-08", false, 1962),
     ("Luther Vandross", true, "Luther Ronzoni Vandross Jr.", "1951-04-20", false, 1969),
-    ("John Lennon", true, "John Winston Ono Lennon", "1940-08-09", false, 1956);
+    ("John Lennon", true, "John Winston Ono Lennon", "1940-08-09", false, 1956),
+    ("Pixies", false, null, null, true, 1986);
 
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
@@ -42,7 +43,8 @@ INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
     ("Born This Way", "2011-05-23", 7.99),
     ("Damn the Torpedoes", "1979-10-19", 12.99),
     ("Dark Horse", "1974-12-09", 13.98),
-    ("Young Americans", "1975-03-05", 12.95);
+    ("Young Americans", "1975-03-05", 12.95),
+    ("Bossanova", "1990-08-13", 12.95);
 
 -- Songs
 INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
@@ -129,7 +131,22 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Somebody Up There Likes Me", 7, "00:06:36"),
     ("Across the Universe", 7, "00:04:29"),
     ("Can You Hear Me?", 7, "00:05:03"),
-    ("Fame", 7, "00:04:21");
+    ("Fame", 7, "00:04:21"),
+-- Bossanova (78-91)
+	("Cecilia Ann", 8, "00:02:06"),
+    ("Rock Music", 8, "00:01:52"),
+    ("Veloria", 8, "00:03:40"),
+    ("Allison", 8, "00:01:18"),
+    ("Is She Wierd", 8, "00:03:01"),
+    ("Ana", 8, "00:02:09"),
+    ("All Over the World", 8, "00:05:27"),
+    ("Dig for Fire", 8, "00:03:03"),
+    ("Down to the Well", 8, "00:02:28"),
+    ("The Happening", 8, "00:04:19"),
+    ("Blown Away", 8, "00:02:20"),
+    ("Hang Wire", 8, "00:02:01"),
+    ("Stormy Weather", 8, "00:03:27"),
+    ("Havalina", 8, "00:02:34");
 
 -- Song Features
 INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
@@ -272,7 +289,22 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (75, 17),
     (76, 17),
     (77, 17),
-    (77, 19);
+    (77, 19),
+-- Bossanova album (SongID 78-91)
+	(78, 20),
+    (79, 20),
+    (80, 20),
+    (81, 20),
+    (82, 20),
+    (83, 20),
+    (84, 20),
+    (85, 20),
+    (86, 20),
+    (87, 20),
+    (88, 20),
+    (89, 20),
+    (90, 20),
+    (91, 20);
 
 -- Genres
 INSERT INTO GENRE (GenreName, Description) VALUES
@@ -290,6 +322,7 @@ INSERT INTO GENRE (GenreName, Description) VALUES
     ("Glam Metal", "Glam metal is a subgenre of heavy metal that features pop-influenced hooks and guitar riffs, upbeat rock anthems, and slow power ballads."),
     ("Country Rock", "Country rock is a subgenre of popular music, formed from the fusion of rock and country."),
     ("Rock-n-Roll", "Rock/Rock-n-Roll is a broad genre of popular music that originated as 'rock and roll' in the United States in the late 1940s and early 1950s, developing into a range of different styles in the mid-1960s and later, particularly in the United States and the United Kingdom."),
+    ("Alternative Rock", "Alternative Rock is a style of Rock music that is characterized as unconventional or outside the mainstream."),
     ("Folk", "Folk is a type of traditional and generally rural music that originally was passed down through families and other small social groups"),
     ("Indie", "Indie, or independent music, refers to music that is produced independently from commercial record labels or their subsidiaries");
 
@@ -358,7 +391,22 @@ INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
     (74, "Pop"),
     (75, "Pop"),
     (76, "Pop"),
-    (77, "Pop");
+    (77, "Pop"),
+-- Bossanova album (78-91)
+	(78, "Alternative Rock"),
+    (79, "Alternative Rock"),
+    (80, "Alternative Rock"),
+    (81, "Alternative Rock"),
+    (82, "Alternative Rock"),
+    (83, "Alternative Rock"),
+    (84, "Alternative Rock"),
+    (85, "Alternative Rock"),
+    (86, "Alternative Rock"),
+    (87, "Alternative Rock"),
+    (88, "Alternative Rock"),
+    (89, "Alternative Rock"),
+    (90, "Alternative Rock"),
+    (91, "Alternative Rock");
 
 -- MemberOf
 INSERT INTO MemberOf (GroupID, IndividualID) VALUES
