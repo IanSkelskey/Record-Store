@@ -27,14 +27,18 @@ INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
     ("Skyler Skjelset", true, "Skyler Skjelset", "1986-03-05", false, null),
     ("Casey Wescott", true, "Casey Wescott", "1981-01-05", false, null),
     ("Christian Wargo", true, "Christian Wargo", "1976-09-22", false, null),
-    ("Morgan Henderson", true, "Morgan Henderson", "1978-08-22", false, null);
+    ("Morgan Henderson", true, "Morgan Henderson", "1978-08-22", false, null),
+    ("Tom Petty and the Heartbreakers", false, null, null, true, "1976-00-00"),
+    ("George Harrison", true, "George Harrison", "1943-02-25", false, null);
 
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
     ("In My Room", "2016-07-01", 17.58),
     ("Fleet Foxes", "2008-06-03", 13.98),
     ("Montero", "2021-09-17", 12.99),
-    ("Born This Way", "2011-05-23", 7.99);
+    ("Born This Way", "2011-05-23", 7.99),
+    ("Damn the Torpedoes", "1979-10-19", 12.99),
+    ("Dark Horse", "1974-12-09", 13.98);
 
 -- Songs
 INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
@@ -93,6 +97,8 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Meadowlarks", 2, "00:03:11"),
     ("Blue Ridge Mountains", 2, "00:04:25"),
     ("Oliver James", 2, "00:03:23");
+    -- Damn the Torpedoes Album (52-)
+    -- Dark Horse (-)
 
 -- Song Features
 INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
@@ -175,11 +181,13 @@ INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
 INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
   ("Tutone Music Shop", "8608675309", "120 Jenny Lane, San Francisco, California 94102"),
   ("Rick's Record Shop", "8605553214", "322 Jesse Street, Springfield, Massachusetts 01020"),
-  ("Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447");
+  ("Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447"),
+  ("Big Round Record Store", "9085554242", "20 W 34th St., New York, NY 10001");
 
 -- Employees
 INSERT INTO EMPLOYEE (Name, LocationID) VALUES
   ("Ian Skelskey", 1),
   ("Andrew Tonn", 2),
-  ("Graef Von Grundeltaag", 3);
+  ("Graef Von Grundeltaag", 3),
+  ("Steven Stabile", 4);
 
