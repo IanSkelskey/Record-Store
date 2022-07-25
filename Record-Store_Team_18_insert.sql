@@ -21,7 +21,13 @@ INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
     ("Doja Cat", true, "Amala Ratna Zandile Dlamini", "1995-10-21", false, null),
     ("Elton John", true, "Sir Elton Hercules John", "1947-03-25", false, null),
     ("Megan Thee Stallion", true, "Megan Jovon Ruth Pete", "1995-02-15", false, null),
-    ("Miley Cyrus", true, "Miley Ray Cyrus", "1992-11-23", false, null);
+    ("Miley Cyrus", true, "Miley Ray Cyrus", "1992-11-23", false, null),
+    ("Fleet Foxes", false, null, null, true, "2006-00-00"),
+    ("Robin Pecknold", true, "Robin Pecknold", "1986-03-30", false, null),
+    ("Skyler Skjelset", true, "Skyler Skjelset", "1986-03-05", false, null),
+    ("Casey Wescott", true, "Casey Wescott", "1981-01-05", false, null),
+    ("Christian Wargo", true, "Christian Wargo", "1976-09-22", false, null),
+    ("Morgan Henderson", true, "Morgan Henderson", "1978-08-22", false, null);
 
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
