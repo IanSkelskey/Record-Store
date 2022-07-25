@@ -222,7 +222,9 @@ INSERT INTO GENRE (GenreName, Description) VALUES
     ("R&B/Soul", "Short for rhythm and blues. A kind of pop music of African American origin with a soulful vocal style featuring improvisation."),
     ("Glam Metal", "Glam metal is a subgenre of heavy metal that features pop-influenced hooks and guitar riffs, upbeat rock anthems, and slow power ballads."),
     ("Country Rock", "Country rock is a subgenre of popular music, formed from the fusion of rock and country."),
-    ("Rock-n-Roll", "Rock/Rock-n-Roll is a broad genre of popular music that originated as 'rock and roll' in the United States in the late 1940s and early 1950s, developing into a range of different styles in the mid-1960s and later, particularly in the United States and the United Kingdom.");
+    ("Rock-n-Roll", "Rock/Rock-n-Roll is a broad genre of popular music that originated as 'rock and roll' in the United States in the late 1940s and early 1950s, developing into a range of different styles in the mid-1960s and later, particularly in the United States and the United Kingdom."),
+    ("Folk", "Folk is a type of traditional and generally rural music that originally was passed down through families and other small social groups"),
+    ("Indie", "Indie, or independent music, refers to music that is produced independently from commercial record labels or their subsidiaries");
 
 -- Song Genre
 INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
