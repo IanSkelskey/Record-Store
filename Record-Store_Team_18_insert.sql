@@ -29,7 +29,10 @@ INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
     ("Christian Wargo", true, "Christian Wargo", "1976-09-22", false, null),
     ("Morgan Henderson", true, "Morgan Henderson", "1978-08-22", false, null),
     ("Tom Petty and the Heartbreakers", false, null, null, true, "1976-00-00"),
-    ("George Harrison", true, "George Harrison", "1943-02-25", false, null);
+    ("George Harrison", true, "George Harrison", "1943-02-25", false, null),
+    ("David Bowie", true, "David Robert Jones", "1947-01-08", false, 1962),
+    ("Luther Vandross", true, "Luther Ronzoni Vandross Jr.", "1951-04-20", false, 1969),
+    ("John Lennon", true, "John Winston Ono Lennon", "1940-08-09", false, 1956);
 
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
@@ -38,7 +41,8 @@ INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
     ("Montero", "2021-09-17", 12.99),
     ("Born This Way", "2011-05-23", 7.99),
     ("Damn the Torpedoes", "1979-10-19", 12.99),
-    ("Dark Horse", "1974-12-09", 13.98);
+    ("Dark Horse", "1974-12-09", 13.98),
+    ("Young Americans", "1975-03-05", 12.95);
 
 -- Songs
 INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
@@ -64,11 +68,11 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Sheibe", 4, "00:03:45"),
     ("Bloody Mary", 4, "00:04:04"),
     ("Bad Kids", 4, "00:03:50"),
-    ("Highway Unicorn (Road to Love)", 4, "00:04:15")
+    ("Highway Unicorn (Road to Love)", 4, "00:04:15"),
     ("Heavy Metal Lover", 4, "00:04:12"),
     ("Electric Chapel", 4, "00:04:13"),
     ("You and I", 4, "00:05:07"),
-    ("Edge of Glory", 4, "00:05:20")
+    ("Edge of Glory", 4, "00:05:20"),
 -- Montero ALBUM (26-40)
     ("Montero (Call Me By Your Name)", 3, "00:02:17"),
     ("Dead Right Now", 3, "00:03:41"),
@@ -84,7 +88,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Void", 3, "00:04:08"),
     ("Dont Want It", 3, "00:02:10"),
     ("Life After Salem", 3, "00:03:30"),
-    ("Am I Dreaming", 3, "00:03:03")
+    ("Am I Dreaming", 3, "00:03:03"),
 -- Fleet Foxes (41-51)
     ("Sun It Rises", 2, "00:03:11"),
     ("White Winter Hymnal", 2, "00:02:27"),
@@ -116,7 +120,16 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Ding Dong, Ding Dong", 6, "00:03:40"),
     ("Dark Horse", 6, "00:03:54"),
     ("Far East Man", 6, "00:05:52"),
-    ("It Is 'He' (Jai Sri Krishna)", 6, "00:04:50");
+    ("It Is 'He' (Jai Sri Krishna)", 6, "00:04:50"),
+    -- Young Americans (70-77)
+    ("Young Americans", 7, "00:05:11"),
+    ("Win", 7, "00:04:44"),
+    ("Fascination", 7, "00:05:45"),
+    ("Right", 7, "00:04:15"),
+    ("Somebody Up There Likes Me", 7, "00:06:36"),
+    ("Across the Universe", 7, "00:04:29"),
+    ("Can You Hear Me?", 7, "00:05:03"),
+    ("Fame", 7, "00:04:21");
 
 -- Song Features
 INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
@@ -131,7 +144,7 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (1, 8),
     (1, 9),
     (1, 10),
-    (1, 11)
+    (1, 11),
 -- Born this way album (SongID 12-25)
     (12,2),
     (13,2),
@@ -181,7 +194,18 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (66,16),
     (67,16),
     (68,16),
-    (69,16);
+    (69,16),
+    -- Young Americans album (SongID 70-77)
+    (70, 17),
+    (71, 17),
+    (72, 17),
+    (72, 18),
+    (73, 17),
+    (74, 17),
+    (75, 17),
+    (76, 17),
+    (77, 17),
+    (77, 19);
 
 -- Genres
 INSERT INTO GENRE (GenreName, Description) VALUES
@@ -232,7 +256,16 @@ INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
     (66, "Rock-n-Roll"),
     (67, "Rock-n-Roll"),
     (68, "Rock-n-Roll"),
-    (69, "Rock-n-Roll");
+    (69, "Rock-n-Roll"),
+-- Young Americans album (70-77)
+	(70, "Pop"),
+    (71, "Pop"),
+    (72, "Pop"),
+    (73, "Pop"),
+    (74, "Pop"),
+    (75, "Pop"),
+    (76, "Pop"),
+    (77, "Pop");
 
 -- MemberOf
 
