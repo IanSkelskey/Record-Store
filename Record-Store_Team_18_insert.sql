@@ -18,10 +18,10 @@ INSERT INTO EMPLOYEE (Name, LocationID) VALUES
   ("Graef Von Grundeltaag", );
 
 -- Locations
-INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
-  ("Tutone Music Shop", 8608675309, "120 Jenny Lane, San Francisco, California 94102"),
-  ("Rick's Record Shop", 8605553214 "322 Jesse Street, Springfield, Massachusetts 01020"),
-  ("Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447");
+INSERT INTO LOCATION (LocationID, LocationName, PhoneNumber, Address) VALUES
+  (1, "Tutone Music Shop", 8608675309, "120 Jenny Lane, San Francisco, California 94102"),
+  (2, "Rick's Record Shop", 8605553214 "322 Jesse Street, Springfield, Massachusetts 01020"),
+  (3, "Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447");
 
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
@@ -42,7 +42,7 @@ INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
 	("Miley Cyrus", true, "Miley Ray Cyrus", "1992-11-23", false, null);
 
 -- Songs
-INSERT INTO SONG VALUES
+INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
 	(1, "Woke Up Today", 280, "Lyrics", 1),
     (2, "In My Room", 289, "Lyrics", 1),
     (3, "Hideaway", 412, "Lyrics", 1),
@@ -53,7 +53,21 @@ INSERT INTO SONG VALUES
     (8, "Hajanga", 362, "Lyrics", 1),
     (9, "Flintstones", 190, "Lyrics", 1),
     (10, "In The Real Early Morning", 369, "Lyrics", 1),
-    (11, "Don't You Know", 550, "Lyrics", 1);
+    (11, "Don't You Know", 550, "Lyrics", 1),
+	("Marry The Night", 4, "00:04:24"),
+	("Born This Way", 4, "00:04:20"),
+	("Government Hooker", 4, "00:04:14"),
+	("Judas", 4, "00:04:09"),
+	("Americano", 4, "00:04:06"),
+	("Hair", 4, "00:05:07"),
+	("Sheibe", 4, "00:03:45"),
+	("Bloody Mary", 4, "00:04:04"),
+	("Bad Kids", 4, "00:03:50"),
+	("Highway Unicorn (Road to Love)", 4, "00:04:15")
+	("Heavy Metal Lover", 4, "00:04:12"),
+	("Electric Chapel", 4, "00:04:13"),
+	("You and I", 4, "00:05:07"),
+	("Edge of Glory", 4, "00:05:20");
 
 -- Song Features
 INSERT INTO SONG_FEATURE_LIST VALUES
