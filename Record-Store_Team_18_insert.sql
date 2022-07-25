@@ -119,8 +119,7 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (22,2),
     (23,2),
     (24,2),
-    (25,2),
-    ;
+    (25,2);
 
 -- Genres
 INSERT INTO GENRE (GenreName, Description) VALUES
