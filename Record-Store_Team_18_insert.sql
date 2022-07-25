@@ -54,6 +54,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     (9, "Flintstones", 190, "Lyrics", 1),
     (10, "In The Real Early Morning", 369, "Lyrics", 1),
     (11, "Don't You Know", 550, "Lyrics", 1),
+-- Born This Way Album
 	("Marry The Night", 4, "00:04:24"),
 	("Born This Way", 4, "00:04:20"),
 	("Government Hooker", 4, "00:04:14"),
@@ -67,10 +68,26 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
 	("Heavy Metal Lover", 4, "00:04:12"),
 	("Electric Chapel", 4, "00:04:13"),
 	("You and I", 4, "00:05:07"),
-	("Edge of Glory", 4, "00:05:20");
+	("Edge of Glory", 4, "00:05:20")
+-- Montero ALBUM
+	("Montero (Call Me By Your Name)", 3, "00:02:17"),
+	("Dead Right Now", 3, "00:03:41"),
+	("Industry Baby", 3, "00:03:32"),
+	("Thats What I Want", 3, "00:02:23"),
+	("The Art of Realization", 3, "00:00:24"),
+	("Scoop", 3, "00:02:54"),
+	("One of Me", 3, "00:02:41"),
+	("Lost In The Citadel", 3, "00:02:50"),
+	("Dolla Sign Slime", 3, "00:02:25"),
+	("Tales of Dominica", 3, "00:02:26"),
+	("Sun Goes Down", 3, "00:2:48"),
+	("Void", 3, "00:04:08"),
+	("Dont Want It", 3, "00:02:10"),
+	("Life After Salem", 3, "00:03:30"),
+	("Am I Dreaming", 3, "00:03:03");
 
 -- Song Features
-INSERT INTO SONG_FEATURE_LIST VALUES
+INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
 	(1, 1),
     (1, 2),
     (1, 3),
