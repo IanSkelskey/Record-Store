@@ -133,7 +133,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Can You Hear Me?", 7, "00:05:03"),
     ("Fame", 7, "00:04:21"),
 -- Bossanova (78-91)
-	("Cecilia Ann", 8, "00:02:06"),
+    ("Cecilia Ann", 8, "00:02:06"),
     ("Rock Music", 8, "00:01:52"),
     ("Veloria", 8, "00:03:40"),
     ("Allison", 8, "00:01:18"),
@@ -291,7 +291,7 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (77, 17),
     (77, 19),
 -- Bossanova album (SongID 78-91)
-	(78, 20),
+    (78, 20),
     (79, 20),
     (80, 20),
     (81, 20),
@@ -393,7 +393,7 @@ INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
     (76, "Pop"),
     (77, "Pop"),
 -- Bossanova album (78-91)
-	(78, "Alternative Rock"),
+    (78, "Alternative Rock"),
     (79, "Alternative Rock"),
     (80, "Alternative Rock"),
     (81, "Alternative Rock"),
