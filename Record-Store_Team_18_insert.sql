@@ -74,7 +74,19 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Void", 3, "00:04:08"),
     ("Dont Want It", 3, "00:02:10"),
     ("Life After Salem", 3, "00:03:30"),
-    ("Am I Dreaming", 3, "00:03:03");
+    ("Am I Dreaming", 3, "00:03:03")
+-- Fleet Foxes (41-51)
+    ("Sun It Rises", 2, "00:03:11"),
+    ("White Winter Hymnal", 2, "00:02:27"),
+    ("Ragged Wood", 2, "00:05:07"),
+    ("Tiger Mountain Peasant Song", 2, "00:03:28"),
+    ("Quiet Houses", 2, "00:03:32"),
+    ("He Doesn't Know Why", 2, "00:03:20"),
+    ("Heard Them Stirring", 2, "00:03:02"),
+    ("Your Protector", 2, "00:04:09"),
+    ("Meadowlarks", 2, "00:03:11"),
+    ("Blue Ridge Mountains", 2, "00:04:25"),
+    ("Oliver James", 2, "00:03:23");
 
 -- Song Features
 INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
