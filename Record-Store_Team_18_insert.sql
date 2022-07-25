@@ -175,6 +175,18 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (23,2),
     (24,2),
     (25,2),
+-- Fleet Foxes (41-51)
+    (2, 41),
+    (2, 42),
+    (2, 43),
+    (2, 44),
+    (2, 45),
+    (2, 46),
+    (2, 47),
+    (2, 48),
+    (2, 49),
+    (2, 50),
+    (2, 51),
 -- Damn the Torpedoes album (SongID 52-60)
     (52,15),
     (53,15),
