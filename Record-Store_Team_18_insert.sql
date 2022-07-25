@@ -44,7 +44,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Flintstones", 1, "00:03:10"),
     ("In The Real Early Morning", 1, "00:06:09"),
     ("Don't You Know", 1, "00:09:10"),
--- Born This Way Album
+-- Born This Way Album (12-25)
 	("Marry The Night", 4, "00:04:24"),
 	("Born This Way", 4, "00:04:20"),
 	("Government Hooker", 4, "00:04:14"),
@@ -163,5 +163,5 @@ INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
 INSERT INTO EMPLOYEE (Name, LocationID) VALUES
   ("Ian Skelskey", 1),
   ("Andrew Tonn", 2),
-  ("Graef Von Grundeltaag", );
+  ("Graef Von Grundeltaag", 3);
 
