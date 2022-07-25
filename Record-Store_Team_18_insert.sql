@@ -15,7 +15,7 @@ Order of inserts will be important based on dependancies. Please follow this ORD
 INSERT INTO EMPLOYEE (Name, LocationID) VALUES
   ("Ian Skelskey", 1),
   ("Andrew Tonn", 2),
-  ("Graef Von Grundeltaag", );
+  ("Graef Von Grundeltaag", 3);
 
 -- Locations
 INSERT INTO LOCATION (LocationID, LocationName, PhoneNumber, Address) VALUES
@@ -31,7 +31,7 @@ INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
 	("Born This Way", "2011-05-23", 7.99);
 
 -- Artists
-INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Established)VALUES
+INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Established) VALUES
     (1, "Jacob Collier", "1994-08-02", "Jacob Collier"),
 	("Lady Gaga", true, "Stefani Joanne Angelina Germanotta", "1986-03-28", false, null),
 	("Lil Nas X", true, "Montero Lamar Hill", "1999-04-09", false, null),
@@ -54,7 +54,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     (9, "Flintstones", 190, "Lyrics", 1),
     (10, "In The Real Early Morning", 369, "Lyrics", 1),
     (11, "Don't You Know", 550, "Lyrics", 1),
--- Born This Way Album
+-- Born This Way Album (12-25)
 	("Marry The Night", 4, "00:04:24"),
 	("Born This Way", 4, "00:04:20"),
 	("Government Hooker", 4, "00:04:14"),
@@ -69,7 +69,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
 	("Electric Chapel", 4, "00:04:13"),
 	("You and I", 4, "00:05:07"),
 	("Edge of Glory", 4, "00:05:20")
--- Montero ALBUM
+-- Montero ALBUM (26-40)
 	("Montero (Call Me By Your Name)", 3, "00:02:17"),
 	("Dead Right Now", 3, "00:03:41"),
 	("Industry Baby", 3, "00:03:32"),
@@ -98,7 +98,38 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (1, 8),
     (1, 9),
     (1, 10),
-    (1, 11);
+    (1, 11)
+-- Born this way album (SongID 12-25)
+	(12,2),
+	(13,2),
+	(14,2),
+	(15,2),
+	(16,2),
+	(17,2),
+	(18,2),
+	(19,2),
+	(20,2),
+	(21,2),
+	(22,2),
+	(23,2),
+	(24,2),
+	(25,2),
+-- Montero album (26-40)
+	(26,2),
+	(27,2),
+	(28,2),
+	(15,2),
+	(16,2),
+	(17,2),
+	(18,2),
+	(19,2),
+	(20,2),
+	(21,2),
+	(22,2),
+	(23,2),
+	(24,2),
+	(25,2),
+	;
 
 -- Genres
 INSERT INTO GENRE (GenreName, Description) VALUES
@@ -117,7 +148,7 @@ INSERT INTO GENRE (GenreName, Description) VALUES
 	("Country Rock", "Country rock is a subgenre of popular music, formed from the fusion of rock and country.");
 
 -- Song Genre
-INSERT INTO SONG_GENRE_LIST VALUES
+INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
 	(1, "Jazz"),
     (2, "Jazz"),
     (3, "Jazz"),
