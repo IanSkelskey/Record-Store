@@ -164,5 +164,5 @@ INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
 INSERT INTO EMPLOYEE (Name, LocationID) VALUES
   ("Ian Skelskey", 1),
   ("Andrew Tonn", 2),
-  ("Graef Von Grundeltaag", );
+  ("Graef Von Grundeltaag", 3);
 
