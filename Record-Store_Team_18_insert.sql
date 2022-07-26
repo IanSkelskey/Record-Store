@@ -28,7 +28,7 @@ INSERT INTO Artist (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
     ("Casey Wescott", true, "Casey Wescott", "1981-01-05", false, null),
     ("Christian Wargo", true, "Christian Wargo", "1976-09-22", false, null),
     ("Morgan Henderson", true, "Morgan Henderson", "1978-08-22", false, null),
-    ("Tom Petty and the Heartbreakers", false, null, null, true, "1976-00-00"),
+    ("Tom Petty and the Heartbreakers", false, null, null, true, "1976-01-01"),
     ("George Harrison", true, "George Harrison", "1943-02-25", false, null),
     ("David Bowie", true, "David Robert Jones", "1947-01-08", false, "1962-00-00"),
     ("Luther Vandross", true, "Luther Ronzoni Vandross Jr.", "1951-04-20", false, "1969-00-00"),
