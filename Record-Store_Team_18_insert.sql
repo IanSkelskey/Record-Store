@@ -153,7 +153,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Havalina", 8, "00:02:34");
 
 -- Song Features
-INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
+INSERT INTO SONGFEATURELIST (SongID, ArtistID) VALUES
 -- In My Room (SONGID 1-11)
     (1, 1),
     (2, 1),

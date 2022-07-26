@@ -28,7 +28,7 @@ CREATE TABLE Album
 CREATE TABLE Song
 (
   SongID INT NOT NULL AUTO_INCREMENT,
-  SongTitle VARCHAR(30) NOT NULL,
+  SongTitle VARCHAR(50) NOT NULL,
   Duration Time NOT NULL,
   Lyrics Text,
   AlbumID INT NOT NULL,
@@ -55,7 +55,7 @@ CREATE TABLE SongGenreList
 CREATE TABLE Artist
 (
   ArtistID INT NOT NULL AUTO_INCREMENT,
-  StageName VARCHAR(30) NOT NULL,
+  StageName VARCHAR(50) NOT NULL,
   SoloFlag Boolean NOT NULL,
   ArtistName VARCHAR(50),
   DateOfBirth DATE,
