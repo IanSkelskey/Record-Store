@@ -91,3 +91,4 @@ CREATE TABLE SongFeatureList (
     FOREIGN KEY (ArtistID)
         REFERENCES Artist (ArtistID)
 );
+
