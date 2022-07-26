@@ -488,15 +488,24 @@ INSERT INTO MemberOf (GroupID, IndividualID) VALUES
 
 -- Locations
 INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
-  ("Tutone Music Shop", "8608675309", "120 Jenny Lane, San Francisco, California 94102"),
-  ("Rick's Record Shop", "8605553214", "322 Jesse Street, Springfield, Massachusetts 01020"),
-  ("Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447"),
-  ("Big Round Record Store", "9085554242", "20 W 34th St., New York, NY 10001");
+    ("Tutone Music Shop", "8608675309", "120 Jenny Lane, San Francisco, California 94102"),
+    ("Rick's Record Shop", "8605553214", "322 Jesse Street, Springfield, Massachusetts 01020"),
+    ("Stonewall Locker", "2535397684", "1010 122nd St S, Tacoma, WA 98447"),
+    ("Big Round Record Store", "9085554242", "20 W 34th St., New York, NY 10001");
 
 -- Employees
 INSERT INTO EMPLOYEE (Name, LocationID) VALUES
-  ("Ian Skelskey", 1),
-  ("Andrew Tonn", 2),
-  ("Graef Von Grundeltaag", 3),
-  ("Steven Stabile", 4);
+    ("Ian Skelskey", 1),
+    ("Andrew Tonn", 2),
+    ("Graef Von Grundeltaag", 3),
+    ("Steven Stabile", 4);
 
+INSERT INTO INVENTORY (AlbumID, LocationID, Amount) VALUES
+    (1, 1, 5),
+    (1, 2, 0),
+    (1, 3, 2),
+    (1, 4, 10),
+    (2, 1, 1),
+    (2, 2, 2),
+    (2, 3, 3),
+    (2, 4, 4);
