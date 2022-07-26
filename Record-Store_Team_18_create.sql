@@ -16,13 +16,12 @@ CREATE TABLE Empolyee
   FOREIGN KEY (LocationID) REFERENCES Location(LocationID)
 );
 
-CREATE TABLE Album
-(
-  AlbumID INT NOT NULL AUTO_INCREMENT,
-  AlbumTitle VARCHAR(30) NOT NULL,
-  ReleaseDate DATE NOT NULL,
-  Cost FLOAT NOT NULL,
-  PRIMARY KEY (AlbumID)
+CREATE TABLE Album (
+    AlbumID INT NOT NULL AUTO_INCREMENT,
+    AlbumTitle VARCHAR(30) NOT NULL,
+    ReleaseDate DATE NOT NULL,
+    Cost FLOAT NOT NULL,
+    PRIMARY KEY (AlbumID)
 );
 
 CREATE TABLE Song
@@ -73,14 +72,15 @@ CREATE TABLE MemberOf
   FOREIGN KEY (IndividualID) REFERENCES Artist(ArtistID)
 );
 
-CREATE TABLE Inventory
-(
-  AlbumID INT NOT NULL,
-  LocationID INT NOT NULL,
-  Amount INT NOT NULL,
-  PRIMARY KEY (AlbumID, LocationID),
-  FOREIGN KEY (AlbumID) REFERENCES Album(AlbumID),
-  FOREIGN KEY (LocationID) REFERENCES Location(LocationID)
+CREATE TABLE Inventory (
+    AlbumID INT NOT NULL,
+    LocationID INT NOT NULL,
+    Amount INT NOT NULL,
+    PRIMARY KEY (AlbumID , LocationID),
+    FOREIGN KEY (AlbumID)
+        REFERENCES Album (AlbumID),
+    FOREIGN KEY (LocationID)
+        REFERENCES Location (LocationID)
 );
 
 CREATE TABLE SongFeatureList

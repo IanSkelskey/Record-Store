@@ -178,20 +178,25 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (24,2),
     (25,2),
 -- Montero album (26-40)
-    (26,2),
-    (27,2),
-    (28,2),
-    (15,2),
-    (16,2),
-    (17,2),
-    (18,2),
-    (19,2),
-    (20,2),
-    (21,2),
-    (22,2),
-    (23,2),
-    (24,2),
-    (25,2),
+    (26,3), -- Montero
+    (27,3), -- Dead Right Now
+    (28,3), -- Industry Baby
+    (28,4),
+    (29,3), -- Thats what I Want
+    (30,3), -- Art of Realization
+    (31,3), -- Scoop
+    (31,5),
+    (32,3), -- One of Me
+    (32,6),
+    (33,3), -- Lost in the citadel
+    (34,3), -- Dolla Sign Slime
+    (35,3), -- Tales of Dominica
+    (36,3), -- Sun Goes Down
+    (37,3), -- Void
+    (38,3), -- Dont Want It
+    (39,3), -- Life After Salem
+    (40,3), -- Am I Dreaming
+    (41,8), -- Am I dreaming
 -- Fleet Foxes (41-51)
     (41, 9),
     (42, 9),
