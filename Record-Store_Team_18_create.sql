@@ -9,7 +9,7 @@ CREATE TABLE Location
 
 CREATE TABLE Employee
 (
-  EmployeeID INT NOT NULL,
+  EmployeeID INT NOT NULL AUTO_INCREMENT,
   Name VARCHAR(30) NOT NULL,
   LocationID INT NOT NULL,
   PRIMARY KEY (EmployeeID),
@@ -38,7 +38,7 @@ CREATE TABLE Song
 CREATE TABLE Genre
 (
   GenreName VARCHAR(25) NOT NULL,
-  Description VARCHAR(200) NOT NULL,
+  Description MEDIUMTEXT NOT NULL,
   PRIMARY KEY (GenreName)
 );
 
