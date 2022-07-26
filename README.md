@@ -106,6 +106,8 @@ CREATE TABLE SongFeatureList
 ```
 ## Environment
 
+- MySQL version 5.6
+
 Java, Gradle, JDBC, etc?
 
 ## Steps for Execution
