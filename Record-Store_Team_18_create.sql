@@ -1,13 +1,13 @@
 CREATE TABLE Location
 (
-  LocationID INT NOT NULL,
+  LocationID INT NOT NULL AUTO_INCREMENT,
   LocationName VARCHAR(45) NOT NULL,
   PhoneNumber CHAR(10) NOT NULL,
   Address VARCHAR(50) NOT NULL,
   PRIMARY KEY (LocationID)
 );
 
-CREATE TABLE Empolyee
+CREATE TABLE Employee
 (
   EmployeeID INT NOT NULL,
   Name VARCHAR(30) NOT NULL,
