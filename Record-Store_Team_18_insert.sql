@@ -30,10 +30,14 @@ INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
     ("Morgan Henderson", true, "Morgan Henderson", "1978-08-22", false, null),
     ("Tom Petty and the Heartbreakers", false, null, null, true, "1976-00-00"),
     ("George Harrison", true, "George Harrison", "1943-02-25", false, null),
-    ("David Bowie", true, "David Robert Jones", "1947-01-08", false, 1962),
-    ("Luther Vandross", true, "Luther Ronzoni Vandross Jr.", "1951-04-20", false, 1969),
-    ("John Lennon", true, "John Winston Ono Lennon", "1940-08-09", false, 1956),
-    ("Pixies", false, null, null, true, 1986);
+    ("David Bowie", true, "David Robert Jones", "1947-01-08", false, "1962-00-00"),
+    ("Luther Vandross", true, "Luther Ronzoni Vandross Jr.", "1951-04-20", false, "1969-00-00"),
+    ("John Lennon", true, "John Winston Ono Lennon", "1940-08-09", false, "1956-00-00"),
+    ("Pixies", false, null, null, true, "1986-00-00"),
+    ("Frank Black", true, "Charles Thompson IV", "1965-04-06", false, "1986-00-00"),
+    ("Kim Deal", true, "Kimberley Ann Deal", "1961-06-10", false, "1986-00-00"),
+    ("Joey Santigo", true, "Joseph Alberto Santiago", "1965-06-10", false, "1986-00-00"),
+    ("David Lovering", true, "David Lovering", "1961-12-06", false, "1986-00-00");
 
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
@@ -133,7 +137,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Can You Hear Me?", 7, "00:05:03"),
     ("Fame", 7, "00:04:21"),
 -- Bossanova (78-91)
-	("Cecilia Ann", 8, "00:02:06"),
+    ("Cecilia Ann", 8, "00:02:06"),
     ("Rock Music", 8, "00:01:52"),
     ("Veloria", 8, "00:03:40"),
     ("Allison", 8, "00:01:18"),
@@ -149,7 +153,7 @@ INSERT INTO SONG (SongTitle, AlbumID, Duration)VALUES
     ("Havalina", 8, "00:02:34");
 
 -- Song Features
-INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
+INSERT INTO SONGFEATURELIST (SongID, ArtistID) VALUES
 -- In My Room (SONGID 1-11)
     (1, 1),
     (2, 1),
@@ -296,20 +300,76 @@ INSERT INTO SONG_FEATURE_LIST (SongID, ArtistID) VALUES
     (77, 17),
     (77, 19),
 -- Bossanova album (SongID 78-91)
-	(78, 20),
+    (78, 20),
+    (78, 21),
+    (78, 22),
+    (78, 23),
+    (78, 24),
     (79, 20),
+    (79, 21),
+    (79, 22),
+    (79, 23),
+    (79, 24),
     (80, 20),
+    (80, 21),
+    (80, 22),
+    (80, 23),
+    (80, 24),
     (81, 20),
+    (81, 21),
+    (81, 22),
+    (81, 23),
+    (81, 24),
     (82, 20),
+    (82, 21),
+    (82, 22),
+    (82, 23),
+    (82, 24),
     (83, 20),
+    (83, 21),
+    (83, 22),
+    (83, 23),
+    (83, 24),
     (84, 20),
+    (84, 21),
+    (84, 22),
+    (84, 23),
+    (84, 24),
     (85, 20),
+    (85, 21),
+    (85, 22),
+    (85, 23),
+    (85, 24),
     (86, 20),
+    (86, 21),
+    (86, 22),
+    (86, 23),
+    (86, 24),
     (87, 20),
+    (87, 21),
+    (87, 22),
+    (87, 23),
+    (87, 24),
     (88, 20),
+    (88, 21),
+    (88, 22),
+    (88, 23),
+    (88, 24),
     (89, 20),
+    (89, 21),
+    (89, 22),
+    (89, 23),
+    (89, 24),
     (90, 20),
-    (91, 20);
+    (90, 21),
+    (90, 22),
+    (90, 23),
+    (90, 24),
+    (91, 20),
+    (91, 21),
+    (91, 22),
+    (91, 23),
+    (91, 24);
 
 -- Genres
 INSERT INTO GENRE (GenreName, Description) VALUES
@@ -398,7 +458,7 @@ INSERT INTO SONG_GENRE_LIST (SongID, GenreName) VALUES
     (76, "Pop"),
     (77, "Pop"),
 -- Bossanova album (78-91)
-	(78, "Alternative Rock"),
+    (78, "Alternative Rock"),
     (79, "Alternative Rock"),
     (80, "Alternative Rock"),
     (81, "Alternative Rock"),
@@ -420,7 +480,11 @@ INSERT INTO MemberOf (GroupID, IndividualID) VALUES
     (9, 11),
     (9, 12),
     (9, 13),
-    (9, 14);
+    (9, 14),
+    (20, 21),
+    (20, 22),
+    (20, 23),
+    (20, 24);
 
 -- Locations
 INSERT INTO LOCATION (LocationName, PhoneNumber, Address) VALUES
