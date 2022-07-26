@@ -563,4 +563,14 @@ INSERT INTO Inventory (AlbumID, LocationID, Amount) VALUES
     (4, 1, 2),
     (4, 2, 0),
     (4, 3, 15),
-    (4, 4, 1);
+    (4, 4, 1),
+-- Damn the Torpedoes album
+    (5, 1, 4),
+    (5, 2, 6),
+    (5, 3, 3),
+    (5, 4, 2),
+-- Dark Horse album
+    (6, 1, 5),
+    (6, 2, 2),
+    (6, 3, 2),
+    (6, 4, 1);
