@@ -30,10 +30,14 @@ INSERT INTO ARTIST (StageName, SoloFlag, ArtistName, DateOfBirth, BandFlag, Esta
     ("Morgan Henderson", true, "Morgan Henderson", "1978-08-22", false, null),
     ("Tom Petty and the Heartbreakers", false, null, null, true, "1976-00-00"),
     ("George Harrison", true, "George Harrison", "1943-02-25", false, null),
-    ("David Bowie", true, "David Robert Jones", "1947-01-08", false, 1962),
-    ("Luther Vandross", true, "Luther Ronzoni Vandross Jr.", "1951-04-20", false, 1969),
-    ("John Lennon", true, "John Winston Ono Lennon", "1940-08-09", false, 1956),
-    ("Pixies", false, null, null, true, 1986);
+    ("David Bowie", true, "David Robert Jones", "1947-01-08", false, "1962-00-00"),
+    ("Luther Vandross", true, "Luther Ronzoni Vandross Jr.", "1951-04-20", false, "1969-00-00"),
+    ("John Lennon", true, "John Winston Ono Lennon", "1940-08-09", false, "1956-00-00"),
+    ("Pixies", false, null, null, true, "1986-00-00"),
+    ("Frank Black", true, "Charles Thompson IV", "1965-04-06", false, "1986-00-00"),
+    ("Kim Deal", true, "Kimberley Ann Deal", "1961-06-10", false, "1986-00-00"),
+    ("Joey Santigo", true, "Joseph Alberto Santiago", "1965-06-10", false, "1986-00-00"),
+    ("David Lovering", true, "David Lovering", "1961-12-06", false, "1986-00-00");
 
 -- Albums
 INSERT INTO ALBUM (AlbumTitle, ReleaseDate, Cost) VALUES
