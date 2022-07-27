@@ -524,6 +524,88 @@ SET
     END
 WHERE
     songID BETWEEN 1 AND 11;
+
+UPDATE SONG -- Album: Damn the Torpedoes, Tom Petty
+SET
+	Lyrics = CASE songID
+        WHEN
+		    54 -- Song: Even the Losers
+	    THEN
+            'Well, it was nearly summer we sat on your roof
+            Yeah, we smoked cigarettes and we stared at the moon
+            And I showed you stars you never could see
+            Babe, it couln\'t have been that easy to forget about me
+            Baby, time meant nothing anything seemed real
+            Yeah, you could kiss like fire and you made me feel
+            Like every word you said was meant to be
+            It couldn\'t have been that easy to forget about me
+            Baby, even the losers
+            Get lucky sometimes
+            Even the losers
+            Keep a little bit of pride
+            They get lucky sometimes
+            Two cars parked on the overpass
+            Rocks hit the water like broken glass
+            I shoulda known right then it was too good to last
+            God, it\'s such a drag when you live in the past
+            Baby, even the losers
+            Get lucky sometimes
+            Even the losers
+            Keep a little bit of pride
+            They get lucky sometimes'
+    END
+WHERE 
+    songID BETWEEN 52 AND 60;
+
+UPDATE SONG -- Album: Dark Horse, George Harrison
+SET
+	Lyrics = CASE songID
+        WHEN
+		    67 -- Song: Dark Horse
+	    THEN
+		'You thought that you knew where I was and when
+        Baby, it looks like it\'s foolin you again
+        You thought that you\'d got me all staked out
+        Babe it looks like I\'ve been breaking out
+        I\'m a dark horse
+        Running on a dark race course
+        I\'m a blue moon
+        Since I stepped out of the womb
+        I\'ve been a cool jerk
+        Who\'s looking for the source
+        I\'m a dark horse
+        You thought that you\'d got me in your grip
+        Baby looks like you was not so smart
+        And I became too slippery for you
+        Let me tell you that was nothing new
+        I\'m a dark horse
+        Running on a dark race course
+        I\'m a blue moon
+        Since I picked up my first spoon
+        I\'ve been a cool jerk
+        Who\'s looking for the source
+        I\'m a dark horse
+        I thought that you knew it all along
+        Until you started getting me not right
+        Seems as if you heard a little late
+        I warned you when we both was at the starting gate
+        I\'m a dark horse
+        Running on a dark race course
+        I\'m a blue moon
+        Since I stepped out of the womb
+        I\'ve been a cool jerk
+        Who\'s looking for his perks
+        I\'m a dark horse
+        I\'m a dark horse
+        I\'m running on a dark race course
+        I\'m a blue moon
+        Since I stepped out of the womb
+        I\'ve been a cool jerk
+        Just looking at the source
+        I\'m a dark horse'
+    END
+WHERE 
+    songID BETWEEN 61 AND 69;
     
 UPDATE SONG
 SET
