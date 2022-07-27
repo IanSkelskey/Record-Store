@@ -63,7 +63,9 @@ INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
     ("Hajanga", 1, "00:06:02"),
     ("Flintstones", 1, "00:03:10"),
     ("In The Real Early Morning", 1, "00:06:09"),
-    ("Don't You Know", 1, "00:09:10"),
+    ("Don't You Know", 1, "00:09:10");
+
+INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
 -- Born This Way Album (12-25)
     ("Marry The Night", 4, "00:04:24"),
     ("Born This Way", 4, "00:04:20"),
@@ -78,7 +80,9 @@ INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
     ("Heavy Metal Lover", 4, "00:04:12"),
     ("Electric Chapel", 4, "00:04:13"),
     ("You and I", 4, "00:05:07"),
-    ("Edge of Glory", 4, "00:05:20"),
+    ("Edge of Glory", 4, "00:05:20");
+
+INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
 -- Montero ALBUM (26-40)
     ("Montero (Call Me By Your Name)", 3, "00:02:17"),
     ("Dead Right Now", 3, "00:03:41"),
@@ -94,7 +98,9 @@ INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
     ("Void", 3, "00:04:08"),
     ("Dont Want It", 3, "00:02:10"),
     ("Life After Salem", 3, "00:03:30"),
-    ("Am I Dreaming", 3, "00:03:03"),
+    ("Am I Dreaming", 3, "00:03:03");
+
+INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
 -- Fleet Foxes (41-51)
     ("Sun It Rises", 2, "00:03:11"),
     ("White Winter Hymnal", 2, "00:02:27"),
@@ -106,7 +112,9 @@ INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
     ("Your Protector", 2, "00:04:09"),
     ("Meadowlarks", 2, "00:03:11"),
     ("Blue Ridge Mountains", 2, "00:04:25"),
-    ("Oliver James", 2, "00:03:23"),
+    ("Oliver James", 2, "00:03:23");
+
+INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
 -- Damn the Torpedoes Album (52-60)
     ("Refugee", 5, "00:03:22"),
     ("Here Comes My Girl", 5, "00:04:27"),
@@ -116,7 +124,9 @@ INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
     ("Don't Do Me Like That", 5, "00:02:44"),
     ("You Tell Me", 5, "00:04:35"),
     ("What Are You Doin' in My Life", 5, "00:03:27"),
-    ("Louisiana Rain", 5, "00:05:54"),
+    ("Louisiana Rain", 5, "00:05:54");
+
+INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
 -- Dark Horse (61-69)
     ("Hari's on Tour (Express)", 6, "00:04:43"),
     ("Simply Shady", 6, "00:04:38"),
@@ -126,7 +136,9 @@ INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
     ("Ding Dong, Ding Dong", 6, "00:03:40"),
     ("Dark Horse", 6, "00:03:54"),
     ("Far East Man", 6, "00:05:52"),
-    ("It Is 'He' (Jai Sri Krishna)", 6, "00:04:50"),
+    ("It Is 'He' (Jai Sri Krishna)", 6, "00:04:50");
+
+INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
 -- Young Americans (70-77)
     ("Young Americans", 7, "00:05:11"),
     ("Win", 7, "00:04:44"),
@@ -135,7 +147,9 @@ INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
     ("Somebody Up There Likes Me", 7, "00:06:36"),
     ("Across the Universe", 7, "00:04:29"),
     ("Can You Hear Me?", 7, "00:05:03"),
-    ("Fame", 7, "00:04:21"),
+    ("Fame", 7, "00:04:21");
+
+INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
 -- Bossanova (78-91)
     ("Cecilia Ann", 8, "00:02:06"),
     ("Rock Music", 8, "00:01:52"),
@@ -165,7 +179,9 @@ INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
     (8, 1),
     (9, 1),
     (10, 1),
-    (11, 1),
+    (11, 1);
+
+INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
 -- Born this way album (SongID 12-25)
     (12,2),
     (13,2),
@@ -180,7 +196,9 @@ INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
     (22,2),
     (23,2),
     (24,2),
-    (25,2),
+    (25,2);
+
+INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
 -- Montero album (26-40)
     (26,3), -- Montero
     (27,3), -- Dead Right Now
@@ -200,8 +218,11 @@ INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
     (38,3), -- Dont Want It
     (39,3), -- Life After Salem
     (40,3), -- Am I Dreaming
-    (40,8), -- Am I dreaming
+    (40,8); -- Am I dreaming
+
+INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
 -- Fleet Foxes (41-51)
+-- Band (ArtistID 9)
     (41, 9),
     (42, 9),
     (43, 9),
@@ -213,6 +234,7 @@ INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
     (49, 9),
     (50, 9),
     (51, 9),
+-- Members (ArtistID 10-14)
     (41, 10),
     (42, 10),
     (43, 10),
@@ -267,7 +289,9 @@ INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
     (48, 14),
     (49, 14),
     (50, 14),
-    (51, 14),
+    (51, 14);
+
+INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
 -- Damn the Torpedoes album (SongID 52-60)
     (52,15),
     (53,15),
@@ -277,7 +301,9 @@ INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
     (57,15),
     (58,15),
     (59,15),
-    (60,15),
+    (60,15);
+
+INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
 -- Dark Horse album (SongID 61-69)
     (61,16),
     (62,16),
@@ -287,7 +313,9 @@ INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
     (66,16),
     (67,16),
     (68,16),
-    (69,16),
+    (69,16);
+
+INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
 -- Young Americans album (SongID 70-77)
     (70, 17),
     (71, 17),
@@ -298,7 +326,9 @@ INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
     (75, 17),
     (76, 17),
     (77, 17),
-    (77, 19),
+    (77, 19);
+
+INSERT INTO SongFeatureList (SongID, ArtistID) VALUES
 -- Bossanova album (SongID 78-91)
     (78, 20),
     (78, 21),
@@ -406,7 +436,9 @@ INSERT INTO SongGenreList (SongID, GenreName) VALUES
     (8, "Jazz"),
     (9, "Jazz"),
     (10, "Jazz"),
-    (11, "Jazz"),
+    (11, "Jazz");
+
+INSERT INTO SongGenreList (SongID, GenreName) VALUES
 -- Fleet Foxes (41-51)
     (41, "Folk"),
     (42, "Folk"),
@@ -429,7 +461,9 @@ INSERT INTO SongGenreList (SongID, GenreName) VALUES
     (48, "Rock-n-Roll"),
     (49, "Rock-n-Roll"),
     (50, "Rock-n-Roll"),
-    (51, "Rock-n-Roll"),
+    (51, "Rock-n-Roll");
+
+INSERT INTO SongGenreList (SongID, GenreName) VALUES
 -- Damn the Torpedoes album (52-60)
     (52, "Rock-n-Roll"),
     (53, "Rock-n-Roll"),
@@ -439,7 +473,9 @@ INSERT INTO SongGenreList (SongID, GenreName) VALUES
     (57, "Rock-n-Roll"),
     (58, "Rock-n-Roll"),
     (59, "Rock-n-Roll"),
-    (60, "Rock-n-Roll"),
+    (60, "Rock-n-Roll");
+
+INSERT INTO SongGenreList (SongID, GenreName) VALUES
 -- Dark Horse album (61-69)
     (61, "Rock-n-Roll"),
     (62, "Rock-n-Roll"),
@@ -449,7 +485,9 @@ INSERT INTO SongGenreList (SongID, GenreName) VALUES
     (66, "Rock-n-Roll"),
     (67, "Rock-n-Roll"),
     (68, "Rock-n-Roll"),
-    (69, "Rock-n-Roll"),
+    (69, "Rock-n-Roll");
+
+INSERT INTO SongGenreList (SongID, GenreName) VALUES
 -- Young Americans album (70-77)
     (70, "Pop"),
     (71, "Pop"),
@@ -458,7 +496,9 @@ INSERT INTO SongGenreList (SongID, GenreName) VALUES
     (74, "Pop"),
     (75, "Pop"),
     (76, "Pop"),
-    (77, "Pop"),
+    (77, "Pop");
+
+INSERT INTO SongGenreList (SongID, GenreName) VALUES
 -- Bossanova album (78-91)
     (78, "Alternative Rock"),
     (79, "Alternative Rock"),
@@ -473,7 +513,9 @@ INSERT INTO SongGenreList (SongID, GenreName) VALUES
     (88, "Alternative Rock"),
     (89, "Alternative Rock"),
     (90, "Alternative Rock"),
-    (91, "Alternative Rock"),
+    (91, "Alternative Rock");
+
+INSERT INTO SongGenreList (SongID, GenreName) VALUES
 -- Born this way album (SongID 12-25)
     (12, "Synth-pop"), -- Marry the night
     (12, "Dance-pop"),
@@ -498,7 +540,9 @@ INSERT INTO SongGenreList (SongID, GenreName) VALUES
     (23, "Glam Metal"), -- Electric Chapel
     (24, "Country Rock"),-- You and I
     (25, "Pop"), -- The Edge of Glory
-    (25, "Disco"),
+    (25, "Disco");
+
+INSERT INTO SongGenreList (SongID, GenreName) VALUES
 -- Montero album (26-40)
     (26, "Hip-hop"), -- Montero
     (26, "Electro-pop"),
@@ -528,6 +572,7 @@ INSERT INTO MemberOf (GroupID, IndividualID) VALUES
     (9, 12),
     (9, 13),
     (9, 14),
+-- Pixies Members
     (20, 21),
     (20, 22),
     (20, 23),
