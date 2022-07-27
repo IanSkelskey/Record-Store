@@ -1,9 +1,9 @@
 -- Lyrics
-UPDATE SONG
+UPDATE SONG -- Album: In My Room by Jacob Collier
 SET
     Lyrics = CASE songID
         WHEN
-            1
+            1 -- Woke Up Today
         THEN
             'Woke up today my mind a whirl
             From head to toe with endless feeling
@@ -71,7 +71,7 @@ SET
             Woke up today just like I wanted to
             Found my strength to feel it, oh'
         WHEN
-            2
+            2 -- In My Room
         THEN
             'There\'s a world where I can go to tell my secrets to
             In my room, in my room
@@ -100,7 +100,7 @@ SET
             In my room, in my room
             In my room, in my room'
         WHEN
-            3
+            3 -- Hideaway
         THEN
             'Take me
              Anywhere you wanna go
@@ -167,7 +167,7 @@ SET
              (Far away, far away, far away)
              In my hideaway'
         WHEN
-            4
+            4 -- You And I
         THEN
             'Here we are on earth together,
              It\'s you and I,
@@ -196,7 +196,7 @@ SET
              In love, you and I
              You and I, you and I'
         WHEN
-            5
+            5 -- Down The Line
         THEN
             'I was walking down the line
              Trying to find some peace of mind
@@ -258,14 +258,14 @@ SET
              No, I won\'t wanna call you a friend
              So, this is end of you and me"'
         WHEN
-            6
+            6 -- Now And Then I Think About You
         THEN
             'Now and then I think about you
              Now and then I think about you
              I don\'t wanna be (think about you)
              Now and then I think about you'
         WHEN
-            7
+            7 -- Saviour
         THEN
             'Savior (ha-ha-ah-yeah)
              Savior
@@ -324,7 +324,7 @@ SET
              Searching for the Road to make our dreams come true
              Searching for the prayer that she will love me true'
         WHEN
-            8
+            8 -- Hajanga
         THEN
             'Everybody, near and far
              (Tell \'em about it, tell \'em about it)
@@ -403,7 +403,7 @@ SET
              (Sing the hajanga, sing the hajanga)
              Tell \'em hajanga'
         WHEN
-            9
+            9 -- Flintstones
         THEN
             'Flintstones, meet the Flintstones
              They\'re a modern stone age family
@@ -439,7 +439,7 @@ SET
              Have a yabba-yabba-doo time
              We\'ll have a gay old time'
         WHEN
-            10
+            10 -- In The Real Early Morning
         THEN
             'In the real early morning
              With the sun slowly rising
@@ -489,7 +489,7 @@ SET
              I\'ll be on my way home
              I\'ll be on my way home'
         WHEN
-            11
+            11 -- Don't You Know
         THEN
             'Sticks and stones, I won\'t hide from you no more
              And in time I find what I\'ve been searching for
