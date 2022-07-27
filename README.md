@@ -9,6 +9,8 @@ employees to find what a customer is looking for. The database contains a list o
 along with additional information about artists, songs, genres, etc.
 
 ## Creating the Database
+
+### Creating the Tables
 ```sql
 CREATE TABLE Location (
     LocationID INT NOT NULL AUTO_INCREMENT,
@@ -104,6 +106,12 @@ CREATE TABLE SongFeatureList (
         REFERENCES Artist (ArtistID)
 );
 ```
+
+### Populating the Data
+
+```sql
+
+```
 ## Environment
 
 - MySQL version 5.6
@@ -144,9 +152,13 @@ The members of group 18 are listed below along with their individual contributio
 
 ### [Ian Skelskey](https://github.com/IanSkelskey)
 
+- Created a Slack channel for the group and hosted initial meetings
 - Contributed to proposal
 - Contributed to creation of ERD
 - Contributed to database design before generating SQL from the relational schema
 - Created git repository
 - Created GitHub project
 - Created and maintained README.md
+- Wrote 1/4 of the insert statements necessary to populate database
+- Wrote 1/4 of the initial queries for deliverable 3
+- 
