@@ -524,3 +524,104 @@ SET
     END
 WHERE
     songID BETWEEN 1 AND 11;
+    
+UPDATE SONG
+SET
+	Lyrics = CASE songID
+    WHEN 
+		75
+	THEN
+		'Words are flowing like endless rain into a paper cup
+        They slither wildley as they slip away across the universe
+        Pools of sorrow waves of joy
+        Drifting through my open mind
+        Possessing and caressing me
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Images of broken light
+        Which dance before me like a million eyes
+        They call me on and on across the universe
+        Thoughts meander like a restless wind inside a letter box
+        They tumble blindly as they make their way across the universe
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Sounds of laughter, shades of light
+        Are ringing through my opened ears
+        Inciting and inviting me
+        Limitless undying love
+        Which shines around me like a million suns
+        It calls me on and on across the universe
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change my world
+        Nothing, nothing, nothing, nothing is gonna
+        Nothing\'s gonna change my world
+        Nothing, nothing, nothing, nothing is gonna
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change
+        Nothing\'s gonna change
+        Nothing\'s gonna change
+        Nothing\'s gonna change
+        Nothing\'s gonna change
+        Nothing\'s gonna change
+        Nothing\'s gonna change my world
+        Nothing\'s gonna change
+        Nothing\'s gonna change
+        Nothing\'s gonna change, no, no, no
+        Nothing\'s gonna change my world'
+	END
+WHERE 
+	songID BETWEEN 70 AND 77;
+    
+UPDATE SONG
+SET
+	Lyrics = CASE songID
+    WHEN
+		80
+	THEN
+		'Hold my head
+        We\'ll trampoline
+        Finally through the roof
+        On to somewhere near
+        And far in time
+        Velouria
+        Her coving
+        Travelling career
+        She can really move
+        Oh velveteen
+        My Velouria, my Velouria
+        Even I\'ll adore ya
+        My Velouria
+        Even I\'ll adore ya
+        My Velouria
+        Say to me
+        Where have you been
+        Finally through the roof
+        And how does lemur skin
+        Reflect the sea?
+        We will wade in the shine of the ever
+        We will wade in the shine of the ever
+        We will wade in the tides of the summer
+        Every summer
+        Every summer
+        Every
+        My Velouria
+        My Velouria
+        Forever green
+        I know she\'s here
+        In California
+        I can see the tears
+        Of shastasheen
+        My Velouria, my Velouria
+        Even I\'ll adore ya
+        My Velouria'
+END
+	WHERE songID BETWEEN 78 AND 91;
+        
