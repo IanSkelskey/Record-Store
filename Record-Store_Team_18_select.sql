@@ -62,7 +62,7 @@ WHERE
 -- Nate Queries
 -- "Who are all the employees at each of the locations ordered by location"
 SELECT 
-    employee.EmployeeID, employee.Name, location.LocationName
+    employee.EmployeeID, employee.Name, location.LocationName AS 'Works At'
 FROM
     employee,
     location
@@ -72,7 +72,7 @@ ORDER BY location.LocationID;
 
 -- "How many copies of a particular album (Montero) are there at each location?"
 SELECT 
-    inventory.Amount, location.LocationName
+    inventory.Amount AS 'Montero Album Amount', location.LocationName AS 'Located At'
 FROM
     album,
     inventory,
