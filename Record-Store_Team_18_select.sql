@@ -59,4 +59,26 @@ WHERE
                             AND
                             artist.StageName = 'Fleet Foxes');
 	
+-- Nate Queries
+-- "Who are all the employees at each of the locations ordered by location"
+SELECT 
+    employee.EmployeeID, employee.Name, location.LocationName
+FROM
+    employee,
+    location
+WHERE
+    employee.EmployeeID = location.LocationID
+ORDER BY location.LocationID;
 
+-- "How many copies of a particular album (Montero) are there at each location?"
+SELECT 
+    inventory.Amount, location.LocationName
+FROM
+    album,
+    inventory,
+    location
+WHERE
+    album.AlbumTitle = 'Montero'
+        AND album.AlbumID = inventory.AlbumID
+        AND inventory.LocationID = location.LocationID
+ORDER BY inventory.amount DESC;
