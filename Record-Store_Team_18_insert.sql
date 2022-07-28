@@ -153,7 +153,7 @@ INSERT INTO Song (SongTitle, AlbumID, Duration)VALUES
 -- Bossanova (78-91)
     ("Cecilia Ann", 8, "00:02:06"),
     ("Rock Music", 8, "00:01:52"),
-    ("Veloria", 8, "00:03:40"),
+    ("Velouria", 8, "00:03:40"),
     ("Allison", 8, "00:01:18"),
     ("Is She Wierd", 8, "00:03:01"),
     ("Ana", 8, "00:02:09"),

@@ -18,3 +18,45 @@ FROM
 WHERE
     AlbumTitle = 'In My Room'
 ORDER BY song.SONGID;
+
+-- Andrew's Queries
+SELECT
+	albumtitle AS 'Album'
+FROM
+	album
+WHERE
+	AlbumID IN (SELECT
+						AlbumID
+					FROM
+						song
+					WHERE
+						SongTitle = 'Void');						
+                        
+SELECT
+	stagename AS 'Artist'
+FROM
+	artist
+WHERE ArtistID IN (SELECT
+						ArtistID AS 'Artist'
+					FROM
+						song
+							JOIN
+						songfeaturelist ON songfeaturelist.SongID = song.SongID
+					WHERE
+						SongTitle = 'Industry Baby');
+
+SELECT
+	stagename AS 'Artist'
+FROM
+	artist
+WHERE
+	artist.ArtistID IN (SELECT
+							IndividualID
+						FROM
+							memberof
+								JOIN
+							artist ON artist.ArtistID = memberof.GroupID
+                            AND
+                            artist.StageName = 'Fleet Foxes');
+	
+
