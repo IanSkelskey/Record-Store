@@ -33,30 +33,27 @@ WHERE
 						SongTitle = 'Void');						
                         
 SELECT
-	stagename AS 'Artist'
+	songtitle AS 'Song',
+    stagename AS 'Artist'
 FROM
 	artist
-WHERE ArtistID IN (SELECT
-						ArtistID AS 'Artist'
-					FROM
-						song
-							JOIN
-						songfeaturelist ON songfeaturelist.SongID = song.SongID
-					WHERE
-						SongTitle = 'Industry Baby');
+		INNER JOIN
+	songfeaturelist ON artist.ArtistID = songfeaturelist.ArtistID
+		INNER JOIN
+	song ON songfeaturelist.SongID = song.SongID
+WHERE 
+	SongTitle = 'Industry Baby';
 
 SELECT
-	stagename AS 'Artist'
+	g.stagename AS 'Group',
+    i.stagename AS 'Member'
 FROM
-	artist
+	artist AS i
+		INNER JOIN
+	memberof ON i.ArtistID = memberof.IndividualID
+		INNER JOIN
+	artist AS g ON g.ArtistID = memberof.GroupID
 WHERE
-	artist.ArtistID IN (SELECT
-							IndividualID
-						FROM
-							memberof
-								JOIN
-							artist ON artist.ArtistID = memberof.GroupID
-                            AND
-                            artist.StageName = 'Fleet Foxes');
+	g.StageName = 'Fleet Foxes';
 	
 
