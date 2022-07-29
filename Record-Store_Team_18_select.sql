@@ -125,3 +125,19 @@ where artist.StageName = 'Miley Cyrus' and
 ) as B
 on A.SongTitle = B.songTitle;
 	
+-- Steven's Queries
+-- What albums were released in a range of dates
+SELECT DISTINCT
+    AlbumTitle AS 'Album',
+    ReleaseDate AS 'Release Date'
+FROM
+    Album
+        JOIN
+    Song ON Album.AlbumID = Song.AlbumID
+        JOIN
+    SongFeatureList ON SongFeatureList.SongID = Song.SongID
+WHERE
+    Album.ReleaseDate BETWEEN '1970-01-01' AND '2016-01-01'
+ORDER BY Album.ReleaseDate;
+
+
