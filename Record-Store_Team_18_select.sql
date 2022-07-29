@@ -50,13 +50,11 @@ SELECT
 	albumtitle AS 'Album'
 FROM
 	album
+		INNER JOIN
+	song ON song.AlbumID = album.AlbumID
 WHERE
-	AlbumID IN (SELECT
-						AlbumID
-					FROM
-						song
-					WHERE
-						SongTitle = 'Void');
+	SongTitle = 'Void'
+GROUP BY AlbumTitle;
 						
 -- What artists are featured on a particular song
 SELECT
@@ -82,7 +80,7 @@ FROM
 		INNER JOIN
 	artist AS g ON g.ArtistID = memberof.GroupID
 WHERE
-	g.StageName = 'Fleet Foxes';
+	g.StageName = 'Pixies';
 	
 -- Nate Queries
 -- "Who are all the employees at each of the locations ordered by location"
