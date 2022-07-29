@@ -138,6 +138,19 @@ WHERE
     Album.ReleaseDate BETWEEN '1970-01-01' AND '2016-01-01'
 ORDER BY Album.ReleaseDate;
 
+-- What band was a specific artist a member of
+SELECT
+	i.StageName AS 'Artist',
+	g.StageName AS 'Band/Group'
+FROM
+	Artist AS i
+		INNER JOIN
+	MemberOf ON i.ArtistID = MemberOf.IndividualID
+		INNER JOIN
+	Artist AS g ON g.ArtistID = MemberOf.GroupID
+WHERE
+	i.ArtistName = 'Kimberley Ann Deal';
+
 -- Find all albums that have songs of a particular genre type
 SELECT DISTINCT
 	Genre.GenreName as 'Genre',
