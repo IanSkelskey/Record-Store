@@ -732,12 +732,12 @@ INSERT INTO Inventory (AlbumID, LocationID, Amount) VALUES
     (6, 3, 2),
     (6, 4, 1),
 -- Young Americans album
-	(7, 1, 2),
+    (7, 1, 2),
     (7, 2, 10),
     (7, 3, 8),
     (7, 4, 9),
 -- Bossanova album
-	(8, 1, 3),
+    (8, 1, 3),
     (8, 2, 0),
     (8, 3, 1),
     (8, 4, 7);
