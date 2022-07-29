@@ -42,9 +42,10 @@ FROM
         INNER JOIN
     ALBUM ON album.AlbumID = song.albumid
 WHERE
-    lyrics LIKE '%, oh%'
+    lyrics LIKE '%, oh%';
 
 -- Andrew's Queries
+-- What album contains a song with a specific title
 SELECT
 	albumtitle AS 'Album'
 FROM
@@ -55,8 +56,9 @@ WHERE
 					FROM
 						song
 					WHERE
-						SongTitle = 'Void');						
-                        
+						SongTitle = 'Void');
+						
+-- What artists are featured on a particular song
 SELECT
 	songtitle AS 'Song',
     stagename AS 'Artist'
@@ -68,7 +70,8 @@ FROM
 	song ON songfeaturelist.SongID = song.SongID
 WHERE 
 	SongTitle = 'Industry Baby';
-
+    
+-- Who are the members of a particular band
 SELECT
 	g.stagename AS 'Group',
     i.stagename AS 'Member'
