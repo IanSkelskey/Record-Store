@@ -82,3 +82,21 @@ WHERE
         AND album.AlbumID = inventory.AlbumID
         AND inventory.LocationID = location.LocationID
 ORDER BY inventory.amount DESC;
+
+-- "What song did artist A and artist B collaborate on?"
+select *
+from (select song.songTitle
+	from song, artist, songfeaturelist
+	where artist.StageName = 'Lil Nas X' and
+		artist.ArtistID = songfeaturelist.ArtistID and
+		songfeaturelist.SongID = song.SongID
+) as A
+join
+(select song.songTitle
+from song, artist, songfeaturelist
+where artist.StageName = 'Miley Cyrus' and
+	artist.ArtistID = songfeaturelist.ArtistID and
+    songfeaturelist.SongID = song.SongID
+) as B
+on A.SongTitle = B.songTitle;
+	
