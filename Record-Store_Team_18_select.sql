@@ -19,6 +19,31 @@ WHERE
     AlbumTitle = 'In My Room'
 ORDER BY song.SONGID;
 
+SELECT * FROM location; -- What are all the locations? You asked for it.
+
+SELECT -- Find all albums by a particular artist.
+    albumtitle, stagename
+FROM
+    album
+        INNER JOIN
+    song ON song.albumid = album.albumid
+        INNER JOIN
+    songfeaturelist ON songfeaturelist.SongID = song.songid
+        INNER JOIN
+    artist ON artist.artistid = songfeaturelist.artistid
+WHERE
+    StageName = 'Fleet foxes'
+GROUP BY albumtitle;
+
+SELECT -- Find a song that contains a set of lyrics.
+    songtitle, albumtitle
+FROM
+    song
+        INNER JOIN
+    ALBUM ON album.AlbumID = song.albumid
+WHERE
+    lyrics LIKE '%, oh%'
+
 -- Andrew's Queries
 SELECT
 	albumtitle AS 'Album'
