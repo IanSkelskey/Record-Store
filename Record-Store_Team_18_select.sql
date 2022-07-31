@@ -84,19 +84,24 @@ WHERE
 ORDER BY inventory.amount DESC;
 
 -- "What song did artist A and artist B collaborate on?"
-select *
-from (select song.songTitle
-	from song, artist, songfeaturelist
-	where artist.StageName = 'Lil Nas X' and
-		artist.ArtistID = songfeaturelist.ArtistID and
-		songfeaturelist.SongID = song.SongID
-) as A
-join
-(select song.songTitle
-from song, artist, songfeaturelist
-where artist.StageName = 'Miley Cyrus' and
-	artist.ArtistID = songfeaturelist.ArtistID and
-    songfeaturelist.SongID = song.SongID
-) as B
-on A.SongTitle = B.songTitle;
+SELECT 
+    * 
+FROM
+    (SELECT 
+        song.songTitle
+    FROM
+        song, artist, songfeaturelist
+    WHERE
+        artist.StageName = 'Lil Nas X'
+            AND artist.ArtistID = songfeaturelist.ArtistID
+            AND songfeaturelist.SongID = song.SongID) AS A
+        JOIN
+    (SELECT 
+        song.songTitle
+    FROM
+        song, artist, songfeaturelist
+    WHERE
+        artist.StageName = 'Miley Cyrus'
+            AND artist.ArtistID = songfeaturelist.ArtistID
+            AND songfeaturelist.SongID = song.SongID) AS B ON A.SongTitle = B.songTitle;
 	
