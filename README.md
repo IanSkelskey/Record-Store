@@ -754,7 +754,7 @@ Java, Gradle, JDBC, etc?
 
 ## Video Presentations
 
-- Deliverable 3
+- [Deliverable 3](https://www.youtube.com/watch?v=8NFbX4rywlE)
 - Deliverable 4
 
 ## Contributors 
