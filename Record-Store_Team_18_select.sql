@@ -19,45 +19,68 @@ WHERE
     AlbumTitle = 'In My Room'
 ORDER BY song.SONGID;
 
+SELECT * FROM location; -- What are all the locations? You asked for it.
+
+SELECT -- Find all albums by a particular artist.
+    albumtitle, stagename
+FROM
+    album
+        INNER JOIN
+    song ON song.albumid = album.albumid
+        INNER JOIN
+    songfeaturelist ON songfeaturelist.SongID = song.songid
+        INNER JOIN
+    artist ON artist.artistid = songfeaturelist.artistid
+WHERE
+    StageName = 'Fleet foxes'
+GROUP BY albumtitle;
+
+SELECT -- Find a song that contains a set of lyrics.
+    songtitle, albumtitle
+FROM
+    song
+        INNER JOIN
+    ALBUM ON album.AlbumID = song.albumid
+WHERE
+    lyrics LIKE '%, oh%';
+
 -- Andrew's Queries
+-- What album contains a song with a specific title
 SELECT
 	albumtitle AS 'Album'
 FROM
 	album
+		INNER JOIN
+	song ON song.AlbumID = album.AlbumID
 WHERE
-	AlbumID IN (SELECT
-						AlbumID
-					FROM
-						song
-					WHERE
-						SongTitle = 'Void');						
-                        
+	SongTitle = 'Void'
+GROUP BY AlbumTitle;
+						
+-- What artists are featured on a particular song
 SELECT
-	stagename AS 'Artist'
+	songtitle AS 'Song',
+    stagename AS 'Artist'
 FROM
 	artist
-WHERE ArtistID IN (SELECT
-						ArtistID AS 'Artist'
-					FROM
-						song
-							JOIN
-						songfeaturelist ON songfeaturelist.SongID = song.SongID
-					WHERE
-						SongTitle = 'Industry Baby');
-
+		INNER JOIN
+	songfeaturelist ON artist.ArtistID = songfeaturelist.ArtistID
+		INNER JOIN
+	song ON songfeaturelist.SongID = song.SongID
+WHERE 
+	SongTitle = 'Industry Baby';
+    
+-- Who are the members of a particular band
 SELECT
-	stagename AS 'Artist'
+	g.stagename AS 'Group',
+    i.stagename AS 'Member'
 FROM
-	artist
+	artist AS i
+		INNER JOIN
+	memberof ON i.ArtistID = memberof.IndividualID
+		INNER JOIN
+	artist AS g ON g.ArtistID = memberof.GroupID
 WHERE
-	artist.ArtistID IN (SELECT
-							IndividualID
-						FROM
-							memberof
-								JOIN
-							artist ON artist.ArtistID = memberof.GroupID
-                            AND
-                            artist.StageName = 'Fleet Foxes');
+	g.StageName = 'Pixies';
 	
 -- Nate Queries
 -- "Who are all the employees at each of the locations ordered by location"
@@ -105,3 +128,46 @@ FROM
             AND artist.ArtistID = songfeaturelist.ArtistID
             AND songfeaturelist.SongID = song.SongID) AS B ON A.SongTitle = B.songTitle;
 	
+-- Steven's Queries
+-- What albums were released in a range of dates
+SELECT DISTINCT
+    AlbumTitle AS 'Album',
+    ReleaseDate AS 'Release Date'
+FROM
+    Album
+        JOIN
+    Song ON Album.AlbumID = Song.AlbumID
+        JOIN
+    SongFeatureList ON SongFeatureList.SongID = Song.SongID
+WHERE
+    Album.ReleaseDate BETWEEN '1970-01-01' AND '2016-01-01'
+ORDER BY Album.ReleaseDate;
+
+-- What band was a specific artist a member of
+SELECT
+	i.StageName AS 'Artist',
+	g.StageName AS 'Band/Group'
+FROM
+	Artist AS i
+		INNER JOIN
+	MemberOf ON i.ArtistID = MemberOf.IndividualID
+		INNER JOIN
+	Artist AS g ON g.ArtistID = MemberOf.GroupID
+WHERE
+	i.ArtistName = 'Kimberley Ann Deal';
+
+-- Find all albums that have songs of a particular genre type
+SELECT DISTINCT
+	Genre.GenreName as 'Genre',
+	AlbumTitle as 'Album'
+FROM 
+	Album, Genre, Song, SongGenreList
+WHERE
+	Album.AlbumID = Song.AlbumID
+AND
+	Song.SongID = SongGenreList.SongID
+AND
+	SongGenreList.GenreName = Genre.GenreName
+AND
+	Genre.GenreName = 'Pop';
+    
