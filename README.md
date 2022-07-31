@@ -781,6 +781,8 @@ The members of group 18 are listed below along with their individual contributio
 - Contributed to creation of ERD
 - Converted ERD to relational schema
 - Contributed to database design before generating SQL from the relational schema
+- Contributed 3 SQL queries
+- Contributed 2 albums
 
 ### [Ian Skelskey](https://github.com/IanSkelskey)
 
