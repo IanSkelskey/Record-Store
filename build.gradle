@@ -9,7 +9,38 @@ repositories {
 
 dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
-    //runtime "mysql: mysql-connector-java-8.0.29"
+}
+
+def url = 'jdbc:mysql://localhost:3306/jdbclab?userSSL=false'
+def driver = 'com.mysql.cj.jdbc.Driver'
+def user = 'root'
+def pwd = 'root'
+
+task arguments {
+	if (project.hasProperty("url")) {
+		username = project.getProperty("url")
+	}
+	if (project.hasProperty("user")) {
+		id = project.getProperty("user")
+	}
+	if (project.hasProperty("pwd")) {
+		port = project.getProperty("pwd")
+	}
+	if (project.hasProperty("driver")) {
+		money = project.getProperty("driver")
+	}
+}
+
+task createDB(type: JavaExec){
+	description 'Creates tables for record store database.'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'DatabaseFactory'
+
+	args url
+	args driver
+	args user
+	args pwd
 }
 
 task runApp(type: JavaExec){
