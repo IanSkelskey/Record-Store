@@ -38,9 +38,9 @@ task createDB(type: JavaExec){
 	main = 'DatabaseFactory'
 
 	args url
-	args driver
 	args user
 	args pwd
+	args driver
 }
 
 task runApp(type: JavaExec){
