@@ -1,5 +1,14 @@
 .idea
 
+#eclipse
+.classpath
+.project
+
+#gradle
+.gradle
+/build/
+
+
 Record-Store-DB.mwb
 Record-Store-DB.mwb.bak
 /bin/
