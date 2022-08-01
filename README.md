@@ -795,4 +795,3 @@ The members of group 18 are listed below along with their individual contributio
 - Created and maintained README.md
 - Wrote 1/4 of the insert statements necessary to populate database
 - Wrote 1/4 of the initial queries for deliverable 3
-- 
