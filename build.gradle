@@ -1,6 +1,5 @@
 plugins {
 	id 'java'
-	
 }
 
 repositories {
@@ -35,7 +34,7 @@ task createDB(type: JavaExec){
 	description 'Creates tables for record store database.'
 
 	classpath = sourceSets.main.runtimeClasspath
-	main = 'DatabaseFactory'
+	main = 'TableLoader'
 
 	args url
 	args user
