@@ -18,16 +18,16 @@ def pwd = 'root'
 
 task arguments {
 	if (project.hasProperty("url")) {
-		username = project.getProperty("url")
+		url = project.getProperty("url")
 	}
 	if (project.hasProperty("user")) {
-		id = project.getProperty("user")
+		user = project.getProperty("user")
 	}
 	if (project.hasProperty("pwd")) {
-		port = project.getProperty("pwd")
+		pwd = project.getProperty("pwd")
 	}
 	if (project.hasProperty("driver")) {
-		money = project.getProperty("driver")
+		driver = project.getProperty("driver")
 	}
 }
 
