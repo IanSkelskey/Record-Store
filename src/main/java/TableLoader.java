@@ -19,8 +19,8 @@ public class TableLoader {
 	}
 
 	public void create () {
-		String[] scriptsArray = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_create.sql");
-		for (String s : scriptsArray) {
+		String[] scripts = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_create.sql");
+		for (String s : scripts) {
 			try (PreparedStatement ps = this.con.prepareStatement(s)){
 				ps.execute();
 			} catch (Exception e) {
@@ -49,6 +49,7 @@ public class TableLoader {
 
 		TableLoader dbFactory = new TableLoader(url, user, pwd, driver);
 		SQLHelper.printConnectionInfo(dbFactory.con);
+		SQLHelper.printDatabaseMetaData(dbFactory.con);
 		dbFactory.create();
 	}
 }
