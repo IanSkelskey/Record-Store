@@ -4,7 +4,12 @@ plugins {
 }
 
 repositories {
-	implementation "mysql: mysql-connector-java-8.0.29"
+	mavenCentral()
+}
+
+dependencies {
+    compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+    runtime "mysql: mysql-connector-java-8.0.29"
 }
 
 task runApp(type: JavaExec){
