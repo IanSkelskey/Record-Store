@@ -1,0 +1,15 @@
+plugins {
+	id 'java'
+	
+}
+
+repositories {
+	implementation "mysql: mysql-connector-java-8.0.29"
+}
+
+task runApp(type: JavaExec){
+	description 'Runs db app'
+	
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'UI'
+}
