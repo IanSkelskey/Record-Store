@@ -5,6 +5,8 @@
  * There should not be more than one instance of UI.
  *
 */
+import java.util.ArrayList;
+
 import org.json.*;
 
 import util.DBConnection;
@@ -42,6 +44,8 @@ public class UI{
         dbCon.setConnection(url, user, pwd, driver);
         
         //  ***** QUERY LOGIC TEST CASES *****
+        ArrayList<String> paramX = new ArrayList<String>();
+        
         // Test listAllEmployeesEverywhere
         QueryLogic selectable = QueryLogic.getInstance();
         //JSONArray jsonArray = selectable.listAllEmployeesEverywhere();
@@ -50,11 +54,15 @@ public class UI{
         
         
         // Test getAlbumStockAtAllLocations
-        jsonArray = selectable.getAlbumStockAtAllLocations("Montero");
+        paramX.add(0,"Montero");
+        jsonArray = selectable.queryToJSON(QueryTypes.ALBUM_INSTOCK_EVERYWHERE,paramX);
         System.out.println("getAlbumStockAtAllLocations(\"Montero\")\n" + jsonArray + "\n");
+        paramX.clear();
         
         // Test artistCollaboration
-        jsonArray = selectable.artistCollaboration("Miley Cyrus", "Lil Nas X");
+        paramX.add(0, "Miley Cyrus");
+        paramX.add(1, "Lil Nas X");
+        jsonArray = selectable.queryToJSON(QueryTypes.ARTIST_COLLABORATION, paramX);
         System.out.println("artistCollaboration(\"Miley Cyrus\", \"Lil Nas X\"):\n" + jsonArray + "\n");
         
         displayMenu();
