@@ -1,6 +1,7 @@
 /**
 * Database Factory
 */
+import java.io.File;
 import java.sql.*;
 
 public class TableLoader {
@@ -18,19 +19,19 @@ public class TableLoader {
 		}
 	}
 
-	public void createTables() {
-		String[] scripts = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_create.sql");
+	public void runScript(String path) {
+		String[] scripts = SQLHelper.loadScriptsFromFile(path);
 		SQLHelper.runStatements(scripts, this.con);
 	}
 
-	public void populateTables() {
-		String[] inserts = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_insert.sql");
-		SQLHelper.runStatements(inserts, this.con);
-
-		String[] lyrics = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_update_lyrics.sql");
-		SQLHelper.runStatements(lyrics, this.con);
+	public void runAllScripts() {
+		File[] files = new File("scripts/init/").listFiles();
+		assert files != null;
+		for (File f : files) {
+			String path = f.getPath();
+			runScript(path);
+		}
 	}
-
 
 	public static void main(String[] args){
 		if (args.length != 4) {
@@ -46,7 +47,6 @@ public class TableLoader {
 		String driver = args[3];
 
 		TableLoader tableLoader = new TableLoader(url, user, pwd, driver);
-		tableLoader.createTables();
-		tableLoader.populateTables();
+		tableLoader.runAllScripts();
 	}
 }
