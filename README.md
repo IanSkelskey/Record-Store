@@ -33,16 +33,6 @@ Running the above task will execute four initialization scripts in order:
 1. **Drop** - Drops preexisting tables that have names that exist in our schema.
    This ensures that when you run this task duplication does not occur.
 2. **Create** - Creates all tables in our schema:
-   1. Location
-   2. Employee
-   3. Album
-   4. Song
-   5. Genre
-   6. SongGenreList
-   7. Artist
-   8. MemberOf
-   9. Inventory
-   10. SongFeatureList
 3. **Insert** - Populates the tables with the initial data provided.
 4. **Lyrics** - Updates certain songs with their lyrics. This was done with a separate script to enhance readability.
 
