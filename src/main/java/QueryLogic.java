@@ -28,9 +28,24 @@ public class QueryLogic{
 		System.out.println("Thinking this will print a list of availability by location");
 	}
 
-	// Retrieve all albums and copies at user-specified location
+	// Retrieve all albums and copies at user-specified location (update return type)
 	public void getInventoryAtLocation(String location) {
 		System.out.println("Should return: AlbumTitle, Amount");
+	}
+
+	// Retrieve price of user-specified album (update return type)
+	public void getAlbumPrice(String album) {
+		System.out.println("should return x.xx");
+	}
+
+	// Retrieve all album info
+	public void getAlbumInfo(String album) {
+		System.out.println("should return: AlbumTitle, Songs, Genre, ReleaseDate, Artist");
+	}
+
+	// Retrieve location info (say if an employee needs to call another location, they need the phone number)
+	public void getLocationInfo(String location) {
+		System.out.println("should return: LocationName, Phone, Address");
 	}
 	
 }
