@@ -27,5 +27,10 @@ public class QueryLogic{
 	public void getAlbumStockAtAllLocations(String albumTitle){
 		System.out.println("Thinking this will print a list of availability by location");
 	}
+
+	// Retrieve all albums and copies at user-specified location
+	public void getInventoryAtLocation(String location) {
+		System.out.println("Should return: AlbumTitle, Amount");
+	}
 	
 }
