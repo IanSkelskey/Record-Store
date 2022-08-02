@@ -11,6 +11,9 @@ import java.sql.*;
  */
 public class SQLHelper {
 
+    // This class should contain a reference to the singleton connection to be created by Nate
+    private Connection con;
+
     /**
      * Private constructor to block instantiation.
      */
@@ -45,11 +48,21 @@ public class SQLHelper {
      */
     public static void runStatements(String[] statements, Connection con) {
         for (String s : statements) {
-            try (CallableStatement cs = con.prepareCall(s)) {
-                cs.execute();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
+            runStatement(s, con);
+        }
+    }
+
+    /**
+     * Runs a single SQL statement stored in a String.
+     *
+     * @param statement A String array of SQL statements
+     * @param con The MySQL database connection
+     */
+    public static void runStatement(String statement, Connection con) {
+        try (CallableStatement cs = con.prepareCall(statement)) {
+            cs.execute();
+        } catch (Exception e) {
+            e.printStackTrace();
         }
     }
 
