@@ -21,7 +21,7 @@ public class DBInitializer {
 		String pwd = args[2];
 		String driver = args[3];
 
-		dbCon.setConnection(url, user, pwd, driver);
+		dbCon.setConnection(url, user, pwd);
 
 		SQLHelper.runAllScriptsInDirectory("scripts/init/");
 		dbCon.closeConnection();
