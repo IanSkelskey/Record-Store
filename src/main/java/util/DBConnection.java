@@ -1,15 +1,48 @@
-import java.sql.Connection;
-import java.sql.DatabaseMetaData;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+package util;
 
-public class DatabaseInfo {
+import java.sql.*;
 
-    public static void printConnectionInfo(Connection con) {
+public class DBConnection {
+
+    private static final DBConnection connectionInstance = new DBConnection();
+    private Connection dbConnection = null;
+
+    private DBConnection() {}
+
+    public static DBConnection getInstance() {
+        return connectionInstance;
+    }
+    
+    public void setConnection(String url, String user, String password, String driver) {
+        if (dbConnection != null) {
+            System.out.println("Cannot set connection more than once during runtime.");
+            return;
+        }
         try {
-            String autoCommit = String.valueOf(con.getAutoCommit());
-            String catalog = con.getCatalog();
-            String schema = con.getSchema();
+            Class.forName(driver);
+            dbConnection = DriverManager.getConnection(url, user, password);
+        } catch (ClassNotFoundException | SQLException e) {
+            e.printStackTrace();
+        }
+    }
+    
+    public Connection getConnection() {
+        return this.dbConnection;
+    }
+    
+    public void closeConnection() {
+        try {
+            dbConnection.close();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
+
+    public void printConnectionInfo() {
+        try {
+            String autoCommit = String.valueOf(dbConnection.getAutoCommit());
+            String catalog = dbConnection.getCatalog();
+            String schema = dbConnection.getSchema();
             System.out.println("Connection auto commit status: " + autoCommit);
             System.out.println("Catalog: " + catalog);
             System.out.println("Schema: " + schema);
@@ -18,10 +51,10 @@ public class DatabaseInfo {
         }
     }
 
-    public static void printDatabaseMetaData(Connection con) {
+    public void printDatabaseMetaData() {
         try {
-            DatabaseMetaData meta = con.getMetaData();
-            String activeCatalog = con.getCatalog();
+            DatabaseMetaData meta = dbConnection.getMetaData();
+            String activeCatalog = dbConnection.getCatalog();
 
             System.out.println("Database product name: " + meta.getDatabaseProductName());
             System.out.println("Database product version: " + meta.getDatabaseProductVersion());

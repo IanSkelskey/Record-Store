@@ -1,3 +1,6 @@
+package util;
+
+import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -5,20 +8,19 @@ import java.nio.file.Paths;
 import java.sql.*;
 
 /**
- * SQLHelper
+ * util.SQLHelper
  *
  * This class contains static methods relating to MySQL and JDBC
  */
 public class SQLHelper {
 
-    // This class should contain a reference to the singleton connection to be created by Nate
-    private Connection con;
+    private static final Connection con = DBConnection.getInstance().getConnection();
 
     /**
      * Private constructor to block instantiation.
      */
     private SQLHelper() {
-        throw new IllegalStateException("SQLHelper cannot be instantiated.");
+        throw new IllegalStateException("util.SQLHelper cannot be instantiated.");
     }
 
     /**
@@ -44,11 +46,10 @@ public class SQLHelper {
      * Runs a set of SQL statements stored in a String array.
      *
      * @param statements A String array of SQL statements
-     * @param con The MySQL database connection
      */
-    public static void runStatements(String[] statements, Connection con) {
+    public static void runStatements(String[] statements) {
         for (String s : statements) {
-            runStatement(s, con);
+            runStatement(s);
         }
     }
 
@@ -56,9 +57,8 @@ public class SQLHelper {
      * Runs a single SQL statement stored in a String.
      *
      * @param statement A String array of SQL statements
-     * @param con The MySQL database connection
      */
-    public static void runStatement(String statement, Connection con) {
+    public static void runStatement(String statement) {
         try (CallableStatement cs = con.prepareCall(statement)) {
             cs.execute();
         } catch (SQLException e) {
@@ -66,12 +66,25 @@ public class SQLHelper {
         }
     }
 
-    public static void closeConnection(Connection con) {
-        try {
-            con.close();
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
+    /**
+     * Runs a script from a file given the path.
+     *
+     * @param path Path for a SQL script
+     */
+    public static void runScript(String path) {
+        String[] scripts = loadScriptsFromFile(path);
+        runStatements(scripts);
     }
 
+    /**
+     * Runs all SQL scripts in a given directory.
+     */
+    public static void runAllScriptsInDirectory(String directory) {
+        File[] files = new File(directory).listFiles();
+        assert files != null;
+        for (File f : files) {
+            String path = f.getPath();
+            runScript(path);
+        }
+    }
 }
