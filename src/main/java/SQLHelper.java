@@ -61,7 +61,7 @@ public class SQLHelper {
     public static void runStatement(String statement, Connection con) {
         try (CallableStatement cs = con.prepareCall(statement)) {
             cs.execute();
-        } catch (Exception e) {
+        } catch (SQLException e) {
             e.printStackTrace();
         }
     }
