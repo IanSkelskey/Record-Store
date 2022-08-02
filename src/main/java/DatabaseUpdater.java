@@ -23,7 +23,8 @@ public class DatabaseUpdater {
 	public DatabaseUpdater(){
 		
 	}
-	
+
+	// Consider using a hashmap for column, value pairs for insert statements
 	public void insert(String table, String[] values){
 		System.out.println("Inserting into table: " + table);
 	}

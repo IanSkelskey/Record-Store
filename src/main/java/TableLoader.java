@@ -18,21 +18,19 @@ public class TableLoader {
 		}
 	}
 
-	public void create () {
+	public void createTables() {
 		String[] scripts = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_create.sql");
-		for (String s : scripts) {
-			try (PreparedStatement ps = this.con.prepareStatement(s)){
-				ps.execute();
-			} catch (Exception e) {
-				e.printStackTrace();
-			}
-		}
-		try {
-			this.con.close();
-		} catch (SQLException e) {
-			e.printStackTrace();
-		}
+		SQLHelper.runScripts(scripts, this.con);
 	}
+
+	public void populateTables() {
+		String[] inserts = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_insert.sql");
+		SQLHelper.runScripts(inserts, this.con);
+
+		String[] lyrics = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_update_lyrics.sql");
+		SQLHelper.runScripts(lyrics, this.con);
+	}
+
 
 	public static void main(String[] args){
 		if (args.length != 4) {
@@ -47,9 +45,8 @@ public class TableLoader {
 		String pwd = args[2];
 		String driver = args[3];
 
-		TableLoader dbFactory = new TableLoader(url, user, pwd, driver);
-		SQLHelper.printConnectionInfo(dbFactory.con);
-		SQLHelper.printDatabaseMetaData(dbFactory.con);
-		dbFactory.create();
+		TableLoader tableLoader = new TableLoader(url, user, pwd, driver);
+		tableLoader.createTables();
+		tableLoader.populateTables();
 	}
 }
