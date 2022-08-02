@@ -20,15 +20,15 @@ public class TableLoader {
 
 	public void createTables() {
 		String[] scripts = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_create.sql");
-		SQLHelper.runScripts(scripts, this.con);
+		SQLHelper.runStatements(scripts, this.con);
 	}
 
 	public void populateTables() {
 		String[] inserts = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_insert.sql");
-		SQLHelper.runScripts(inserts, this.con);
+		SQLHelper.runStatements(inserts, this.con);
 
 		String[] lyrics = SQLHelper.loadScriptsFromFile("scripts/Record-Store_Team_18_update_lyrics.sql");
-		SQLHelper.runScripts(lyrics, this.con);
+		SQLHelper.runStatements(lyrics, this.con);
 	}
 
 

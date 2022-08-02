@@ -20,8 +20,8 @@ public class SQLHelper {
 
     /**
      * Loads a master script into a String array of individual scripts from a .sql file.
-     * This method assumes that SQL statements are separated by an empty line. Failure to adhere
-     * to this standard will produce unexpected results.
+     * This method assumes that SQL statements are separated by a semicolon.
+     * Excess white space at the end of scripts will produce unexpected results.
      *
      * @param filename The filename of the .sql script
      * @return scripts An array of individual SQL statements
@@ -37,8 +37,14 @@ public class SQLHelper {
         return masterScript.split(";");
     }
 
-    public static void runScripts(String[] scripts, Connection con) {
-        for (String s : scripts) {
+    /**
+     * Runs a set of SQL statements stored in a String array.
+     *
+     * @param statements A String array of SQL statements
+     * @param con The MySQL database connection
+     */
+    public static void runStatements(String[] statements, Connection con) {
+        for (String s : statements) {
             try (CallableStatement cs = con.prepareCall(s)) {
                 cs.execute();
             } catch (Exception e) {
