@@ -1,9 +1,9 @@
-/**
-* Database Factory
-*/
 import java.io.File;
 import java.sql.*;
 
+/**
+ *
+ */
 public class TableLoader {
 
 	private Connection con;
@@ -19,13 +19,21 @@ public class TableLoader {
 		}
 	}
 
+	/**
+	 * Runs a script from a file given the path.
+	 *
+	 * @param path Path for a SQL script
+	 */
 	public void runScript(String path) {
 		String[] scripts = SQLHelper.loadScriptsFromFile(path);
 		SQLHelper.runStatements(scripts, this.con);
 	}
 
-	public void runAllScripts() {
-		File[] files = new File("scripts/init/").listFiles();
+	/**
+	 * Runs all scripts in a given directory.
+	 */
+	public void runAllScriptsInDirectory(String directory) {
+		File[] files = new File(directory).listFiles();
 		assert files != null;
 		for (File f : files) {
 			String path = f.getPath();
@@ -47,6 +55,6 @@ public class TableLoader {
 		String driver = args[3];
 
 		TableLoader tableLoader = new TableLoader(url, user, pwd, driver);
-		tableLoader.runAllScripts();
+		tableLoader.runAllScriptsInDirectory("/scripts/init/");
 	}
 }
