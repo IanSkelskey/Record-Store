@@ -1,39 +1,31 @@
 /**
-* UI class
+ * UI
+ *
+ * Implements eager singleton design pattern.
+ * There should not be more than one instance of UI.
+ *
 */
-import java.sql.*;
-import java.io.*;
-
-import org.w3c.dom.Document;
-import org.w3c.dom.Element;
-
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
-import javax.xml.parsers.ParserConfigurationException;
-import javax.xml.transform.*;
-import javax.xml.transform.dom.DOMSource;
-import javax.xml.transform.stream.StreamResult;
-
 
 
 public class UI{
-	
+
+	private static final UI instance = new UI();
+
 	private QueryLogic queryLogic;
 	private DatabaseUpdater updater;
 	
-	public UI() {
+	private UI() {
 	    this.queryLogic = new QueryLogic();
 	    this.updater = new DatabaseUpdater();
 	}
 	
-	public void menu(){
+	private static void displayMenu(){
 		System.out.println("Thinking this will be a switch");
 	}
 	
 	public static void main(String[] args){
 		System.out.println("Welcome...");
-		
-		UI ui = new UI();
-		ui.menu();
+
+		displayMenu();
 	}
 }
