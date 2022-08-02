@@ -8,6 +8,7 @@
 import org.json.*;
 
 import util.DBConnection;
+import util.QueryTypes;
 
 
 public class UI{
@@ -43,8 +44,10 @@ public class UI{
         //  ***** QUERY LOGIC TEST CASES *****
         // Test listAllEmployeesEverywhere
         QueryLogic selectable = QueryLogic.getInstance();
-        JSONArray jsonArray = selectable.listAllEmployeesEverywhere();
+        //JSONArray jsonArray = selectable.listAllEmployeesEverywhere();
+        JSONArray jsonArray = selectable.queryToJSON(QueryTypes.ALL_EMPLOYEES_INFO, null);
         System.out.println("listAllEmployeesEverywhere():\n" + jsonArray.toString() + "\n");
+        
         
         // Test getAlbumStockAtAllLocations
         jsonArray = selectable.getAlbumStockAtAllLocations("Montero");

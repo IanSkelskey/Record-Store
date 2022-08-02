@@ -8,6 +8,7 @@ import java.util.stream.IntStream;
 import org.json.*;
 
 import util.DBConnection;
+import util.QueryTypes;
 
 import java.awt.List;
 import java.io.*;
@@ -27,17 +28,7 @@ public class QueryLogic{
 	}
 	
 	public JSONArray getAlbumStockAtAllLocations(String albumTitle){
-		String statement = "SELECT \r\n" + 
-		        "    inventory.Amount, location.LocationName\r\n" + 
-		        "FROM\r\n" + 
-		        "    album,\r\n" + 
-		        "    inventory,\r\n" + 
-		        "    location\r\n" + 
-		        "WHERE\r\n" + 
-		        "    album.AlbumTitle = ?\r\n" + 
-		        "        AND album.AlbumID = inventory.AlbumID\r\n" + 
-		        "        AND inventory.LocationID = location.LocationID\r\n" + 
-		        "ORDER BY inventory.amount DESC;";
+		String statement = QueryTypes.ALBUM_INSTOCK_EVERYWHERE.query;
 		
 		try {
 		    pStatement = DBConnection.getInstance().getConnection().prepareStatement(statement);
@@ -54,14 +45,7 @@ public class QueryLogic{
 	}
 	
 	public JSONArray listAllEmployeesEverywhere() {
-	    String statement = "SELECT \r\n" + 
-	            "    employee.EmployeeID, employee.Name, location.LocationName\r\n" + 
-	            "FROM\r\n" + 
-	            "    employee,\r\n" + 
-	            "    location\r\n" + 
-	            "WHERE\r\n" + 
-	            "    employee.EmployeeID = location.LocationID\r\n" + 
-	            "ORDER BY location.LocationID;";
+	    String statement = QueryTypes.ALL_EMPLOYEES_INFO.query;
 	    try {
             pStatement = DBConnection.getInstance().getConnection().prepareStatement(statement);
             resultSet = pStatement.executeQuery();
@@ -76,26 +60,7 @@ public class QueryLogic{
 	}
 	
 	   public JSONArray artistCollaboration(String artistA, String artistB) {
-	        String statement = "SELECT \r\n" + 
-	                "    * \r\n" + 
-	                "FROM\r\n" + 
-	                "    (SELECT \r\n" + 
-	                "        song.songTitle\r\n" + 
-	                "    FROM\r\n" + 
-	                "        song, artist, songfeaturelist\r\n" + 
-	                "    WHERE\r\n" + 
-	                "        artist.StageName = ?\r\n" + 
-	                "            AND artist.ArtistID = songfeaturelist.ArtistID\r\n" + 
-	                "            AND songfeaturelist.SongID = song.SongID) AS A\r\n" + 
-	                "        JOIN\r\n" + 
-	                "    (SELECT \r\n" + 
-	                "        song.songTitle\r\n" + 
-	                "    FROM\r\n" + 
-	                "        song, artist, songfeaturelist\r\n" + 
-	                "    WHERE\r\n" + 
-	                "        artist.StageName = ?\r\n" + 
-	                "            AND artist.ArtistID = songfeaturelist.ArtistID\r\n" + 
-	                "            AND songfeaturelist.SongID = song.SongID) AS B ON A.SongTitle = B.songTitle;";
+	        String statement = QueryTypes.ARTIST_COLLABORATION.query;
 	        try {
 	            pStatement = DBConnection.getInstance().getConnection().prepareStatement(statement);
 	            pStatement.setString(1, artistA);
@@ -110,6 +75,27 @@ public class QueryLogic{
 	        
 	        return jsonResult;
 	    }
+	   
+	   public JSONArray queryToJSON(QueryTypes type, String[] params) {
+	       String statement = type.query;
+	       try {
+	           pStatement = DBConnection.getInstance().getConnection().prepareStatement(statement);
+	           if (params != null) {
+	               for (int q = 0; q < params.length; q++) {
+	                   pStatement.setString(q, params[q]);
+	               }
+	           } else {
+	               pStatement = DBConnection.getInstance().getConnection().prepareStatement(statement);
+	               resultSet = pStatement.executeQuery();
+	           }
+	       } catch (Exception e) {
+	           e.printStackTrace();
+	       }
+	       
+	       jsonResult = toJSON(resultSet);
+	       closeAllResources();
+	       return jsonResult;
+	   }
 	
 	// FROM: https://www.baeldung.com/java-jdbc-convert-resultset-to-json
 	public JSONArray toJSON(ResultSet resultSet) {
