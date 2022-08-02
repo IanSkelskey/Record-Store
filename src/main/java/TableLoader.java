@@ -30,7 +30,7 @@ public class TableLoader {
 	}
 
 	/**
-	 * Runs all scripts in a given directory.
+	 * Runs all SQL scripts in a given directory.
 	 */
 	public void runAllScriptsInDirectory(String directory) {
 		File[] files = new File(directory).listFiles();
