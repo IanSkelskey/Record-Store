@@ -14,11 +14,15 @@ import java.io.*;
 
 public class QueryLogic{
     
+    private static final QueryLogic qLogic = new QueryLogic();
+    
     private PreparedStatement pStatement;
     private ResultSet resultSet;
 	
-	public QueryLogic(){
-		
+	public QueryLogic(){}
+	
+	public static QueryLogic getInstance() {
+	    return qLogic;
 	}
 	
 	public void getAlbumStockAtAllLocations(String albumTitle){
@@ -27,12 +31,31 @@ public class QueryLogic{
 		closeAllResources();
 	}
 	
-	public ResultSet listAllEmployeesEverywhere() {
-	    return resultSet;
+	public JSONArray listAllEmployeesEverywhere() {
+	    String statement = "SELECT \r\n" + 
+	            "    employee.EmployeeID, employee.Name, location.LocationName\r\n" + 
+	            "FROM\r\n" + 
+	            "    employee,\r\n" + 
+	            "    location\r\n" + 
+	            "WHERE\r\n" + 
+	            "    employee.EmployeeID = location.LocationID\r\n" + 
+	            "ORDER BY location.LocationID;";
+	    try {
+            pStatement = DBConnection.getInstance().getConnection().prepareStatement(statement);
+            resultSet = pStatement.executeQuery();
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+	    
+	    JSONArray jsonResult = toJSON(resultSet);
+	    closeAllResources();
+	    
+	    return jsonResult;
 	}
 	
-	public JSONArray toJSON() {
-	    JSONArray result = null;
+	// FROM: https://www.baeldung.com/java-jdbc-convert-resultset-to-json
+	public JSONArray toJSON(ResultSet resultSet) {
+	    JSONArray jsonResult = null;
 	    try {
 	        ResultSetMetaData md = resultSet.getMetaData();
 	        int numCols = md.getColumnCount();
@@ -47,7 +70,7 @@ public class QueryLogic{
 	          })
 	          .collect(Collectors.toList());
 
-	        result = new JSONArray();
+	        jsonResult = new JSONArray();
 	        while (resultSet.next()) {
 	            JSONObject row = new JSONObject();
 	            colNames.forEach(cn -> {
@@ -57,17 +80,16 @@ public class QueryLogic{
 	                    e.printStackTrace();
 	                }
 	            });
-	            result.put(row);
+	            jsonResult.put(row);
 	        }
 	    } catch (Exception e) {
 	        e.printStackTrace();
 	    }
 
-	    
-	    return result;
+	    return jsonResult;
 	}
 	
-	private void closeAllResources() {
+	public void closeAllResources() {
         try {
             if (resultSet != null) resultSet.close();
             if (pStatement != null) pStatement.close();
