@@ -48,20 +48,45 @@ public class UI{
         
         // Test listAllEmployeesEverywhere
         JSONArray jsonArray = QueryLogic.queryToJSON(QueryTypes.ALL_EMPLOYEES_INFO, null);
-        System.out.println("listAllEmployeesEverywhere():\n" + jsonArray.toString() + "\n");
+        System.out.println("All our employees:\n" + jsonArray.toString() + "\n");
         
         
         // Test getAlbumStockAtAllLocations
         paramX.add(0,"Montero");
         jsonArray = QueryLogic.queryToJSON(QueryTypes.ALBUM_INSTOCK_EVERYWHERE,paramX);
-        System.out.println("getAlbumStockAtAllLocations(\"Montero\")\n" + jsonArray + "\n");
+        System.out.println("Montero albums\n" + jsonArray + "\n");
         paramX.clear();
         
         // Test artistCollaboration
         paramX.add(0, "Miley Cyrus");
         paramX.add(1, "Lil Nas X");
         jsonArray = QueryLogic.queryToJSON(QueryTypes.ARTIST_COLLABORATION, paramX);
-        System.out.println("artistCollaboration(\"Miley Cyrus\", \"Lil Nas X\"):\n" + jsonArray + "\n");
+        System.out.println("Miley Cyrus and Lil Nas X:\n" + jsonArray + "\n");
+        paramX.clear();
+        
+        // Test ARTIST_ALBUMS
+        paramX.add(0, "Lady Gaga");
+        jsonArray = QueryLogic.queryToJSON(QueryTypes.ARTIST_ALBUMS, paramX);
+        System.out.println("Lady Gaga\'s Albums: \n" + jsonArray + "\n");
+        paramX.clear();
+        
+        // Test SONG_LYRICS
+        paramX.add(0, "room");
+        jsonArray = QueryLogic.queryToJSON(QueryTypes.SONG_LYRICS, paramX);
+        System.out.println("Lyrics conntaining \'room\': \n" + jsonArray + "\n");
+        paramX.clear();
+        
+     // Test SONG_LYRICS
+        paramX.add(0, "You And I");
+        jsonArray = QueryLogic.queryToJSON(QueryTypes.ALBUM_SONG_TITLE, paramX);
+        System.out.println("Album of the song \'You and I\': \n" + jsonArray + "\n");
+        paramX.clear();
+        
+        // Test SONG_ARTISTS
+        paramX.add(0, "Industry Baby");
+        jsonArray = QueryLogic.queryToJSON(QueryTypes.SONG_ARTISTS, paramX);
+        System.out.println("Arists involved in \'Industry Baby\': \n" + jsonArray + "\n");
+        paramX.clear();
         
         displayMenu();
         dbCon.closeConnection();

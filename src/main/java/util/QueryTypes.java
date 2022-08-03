@@ -23,6 +23,49 @@ public enum QueryTypes {
             "            AND artist.ArtistID = songfeaturelist.ArtistID\r\n" + 
             "            AND songfeaturelist.SongID = song.SongID) AS B ON A.SongTitle = B.songTitle;"),
     
+    BAND_MEMBERS("SELECT\r\n" + 
+            "    g.stagename AS 'Group',\r\n" + 
+            "    i.stagename AS 'Member'\r\n" + 
+            "FROM\r\n" + 
+            "    artist AS i\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    memberof ON i.ArtistID = memberof.IndividualID\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    artist AS g ON g.ArtistID = memberof.GroupID\r\n" + 
+            "WHERE\r\n" + 
+            "    g.StageName = ?;"),
+    
+    SONG_ARTISTS("SELECT\r\n" + 
+            "    songtitle, \r\n" + 
+            "    stagename \r\n" + 
+            "FROM\r\n" + 
+            "    artist\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    songfeaturelist ON artist.ArtistID = songfeaturelist.ArtistID\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    song ON songfeaturelist.SongID = song.SongID\r\n" + 
+            "WHERE \r\n" + 
+            "    SongTitle = ?;"),
+    
+    ALBUM_SONG_TITLE("SELECT\r\n" + 
+            "    albumtitle \r\n" + 
+            "FROM\r\n" + 
+            "    album\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    song ON song.AlbumID = album.AlbumID\r\n" + 
+            "WHERE\r\n" + 
+            "    SongTitle = ?\r\n" + 
+            "GROUP BY AlbumTitle;"),
+    
+    SONG_LYRICS("SELECT -- Find a song that contains a set of lyrics.\r\n" + 
+            "    songtitle, albumtitle\r\n" + 
+            "FROM\r\n" + 
+            "    song\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    ALBUM ON album.AlbumID = song.albumid\r\n" + 
+            "WHERE\r\n" + 
+            "    lyrics LIKE CONCAT( '%',?,'%');"),
+    
     ALL_EMPLOYEES_INFO("SELECT \r\n" + 
             "    employee.EmployeeID, employee.Name, location.LocationName\r\n" + 
             "FROM\r\n" + 
