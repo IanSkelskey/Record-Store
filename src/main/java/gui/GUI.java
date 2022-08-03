@@ -46,6 +46,7 @@ public class GUI extends Application {
         assert root != null;
         Scene scene = new Scene(root);
         primaryStage.setTitle("Record Store");
+        primaryStage.setResizable(false);
         primaryStage.setScene(scene);
         primaryStage.show();
     }

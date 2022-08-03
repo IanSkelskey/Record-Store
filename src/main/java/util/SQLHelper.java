@@ -24,22 +24,29 @@ public class SQLHelper {
     }
 
     /**
-     * Loads a master script into a String array of individual scripts from a .sql file.
-     * This method assumes that SQL statements are separated by a semicolon.
-     * Excess white space at the end of scripts will produce unexpected results.
+     * Loads a master script into a String from a .sql file.
      *
      * @param filename The filename of the .sql script
      * @return scripts An array of individual SQL statements
      */
-    public static String[] loadScriptsFromFile(String filename) {
-        String masterScript = "";
+    public static String convertScriptToString(String filename) {
+        String script = "";
         Path filePath = Paths.get(filename);
         try {
-            masterScript = new String(Files.readAllBytes(filePath));
+            script = new String(Files.readAllBytes(filePath));
         } catch (IOException e) {
             e.printStackTrace();
         }
-        return masterScript.split(";");
+        return script;
+    }
+
+    /**
+     * @param multiStatement
+     *  A SQL script stored in a string that contains multiple statements separated by a semicolon
+     * @return An array of strings where each element contains one statement.
+     */
+    public static String[] splitMultiStatement(String multiStatement) {
+        return multiStatement.split(";");
     }
 
     /**
@@ -55,6 +62,7 @@ public class SQLHelper {
 
     /**
      * Runs a single SQL statement stored in a String.
+     * Cannot be used to run SELECT statements.
      *
      * @param statement A String array of SQL statements
      */
@@ -72,7 +80,8 @@ public class SQLHelper {
      * @param path Path for a SQL script
      */
     public static void runScript(String path) {
-        String[] scripts = loadScriptsFromFile(path);
+        String multiScript = convertScriptToString(path);
+        String[] scripts = splitMultiStatement(multiScript);
         runStatements(scripts);
     }
 

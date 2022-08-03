@@ -10,7 +10,6 @@ import java.util.ArrayList;
 import org.json.*;
 
 import util.DBConnection;
-import util.QueryTypes;
 import util.SQLHelper;
 
 
@@ -91,8 +90,8 @@ public class UI{
 
         // Band Members
         paramX.add("Fleet Foxes");
-        String[] query = SQLHelper.loadScriptsFromFile("scripts/query/BAND_MEMBERS.sql");
-        jsonArray = QueryLogic.queryToJSON(query[0], paramX);
+        String query = SQLHelper.convertScriptToString("scripts/query/BAND_MEMBERS.sql");
+        jsonArray = QueryLogic.queryToJSON(query, paramX);
         System.out.println("Members of 'Fleet Foxes': \n" + jsonArray + "\n");
         paramX.clear();
 
