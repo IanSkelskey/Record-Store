@@ -11,6 +11,7 @@ import org.json.*;
 
 import util.DBConnection;
 import util.QueryTypes;
+import util.SQLHelper;
 
 
 public class UI{
@@ -44,8 +45,9 @@ public class UI{
         
         //  ***** QUERY LOGIC TEST CASES *****
         ArrayList<String> paramX = new ArrayList<String>();
-        
-        // Test listAllEmployeesEverywhere
+        JSONArray jsonArray = new JSONArray();
+
+/*        // Test listAllEmployeesEverywhere
         JSONArray jsonArray = QueryLogic.queryToJSON(QueryTypes.ALL_EMPLOYEES_INFO, new ArrayList<>());
         System.out.println("All our employees:\n" + jsonArray.toString() + "\n");
         
@@ -85,8 +87,15 @@ public class UI{
         paramX.add(0, "Industry Baby");
         jsonArray = QueryLogic.queryToJSON(QueryTypes.SONG_ARTISTS, paramX);
         System.out.println("Arists involved in \'Industry Baby\': \n" + jsonArray + "\n");
+        paramX.clear();*/
+
+        // Band Members
+        paramX.add("Fleet Foxes");
+        String[] query = SQLHelper.loadScriptsFromFile("scripts/query/BAND_MEMBERS.sql");
+        jsonArray = QueryLogic.queryToJSON(query[0], paramX);
+        System.out.println("Members of 'Fleet Foxes': \n" + jsonArray + "\n");
         paramX.clear();
-        
+
         displayMenu();
         dbCon.closeConnection();
 	}
