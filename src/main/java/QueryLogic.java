@@ -41,7 +41,7 @@ public class QueryLogic{
            e.printStackTrace();
        }
        
-       jsonResult = toJSON(resultSet);
+       jsonResult = altJSON(resultSet);
        closeAllResources();
        
        return jsonResult;
@@ -81,6 +81,30 @@ public class QueryLogic{
 	    }
 
 	    return jsonResult;
+	}
+	
+	public static JSONArray altJSON(ResultSet rs) {
+	    JSONArray json = new JSONArray();
+	    
+	    try {
+            ResultSetMetaData rsmd = rs.getMetaData();
+            while(rs.next()) {
+              int numColumns = rsmd.getColumnCount();
+              JSONObject obj = new JSONObject();
+              for (int i=1; i<=numColumns; i++) {
+                String column_name = rsmd.getColumnName(i);
+                obj.put(column_name, rs.getObject(column_name));
+              }
+              json.put(obj);
+            }
+        } catch (JSONException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (SQLException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+	    return json;
 	}
 	
 	public static void closeAllResources() {

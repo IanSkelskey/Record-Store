@@ -29,7 +29,7 @@ public enum QueryTypes {
             "    employee,\r\n" + 
             "    location\r\n" + 
             "WHERE\r\n" + 
-            "    employee.EmployeeID = location.LocationID\r\n" + 
+            "    employee.EmployeeID = location.LocationID \r\n" + 
             "ORDER BY location.LocationID;"),
     
     ALBUM_INSTOCK_EVERYWHERE("SELECT \r\n" + 
@@ -42,7 +42,21 @@ public enum QueryTypes {
             "    album.AlbumTitle = ?\r\n" + 
             "        AND album.AlbumID = inventory.AlbumID\r\n" + 
             "        AND inventory.LocationID = location.LocationID\r\n" + 
-            "ORDER BY inventory.amount DESC;");
+            "ORDER BY inventory.amount DESC;"),
+    
+    ARTIST_ALBUMS("SELECT -- Find all albums by a particular artist.\r\n" + 
+            "    albumtitle, stagename\r\n" + 
+            "FROM\r\n" + 
+            "    album\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    song ON song.albumid = album.albumid\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    songfeaturelist ON songfeaturelist.SongID = song.songid\r\n" + 
+            "        INNER JOIN\r\n" + 
+            "    artist ON artist.artistid = songfeaturelist.artistid\r\n" + 
+            "WHERE\r\n" + 
+            "    StageName = ?\r\n" + 
+            "GROUP BY albumtitle;");
     
     public final String query;
     
