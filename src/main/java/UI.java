@@ -48,12 +48,6 @@ public class UI{
         ArrayList<String> paramX = new ArrayList<String>();
         JSONArray jsonArray = new JSONArray();
 
-/*        // Test listAllEmployeesEverywhere
-        JSONArray jsonArray = QueryLogic.queryToJSON(QueryTypes.ALL_EMPLOYEES_INFO, new ArrayList<>());
-        System.out.println("All our employees:\n" + jsonArray.toString() + "\n");
-
-        */
-
         // Band Members
         paramX.add("Fleet Foxes");
         String[] query = SQLHelper.loadScriptsFromFile(QueryTypes.BAND_MEMBERS.queryPath);
@@ -95,7 +89,6 @@ public class UI{
         paramX.clear();
         query = null;
         
-        
         // Test getAlbumStockAtAllLocations
         paramX.add(0,"Montero");
         query = SQLHelper.loadScriptsFromFile(QueryTypes.ALBUM_INSTOCK_EVERYWHERE.queryPath);
@@ -111,6 +104,37 @@ public class UI{
         System.out.println("The song 'Hair' is found on the album: " + jsonArray + "\n");
         paramX.clear();
         query = null;
+        
+        // Test listAllEmployeesEverywhere
+        query = SQLHelper.loadScriptsFromFile(QueryTypes.EMPLOYEES_INFO.queryPath);
+        jsonArray = QueryLogic.queryToJSON(query[0], new ArrayList<>());
+        System.out.println("All our employees:\n" + jsonArray.toString() + "\n");
+        query = null;
+        
+        //Test LOCATION_INFO
+        query = SQLHelper.loadScriptsFromFile(QueryTypes.LOCATIONS_INFO.queryPath);
+        jsonArray = QueryLogic.queryToJSON(query[0], paramX);
+        System.out.println("All location info:\n" + jsonArray + "\n");
+        query = null;
+        
+        // TEST ALBUM_IN_RANGE
+        paramX.add(0, "1970-01-01");
+        paramX.add(1, "2016-01-01");
+        query = SQLHelper.loadScriptsFromFile(QueryTypes.ALBUMS_IN_RANGE.queryPath);
+        jsonArray = QueryLogic.queryToJSON(query[0], paramX);
+        System.out.println("Albums released between '1970-01-01' and '2016-01-01' \n" + jsonArray + "\n");
+        paramX.clear();
+        query = null;
+        
+        // TEST BAND_OF_ARTIST
+        paramX.add(0, "Kimberley Ann Deal");
+        query = SQLHelper.loadScriptsFromFile(QueryTypes.BAND_OF_ARTIST.queryPath);
+        jsonArray = QueryLogic.queryToJSON(query[0], paramX);
+        System.out.println("'Kimberley Ann Deal' was in what band?\n" + jsonArray + "\n");
+        paramX.clear();
+        query = null;
+        
+        // TEST ARTIST_OF_GENRE
 
         displayMenu();
         dbCon.closeConnection();

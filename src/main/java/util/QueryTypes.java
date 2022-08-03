@@ -7,9 +7,13 @@ public enum QueryTypes {
     SONG_ARTISTS("scripts/query/SONG_ARTISTS.sql"),
     ALBUM_SONG_TITLE("scripts/query/ALBUM_SONG_TITLE.sql"),
     SONG_LYRICS("scripts/query/SONG_LYRICS.sql"),
-    ALL_EMPLOYEES_INFO("scripts/query/ALL_EMPLOYEES_INFO.sql"),
+    EMPLOYEES_INFO("scripts/query/EMPLOYEES_INFO.sql"),
     ALBUM_INSTOCK_EVERYWHERE("scripts/query/ALBUM_INSTOCK_EVERYWHERE.sql"),
-    ARTIST_ALBUMS("scripts/query/ARTIST_ALBUMS.sql");
+    ARTIST_ALBUMS("scripts/query/ARTIST_ALBUMS.sql"),
+    LOCATIONS_INFO("scripts/query/LOCATIONS_INFO.sql"),
+    ALBUMS_IN_RANGE("scripts/query/ALBUMS_IN_RANGE.sql"),
+    BAND_OF_ARTIST("scripts/query/BAND_OF_ARTIST.sql"),
+    ARTISTS_OF_GENRE("scripts/query/ARTISTS_OF_GENRE.sql");
     
     public final String queryPath;
     
