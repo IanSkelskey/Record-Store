@@ -8,6 +8,7 @@ repositories {
 
 dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+    compile group: 'org.json', name: 'json', version: '20200518'
 }
 
 def url = 'jdbc:mysql://localhost:3306/record-store?userSSL=false'
@@ -42,4 +43,9 @@ task runApp(type: JavaExec){
 	
 	classpath = sourceSets.main.runtimeClasspath
 	main = 'UI'
+	
+	args url
+    args user
+    args pwd
+    args driver
 }
