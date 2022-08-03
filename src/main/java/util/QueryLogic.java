@@ -1,10 +1,10 @@
+package util;
 /**
 * QueryLogic
 */
 import java.sql.*;
 import java.util.ArrayList;
 import org.json.*;
-import util.DBConnection;
 
 public class QueryLogic{
 
