@@ -78,6 +78,13 @@ public class SQLHelper {
 
     /**
      * Runs all SQL scripts in a given directory.
+     * If the scripts must be run in a particular order,
+     * name each script with a leading number to indicate its position in line.
+     * For Example:
+     *  - 0_drop.sql
+     *  - 1_create.sql
+     *  - 2_insert.sql
+     *  - 3_lyrics.sql
      */
     public static void runAllScriptsInDirectory(String directory) {
         File[] files = new File(directory).listFiles();
