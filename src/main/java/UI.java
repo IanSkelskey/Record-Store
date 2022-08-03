@@ -29,7 +29,7 @@ public class UI{
 	
         DBConnection dbCon = DBConnection.getInstance();
         
-        if (args.length != 4) {
+        if (args.length != 3) {
                 System.out.println("Incorrect number of arguments. " +
                     "Please provide url, user, password, and driver to access database." +
                     "Exiting now. Please try again.");
@@ -39,9 +39,8 @@ public class UI{
         String url = args[0];
         String user = args[1];
         String pwd = args[2];
-        String driver = args[3];
         
-        dbCon.setConnection(url, user, pwd, driver);
+        dbCon.setConnection(url, user, pwd);
         
         //  ***** QUERY LOGIC TEST CASES *****
         ArrayList<String> paramX = new ArrayList<String>();
