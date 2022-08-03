@@ -47,4 +47,9 @@ task runApp(type: JavaExec){
 	
 	classpath = sourceSets.main.runtimeClasspath
 	main = 'UI'
+	
+	args url
+	args user
+	args pwd
+	args driver
 }

@@ -6,6 +6,11 @@
  *
 */
 
+import java.util.HashMap;
+import java.util.Map;
+
+import util.DBConnection;
+import util.SQLHelper;
 
 public class UI{
 
@@ -24,8 +29,32 @@ public class UI{
 	}
 	
 	public static void main(String[] args){
-		System.out.println("Welcome...");
+		DBConnection dbCon = DBConnection.getInstance();
+		
+		if (args.length != 4) {
+			System.out.println("Incorrect number of arguments. " +
+					"Please provide url, user, password, and driver to access database." +
+					"Exiting now. Please try again.");
+			System.exit(1);
+		}
 
+		String url = args[0];
+		String user = args[1];
+		String pwd = args[2];
+		String driver = args[3];
+
+		dbCon.setConnection(url, user, pwd, driver);
+		System.out.println("Welcome...");
+		
 		displayMenu();
+		
+		HashMap<String, String> hashInsert = new HashMap<String, String>();
+		hashInsert.put("stagename", "\"Ted Nugent\"");
+		hashInsert.put("soloflag", "true");
+		hashInsert.put("artistname", "\"Ted Nugent\"");
+		hashInsert.put("dateofbirth", "\"1945-01-02\"");
+		hashInsert.put("bandflag", "false");
+		hashInsert.put("established", "\"1945-01-02\"");
+		instance.updater.insert("artist", hashInsert);
 	}
 }
