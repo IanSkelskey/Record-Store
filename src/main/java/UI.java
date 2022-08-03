@@ -47,22 +47,20 @@ public class UI{
         ArrayList<String> paramX = new ArrayList<String>();
         
         // Test listAllEmployeesEverywhere
-        QueryLogic selectable = QueryLogic.getInstance();
-        //JSONArray jsonArray = selectable.listAllEmployeesEverywhere();
-        JSONArray jsonArray = selectable.queryToJSON(QueryTypes.ALL_EMPLOYEES_INFO, null);
+        JSONArray jsonArray = QueryLogic.queryToJSON(QueryTypes.ALL_EMPLOYEES_INFO, null);
         System.out.println("listAllEmployeesEverywhere():\n" + jsonArray.toString() + "\n");
         
         
         // Test getAlbumStockAtAllLocations
         paramX.add(0,"Montero");
-        jsonArray = selectable.queryToJSON(QueryTypes.ALBUM_INSTOCK_EVERYWHERE,paramX);
+        jsonArray = QueryLogic.queryToJSON(QueryTypes.ALBUM_INSTOCK_EVERYWHERE,paramX);
         System.out.println("getAlbumStockAtAllLocations(\"Montero\")\n" + jsonArray + "\n");
         paramX.clear();
         
         // Test artistCollaboration
         paramX.add(0, "Miley Cyrus");
         paramX.add(1, "Lil Nas X");
-        jsonArray = selectable.queryToJSON(QueryTypes.ARTIST_COLLABORATION, paramX);
+        jsonArray = QueryLogic.queryToJSON(QueryTypes.ARTIST_COLLABORATION, paramX);
         System.out.println("artistCollaboration(\"Miley Cyrus\", \"Lil Nas X\"):\n" + jsonArray + "\n");
         
         displayMenu();
