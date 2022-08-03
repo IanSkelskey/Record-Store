@@ -10,6 +10,7 @@ repositories {
 
 dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
+    compile group: 'org.json', name: 'json', version: '20200518'
 }
 
 javafx {
@@ -18,7 +19,6 @@ javafx {
 }
 
 def url = 'jdbc:mysql://localhost:3306/record-store?userSSL=false'
-def driver = 'com.mysql.cj.jdbc.Driver'
 def user = 'root'
 def pwd = 'root'
 
@@ -32,9 +32,6 @@ task arguments {
 	if (project.hasProperty("pwd")) {
 		pwd = project.getProperty("pwd")
 	}
-	if (project.hasProperty("driver")) {
-		driver = project.getProperty("driver")
-	}
 }
 
 task createDB(type: JavaExec){
@@ -46,7 +43,6 @@ task createDB(type: JavaExec){
 	args url
 	args user
 	args pwd
-	args driver
 }
 
 task runApp(type: JavaExec){
@@ -54,6 +50,10 @@ task runApp(type: JavaExec){
 	
 	classpath = sourceSets.main.runtimeClasspath
 	main = 'UI'
+
+	args url
+	args user
+	args pwd
 }
 
 task runGUI(type: JavaExec){
@@ -63,7 +63,6 @@ task runGUI(type: JavaExec){
 	main = 'gui.GUILauncher'
 
 	args url
-	args user
-	args pwd
-	args driver
+    args user
+    args pwd
 }
