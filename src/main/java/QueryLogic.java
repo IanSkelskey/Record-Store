@@ -3,16 +3,11 @@
 */
 import java.sql.*;
 import java.util.ArrayList;
-import java.util.stream.Collectors;
-import java.util.stream.IntStream;
 
 import org.json.*;
 
 import util.DBConnection;
 import util.QueryTypes;
-
-import java.awt.List;
-import java.io.*;
 
 public class QueryLogic{
     
