@@ -47,7 +47,7 @@ public class UI{
         ArrayList<String> paramX = new ArrayList<String>();
         
         // Test listAllEmployeesEverywhere
-        JSONArray jsonArray = QueryLogic.queryToJSON(QueryTypes.ALL_EMPLOYEES_INFO, null);
+        JSONArray jsonArray = QueryLogic.queryToJSON(QueryTypes.ALL_EMPLOYEES_INFO, new ArrayList<>());
         System.out.println("All our employees:\n" + jsonArray.toString() + "\n");
         
         
