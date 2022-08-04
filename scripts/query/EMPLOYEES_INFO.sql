@@ -1,5 +1,4 @@
--- "Who are all the employees at each of the locations ordered by location"
-SELECT 
+SELECT
     employee.EmployeeID, employee.Name, location.LocationName AS 'Works At'
 FROM
     employee,

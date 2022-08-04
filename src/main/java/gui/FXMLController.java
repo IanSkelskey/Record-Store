@@ -62,7 +62,7 @@ public class FXMLController {
 
     public void populateResultTable(String query){
 
-        try(ResultSet rs = con.createStatement().executeQuery(query)) {
+        try (ResultSet rs = con.createStatement().executeQuery(query)) {
             ResultSetMetaData meta = rs.getMetaData();
             int columnCount = meta.getColumnCount();
 

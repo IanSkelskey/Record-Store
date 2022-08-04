@@ -1,4 +1,3 @@
--- What band was a specific artist a member of
 SELECT
 	i.StageName AS 'Artist',
 	g.StageName AS 'Band/Group'

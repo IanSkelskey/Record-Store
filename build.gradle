@@ -49,7 +49,8 @@ task runApp(type: JavaExec){
 	description 'Runs db app'
 	
 	classpath = sourceSets.main.runtimeClasspath
-	main = 'UI'
+	main = 'ui.UI'
+	standardInput = System.in
 
 	args url
 	args user

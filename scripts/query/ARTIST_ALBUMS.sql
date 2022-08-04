@@ -1,4 +1,3 @@
--- Find all albums by a particular artist.
 SELECT
     albumtitle, stagename
 FROM

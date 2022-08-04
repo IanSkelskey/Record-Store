@@ -1,4 +1,3 @@
--- What album contains a song with a specific title
 SELECT
 	albumtitle AS 'Album'
 FROM

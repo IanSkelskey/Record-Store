@@ -1,4 +1,3 @@
--- What artists are featured on a particular song
 SELECT
 	songtitle AS 'Song',
     stagename AS 'Artist'

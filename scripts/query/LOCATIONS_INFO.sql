@@ -1,2 +1,1 @@
--- What are all the locations? You asked for it.
-SELECT * FROM location; 
+SELECT * FROM location;

@@ -1,4 +1,3 @@
--- Find all albums that have songs of a particular genre type
 SELECT DISTINCT
 	Genre.GenreName as 'Genre',
 	AlbumTitle as 'Album'

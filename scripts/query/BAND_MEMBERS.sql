@@ -1,4 +1,3 @@
--- Who are the members of a particular band
 SELECT
 	g.stagename AS 'Group',
     i.stagename AS 'Member'

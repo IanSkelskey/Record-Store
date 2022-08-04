@@ -89,6 +89,7 @@ public class SQLHelper {
      * Runs all SQL scripts in a given directory.
      * If the scripts must be run in a particular order,
      * name each script with a leading number to indicate its position in line.
+     *
      * For Example:
      *  - 0_drop.sql
      *  - 1_create.sql
@@ -102,5 +103,23 @@ public class SQLHelper {
             String path = f.getPath();
             runScript(path);
         }
+    }
+
+    /**
+     * Counts all parameters in a SQL script. Parameters are represented by
+     * question marks (?). Make sure that there are no comments in the script that contain
+     * question mark characters.
+     *
+     * @param script A String representation of a parameterized SQL script.
+     * @return The number of parameters.
+     */
+    public static int countScriptParameters(String script) {
+        int count = 0;
+        for (int i = 0; i < script.length(); i++) {
+            if(script.charAt(i) == '?') {
+                count++;
+            }
+        }
+        return count;
     }
 }

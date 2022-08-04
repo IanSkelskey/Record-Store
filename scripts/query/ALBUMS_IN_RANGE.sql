@@ -1,4 +1,3 @@
--- What albums were released in a range of dates
 SELECT DISTINCT
     AlbumTitle AS 'Album',
     ReleaseDate AS 'Release Date'

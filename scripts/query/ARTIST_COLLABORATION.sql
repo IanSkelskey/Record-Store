@@ -1,4 +1,3 @@
--- "What song did artist A and artist B collaborate on?"
 SELECT
     *
 FROM

@@ -1,11 +1,12 @@
 package util;
-/**
-* QueryLogic
-*/
+
 import java.sql.*;
 import java.util.ArrayList;
 import org.json.*;
 
+/**
+ * QueryLogic
+ */
 public class QueryLogic{
 
     private static final Connection DBCon = DBConnection.getInstance().getConnection();

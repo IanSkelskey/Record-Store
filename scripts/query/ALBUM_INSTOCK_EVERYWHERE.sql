@@ -1,5 +1,4 @@
--- "How many copies of a particular album (Montero) are there at each location?"
-SELECT 
+SELECT
     inventory.Amount AS 'Album Amount', location.LocationName AS 'Located At'
 FROM
     album,

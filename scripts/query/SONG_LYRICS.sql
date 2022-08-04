@@ -1,5 +1,4 @@
--- Find a song that contains a set of lyrics.
-SELECT 
+SELECT
     songtitle, albumtitle
 FROM
     song
