@@ -7,7 +7,7 @@ FROM
     FROM
         song, artist, songfeaturelist
     WHERE
-        artist.StageName = 'Lil Nas X'
+        artist.StageName = ?
             AND artist.ArtistID = songfeaturelist.ArtistID
             AND songfeaturelist.SongID = song.SongID) AS A
         JOIN
@@ -16,6 +16,6 @@ FROM
     FROM
         song, artist, songfeaturelist
     WHERE
-        artist.StageName = 'Miley Cyrus'
+        artist.StageName = ?
             AND artist.ArtistID = songfeaturelist.ArtistID
             AND songfeaturelist.SongID = song.SongID) AS B ON A.SongTitle = B.songTitle;
