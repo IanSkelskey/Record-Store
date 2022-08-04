@@ -11,7 +11,7 @@ dependencies {
     compile group: 'org.json', name: 'json', version: '20200518'
 }
 
-def url = 'jdbc:mysql://localhost:3306/record-store?userSSL=false'
+def url = 'jdbc:mysql://localhost:3306/record-store?userSSL=false&useOldAliasMetadataBehavior=true'
 def user = 'root'
 def pwd = 'root'
 

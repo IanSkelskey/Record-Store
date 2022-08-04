@@ -1,3 +1,4 @@
+package util;
 /**
 * QueryLogic
 */
@@ -5,18 +6,14 @@ import java.sql.*;
 import java.util.ArrayList;
 import org.json.*;
 
-import util.DBConnection;
-import util.QueryTypes;
-
 public class QueryLogic{
 
     private static final Connection DBCon = DBConnection.getInstance().getConnection();
     
     private QueryLogic(){}
     
-   public static JSONArray queryToJSON(QueryTypes type, ArrayList<String> params) {
-       String statement = type.query;
-       try (PreparedStatement pStatement = DBCon.prepareStatement(statement)){
+   public static JSONArray queryToJSON(String query, ArrayList<String> params) {
+       try (PreparedStatement pStatement = DBCon.prepareStatement(query)){
            for (int q = 0; q < params.size(); q++) {
                pStatement.setString(q + 1, params.get(q));
            }
