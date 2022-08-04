@@ -78,6 +78,13 @@ The members of group 18 are listed below along with their individual contributio
 - Contributed to database design before generating SQL from the relational schema
 - Contributed 3 SQL queries
 - Contributed 2 albums
+- Converted all 12 static sql script to dynamic scripts
+- Created enum to hold script query paths
+- Tested all selects
+- Generated QueryLogic.java functionality and collaborated on its refactoring
+- Generated build.gradle and collaborated on its additional functionality
+- Hosted weekly team meetings
+- Reviewed multiple github pull-requests
 
 ### [Ian Skelskey](https://github.com/IanSkelskey)
 
