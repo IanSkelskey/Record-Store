@@ -11,7 +11,6 @@ dependencies {
 }
 
 def url = 'jdbc:mysql://localhost:3306/record-store?userSSL=false'
-def driver = 'com.mysql.cj.jdbc.Driver'
 def user = 'root'
 def pwd = 'root'
 
@@ -25,9 +24,6 @@ task arguments {
 	if (project.hasProperty("pwd")) {
 		pwd = project.getProperty("pwd")
 	}
-	if (project.hasProperty("driver")) {
-		driver = project.getProperty("driver")
-	}
 }
 
 task createDB(type: JavaExec){
@@ -39,7 +35,6 @@ task createDB(type: JavaExec){
 	args url
 	args user
 	args pwd
-	args driver
 }
 
 task runApp(type: JavaExec){
