@@ -6,6 +6,8 @@ import util.SQLHelper;
  */
 public class DBInitializer {
 
+	private static final String SCRIPTS_DIR = "scripts/init/";
+
 	public static void main(String[] args){
 		DBConnection dbCon = DBConnection.getInstance();
 
@@ -22,7 +24,7 @@ public class DBInitializer {
 
 		dbCon.setConnection(url, user, pwd);
 
-		SQLHelper.runAllScriptsInDirectory("scripts/init/");
+		SQLHelper.runAllScriptsInDirectory(SCRIPTS_DIR);
 		dbCon.closeConnection();
 	}
 }

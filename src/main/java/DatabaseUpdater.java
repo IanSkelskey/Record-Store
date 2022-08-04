@@ -23,7 +23,7 @@ public class DatabaseUpdater {
 	
 	private Connection conn;
 	
-	public DatabaseUpdater(){
+	public DatabaseUpdater() {
 		
 	}
 
