@@ -38,7 +38,7 @@ task createDB(type: JavaExec){
 	description 'Creates tables for record store database.'
 
 	classpath = sourceSets.main.runtimeClasspath
-	main = 'DBInitializer'
+	main = 'util.DBInitializer'
 
 	args url
 	args user

@@ -4,5 +4,5 @@ FROM
     employee,
     location
 WHERE
-    employee.EmployeeID = location.LocationID
+    employee.LocationID = location.LocationID
 ORDER BY location.LocationID;

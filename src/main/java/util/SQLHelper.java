@@ -6,6 +6,7 @@ import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
+import java.util.HashMap;
 
 /**
  * util.SQLHelper
@@ -121,5 +122,23 @@ public class SQLHelper {
             }
         }
         return count;
+    }
+
+    /**
+     * Inserts a set of values into given columns of a given table.
+     *
+     * @param table Name of the table to insert into.
+     * @param columnValueMap A HashMap which contains String representations of column names and values.
+     */
+    public void insert(String table, HashMap<String, String> columnValueMap){
+
+        String[] keys = columnValueMap.keySet().toArray(new String[0]);
+        String[] values = columnValueMap.values().toArray(new String[0]);
+
+        String statement = "INSERT INTO " + table + " (" +
+                String.join(", ", keys) + ") " + "VALUES ('" +
+                String.join("', '", values) + "'" + ");";
+
+        runStatement(statement);
     }
 }
