@@ -63,6 +63,7 @@ The members of group 18 are listed below along with their individual contributio
 - Contributed to database design before generating SQL from the relational schema
 - Wrote 1/4 of the insert statements
 - Wrote 1/4 of the initial queries
+- Implemented insert method
 
 ### [Steven Stabile](https://github.com/sstabile)
 
@@ -97,4 +98,3 @@ The members of group 18 are listed below along with their individual contributio
 - Created and maintained README.md
 - Wrote 1/4 of the insert statements necessary to populate database
 - Wrote 1/4 of the initial queries for deliverable 3
-
