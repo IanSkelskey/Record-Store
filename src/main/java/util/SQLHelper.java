@@ -130,7 +130,7 @@ public class SQLHelper {
      * @param table Name of the table to insert into.
      * @param columnValueMap A HashMap which contains String representations of column names and values.
      */
-    public void insert(String table, HashMap<String, String> columnValueMap){
+    public static void insert(String table, HashMap<String, String> columnValueMap){
 
         String[] keys = columnValueMap.keySet().toArray(new String[0]);
         String[] values = columnValueMap.values().toArray(new String[0]);
@@ -141,4 +141,13 @@ public class SQLHelper {
 
         runStatement(statement);
     }
+	
+	public static void delete(String table, String att, String v){
+		
+		String statement = "DELETE FROM " + table + " Where " +
+			att + "=" + "'" + v + "'" + ";";
+			
+		runStatement(statement);
+	}
+		
 }

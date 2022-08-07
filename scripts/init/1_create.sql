@@ -45,9 +45,9 @@ CREATE TABLE SongGenreList (
     SongID INT NOT NULL,
     PRIMARY KEY (GenreName , SongID),
     FOREIGN KEY (GenreName)
-        REFERENCES Genre (GenreName),
+        REFERENCES Genre (GenreName) ON DELETE CASCADE,
     FOREIGN KEY (SongID)
-        REFERENCES Song (SongID)
+        REFERENCES Song (SongID) ON DELETE CASCADE
 );
 
 CREATE TABLE Artist (
@@ -87,7 +87,7 @@ CREATE TABLE SongFeatureList (
     ArtistID INT NOT NULL,
     PRIMARY KEY (SongID , ArtistID),
     FOREIGN KEY (SongID)
-        REFERENCES Song (SongID),
+        REFERENCES Song (SongID) ON DELETE CASCADE,
     FOREIGN KEY (ArtistID)
-        REFERENCES Artist (ArtistID)
+        REFERENCES Artist (ArtistID) ON DELETE CASCADE
 );
