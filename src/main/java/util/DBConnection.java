@@ -2,6 +2,10 @@ package util;
 
 import java.sql.*;
 
+/**
+ * DBConnection implements the singleton design pattern.
+ * Encapsulates all JDBC connection information to be shared by all other classes.
+ */
 public class DBConnection {
 
     private static final String DRIVER = "com.mysql.cj.jdbc.Driver";

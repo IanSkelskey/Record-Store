@@ -8,6 +8,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.*;
 import javafx.util.Callback;
 import util.DBConnection;
+import util.Query;
 
 import java.sql.Connection;
 import java.sql.ResultSet;
@@ -35,12 +36,11 @@ public class FXMLController {
 
     public void populateQueryChoices() {
         ObservableList<String> choices = FXCollections.observableArrayList();
-        choices.add("1");
-        choices.add("2");
-        choices.add("3");
-        choices.add("4");
+        for (Query q: Query.values()) {
+            choices.add(q.toString());
+        }
         queryChoice.setItems(choices);
-        queryChoice.setValue("1");
+        queryChoice.setValue(Query.getQueryByID(1).toString());
     }
 
 
