@@ -112,3 +112,8 @@ The members of group 18 are listed below along with their individual contributio
 - Wrote the DBInitializer class
 - Wrote the SQLHelper class and documentation
 - Wrote a dynamic query menu for the terminal UI
+
+## Assets
+
+- [Add Employee Icon](https://www.flaticon.com/free-icons/add-user)
+- [App Icon](https://www.flaticon.com/free-icons/vinyl)

@@ -78,8 +78,6 @@ public enum Query {
         throw new IllegalArgumentException(String.valueOf(id));
     }
 
-
-
     @Override
     public String toString() {
         return this.id + "\t- " + this.description;

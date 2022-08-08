@@ -5,7 +5,7 @@ package util;
  */
 public class DBInitializer {
 
-	private static final String SCRIPTS_DIR = "sql/init/";
+	private static final String SCRIPTS_DIR = "src/main/resources/sql/init/";
 
 	public static void main(String[] args){
 		DBConnection dbCon = DBConnection.getInstance();
