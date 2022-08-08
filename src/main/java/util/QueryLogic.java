@@ -16,7 +16,7 @@ public class QueryLogic{
     private QueryLogic(){}
     
     /**
-     * 
+     *  
      * @param query is the String representation of the sql query.
      * @param params is the set of Strings that hold the sql parameters to handle dynamic
      * queries
