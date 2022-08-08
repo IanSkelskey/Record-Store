@@ -3,6 +3,7 @@ package gui;
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
 import javafx.stage.Stage;
 import util.DBConnection;
@@ -35,19 +36,16 @@ public class GUI extends Application {
     @Override
     public void start(Stage primaryStage) {
 
-        VBox root = null;
-
         try {
-            root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/record-store.fxml")));
+            VBox root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/record-store.fxml")));
+            Scene scene = new Scene(root);
+            primaryStage.setTitle("Record Store");
+            primaryStage.setResizable(false);
+            primaryStage.setScene(scene);
+            primaryStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/vinyl.png"))));
+            primaryStage.show();
         } catch (IOException e) {
             e.printStackTrace();
         }
-
-        assert root != null;
-        Scene scene = new Scene(root);
-        primaryStage.setTitle("Record Store");
-        primaryStage.setResizable(false);
-        primaryStage.setScene(scene);
-        primaryStage.show();
     }
 }

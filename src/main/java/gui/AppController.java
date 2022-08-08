@@ -1,11 +1,14 @@
 package gui;
 
+import gui.dialogs.AboutDialog;
+import gui.dialogs.InsertEmployeeDialog;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.stage.Stage;
 import javafx.util.Callback;
 import util.DBConnection;
 import util.Query;
@@ -36,7 +39,7 @@ public class AppController {
     }
 
     public void openNewEmployeeDialog() {
-        NewEmployeeDialog dialog = new NewEmployeeDialog();
+        InsertEmployeeDialog dialog = new InsertEmployeeDialog();
         dialog.show();
     }
 
@@ -66,7 +69,7 @@ public class AppController {
 
     public void processInputs(String query, String[] params){
 
-        try (PreparedStatement pStatement = con.prepareStatement(query)) {
+        try (PreparedStatement pStatement = this.con.prepareStatement(query)) {
             for (int i = 0; i < this.queryChoice.getValue().paramCount; i++) {
                 pStatement.setString(i + 1, params[i]);
             }
@@ -99,8 +102,19 @@ public class AppController {
             for (int i = 1; i <= columnCount; i++) {
                 row.add(rs.getString(i));
             }
-            data.add(row);
+            this.data.add(row);
         }
-        this.resultTable.setItems(data);
+        this.resultTable.setItems(this.data);
     }
+
+    public void openAboutDialog() {
+        AboutDialog aboutDialog = new AboutDialog();
+        aboutDialog.show();
+    }
+
+    public void close() {
+        Stage stage = (Stage) this.resultTable.getScene().getWindow();
+        stage.close();
+    }
+
 }

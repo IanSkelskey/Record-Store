@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.ButtonType?>
+<?import javafx.scene.control.DialogPane?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<DialogPane expanded="true" headerText="Record Store" prefHeight="419.0" prefWidth="363.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1">
+   <buttonTypes>
+      <ButtonType fx:constant="CLOSE" />
+   </buttonTypes>
+   <content>
+      <VBox prefHeight="200.0" prefWidth="100.0">
+         <children>
+            <Label text="Project designed for SER322: Database Management at Arizona State University by group 18 for Summer Session B 2022." wrapText="true" />
+            <Label text="Record Store is a database and application to aid record store employees. The system should allow employees to find what a customer is looking for. The database contains a list of records and their stock quantityalong with additional information about artists, songs, genres, etc." wrapText="true" />
+            <Label text="Contributors:">
+               <font>
+                  <Font name="System Bold" size="14.0" />
+               </font>
+            </Label>
+            <Label text="Andrew Tonn" />
+            <Label text="Ian Skelskey" />
+            <Label text="Nathanael Swecker" />
+            <Label text="Steven Stabile" />
+         </children>
+      </VBox>
+   </content>
+</DialogPane>
