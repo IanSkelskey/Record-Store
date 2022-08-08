@@ -142,10 +142,17 @@ public class SQLHelper {
         runStatement(statement);
     }
 	
-	public static void delete(String table, String att, String v){
+	/**
+	 * Deletes a row from a given table
+	 *
+	 *@param table Name of the table to delete from
+	 *@param columnName Column name
+	 *@param value Value in row
+	 */
+	public static void delete(String table, String columnName, String value){
 		
 		String statement = "DELETE FROM " + table + " Where " +
-			att + "=" + "'" + v + "'" + ";";
+			columnName + "=" + "'" + value + "'" + ";";
 			
 		runStatement(statement);
 	}

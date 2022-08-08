@@ -10,7 +10,7 @@ import org.json.*;
 import util.DBConnection;
 import util.QueryLogic;
 import util.Query;
-import util.SQLHelper;
+
 /**
  * ui.UI
  *
@@ -91,9 +91,9 @@ public class UI {
         String pwd = args[2];
 
         dbCon.setConnection(url, user, pwd);
-
-        //showQueryMenu();
-		SQLHelper.delete("Artist", "stagename", "David Bowie");
+		
+        showQueryMenu();
+		
         dbCon.closeConnection();
     }
 }
