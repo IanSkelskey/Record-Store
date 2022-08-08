@@ -112,6 +112,10 @@ public class AppController {
         aboutDialog.show();
     }
 
+    public void activateDarkMode() {
+        this.resultTable.getScene().getStylesheets().add(String.valueOf(getClass().getResource("/css/dark.css")));
+    }
+
     public void close() {
         Stage stage = (Stage) this.resultTable.getScene().getWindow();
         stage.close();

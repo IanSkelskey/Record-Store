@@ -2,6 +2,7 @@ package gui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
 import javafx.scene.layout.VBox;
@@ -38,6 +39,7 @@ public class GUI extends Application {
 
         try {
             VBox root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/record-store.fxml")));
+            root.setAlignment(Pos.CENTER);
             Scene scene = new Scene(root);
             primaryStage.setTitle("Record Store");
             primaryStage.setResizable(false);
