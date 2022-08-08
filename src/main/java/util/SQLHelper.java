@@ -130,7 +130,7 @@ public class SQLHelper {
      * @param table Name of the table to insert into.
      * @param columnValueMap A HashMap which contains String representations of column names and values.
      */
-    public void insert(String table, HashMap<String, String> columnValueMap){
+    public static void insert(String table, HashMap<String, String> columnValueMap){
 
         String[] keys = columnValueMap.keySet().toArray(new String[0]);
         String[] values = columnValueMap.values().toArray(new String[0]);
@@ -141,8 +141,24 @@ public class SQLHelper {
 
         runStatement(statement);
     }
+	
+	/**
+	 * Deletes a row from a given table
+	 *
+	 *@param table Name of the table to delete from
+	 *@param columnName Column name
+	 *@param value Value in row
+	 */
+	public static void delete(String table, String columnName, String value){
+		
+		String statement = "DELETE FROM " + table + " Where " +
+			columnName + "=" + "'" + value + "'" + ";";
+			
+		runStatement(statement);
+	}
 
     public static String makeWhereClause(String column, String value) {
         return String.format("\nWHERE %s = %s", column, value);
     }
+
 }
