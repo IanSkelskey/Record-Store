@@ -9,7 +9,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<DialogPane fx:id="pane" headerText="New Employee" prefHeight="216.0" prefWidth="381.0" style="-fx-font-family: sans-serf;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.dialogs.InsertEmployeeDialogController">
+<DialogPane fx:id="pane" headerText="New Employee" prefHeight="216.0" prefWidth="381.0" style="-fx-font-family: sans-serif;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.dialogs.InsertEmployeeDialogController">
    <buttonTypes>
       <ButtonType fx:constant="OK" />
       <ButtonType fx:constant="CANCEL" />

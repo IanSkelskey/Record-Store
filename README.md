@@ -18,7 +18,7 @@ We have automated the initialization of the database with a gradle task.
 
 Navigate to the record-store root directory in a terminal window and run the following command:
 
-`gradle createDB -Purl="jdbc:mysql://localhost:3306/record-store?userSSL=false" -Puser="root" -Ppwd="pass"`
+`gradle createDB -Purl="jdbc:mysql://localhost:3306/record-store?userSSL=false&useOldAliasMetadataBehavior=true" -Puser="root" -Ppwd="pass"`
 
 ### Parameters
 
