@@ -29,7 +29,7 @@ public class UI {
         while (true) {
             System.out.println("Please enter a selection from the options below.\n");
             for (Query q: Query.values()) {
-                System.out.println(q.id + "\t- " + q.menuDescription);
+                System.out.println(q);
             }
             System.out.println("0\t- Exit the application.");
             try {
@@ -49,12 +49,12 @@ public class UI {
         ArrayList<String> params = new ArrayList<>();
         JSONArray jsonArray;
 
-        Query qt = Query.getQueryByID(type);
+        Query q = Query.getQueryByID(type);
 
-        System.out.println("You have selected: " + qt.menuDescription);
-        int paramCount = qt.paramCount;
+        System.out.println("You have selected:\n" + q);
+        int paramCount = q.paramCount;
         for (int i = 0; i < paramCount; i++) {
-            System.out.print("Enter " + qt.paramType + ": ");
+            System.out.print("Enter " + q.paramType + ": ");
             String param = null;
             try {
                 param = in.readLine();
@@ -63,13 +63,13 @@ public class UI {
             }
             params.add(param);
         }
-        String query = qt.query;
+        String query = q.query;
 
         jsonArray = QueryLogic.queryToJSON(query, params);
         if (jsonArray.length() == 0) {
             System.out.println("Your search returned no results. Please check inputs and try again.");
         } else {
-            System.out.println("Result" + jsonArray + "\n");
+            System.out.println("Result:\n" + jsonArray.toString(2) + "\n");
         }
         System.out.println("Returning to menu...\n");
         params.clear();

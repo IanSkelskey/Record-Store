@@ -38,10 +38,10 @@ Running the above task will execute four initialization scripts in order:
 
 ## Environment
 
-- MySQL version 5.6
-- Java
-- Gradle
-- JDBC
+- MySQL 5.6
+- Java 11.0.13
+- Gradle 6.6.1
+- JDBC 8.0.29
 
 ## Steps for Execution
 
@@ -95,6 +95,20 @@ The members of group 18 are listed below along with their individual contributio
 - Contributed to database design before generating SQL from the relational schema
 - Created git repository
 - Created GitHub project
+- Set git standards for the team
+  - Two reviews for main
+  - One review for Development
+  - Working branches for each contributor
+  - Continuous Integration
 - Created and maintained README.md
 - Wrote 1/4 of the insert statements necessary to populate database
 - Wrote 1/4 of the initial queries for deliverable 3
+- Added lyrics for 1 album
+- Hosted team meetings
+- Met with team members individually to maintain consistent vision
+- Reviewed pull requests
+  - Refactored submissions where necessary
+- Updated query enum
+- Wrote the DBInitializer class
+- Wrote the SQLHelper class and documentation
+- Wrote a dynamic query menu for the terminal UI
