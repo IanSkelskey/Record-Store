@@ -141,4 +141,8 @@ public class SQLHelper {
 
         runStatement(statement);
     }
+
+    public static String makeWhereClause(String column, String value) {
+        return String.format("\nWHERE %s = %s", column, value);
+    }
 }
