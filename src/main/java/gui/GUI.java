@@ -41,7 +41,6 @@ public class GUI extends Application {
             VBox root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/record-store.fxml")));
             root.setAlignment(Pos.CENTER);
             Scene scene = new Scene(root);
-            scene.getStylesheets().add(String.valueOf(getClass().getResource("/css/font-update.css")));
             primaryStage.setTitle("Record Store");
             primaryStage.setResizable(false);
             primaryStage.setScene(scene);
