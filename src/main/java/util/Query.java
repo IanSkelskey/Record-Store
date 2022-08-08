@@ -10,6 +10,11 @@ public enum Query {
             "scripts/query/LOCATIONS_INFO.sql",
             "none",
             "Get the information for all locations."),
+    ALBUMS_INFO(
+            "scripts/query/ALBUMS_INFO.sql",
+            "none",
+            "Get information for all albums in the system."
+    ),
     ARTIST_COLLABORATION(
             "scripts/query/ARTIST_COLLABORATION.sql",
             "artist",
