@@ -12,7 +12,7 @@ CREATE TABLE Employee (
     LocationID INT NOT NULL,
     PRIMARY KEY (EmployeeID),
     FOREIGN KEY (LocationID)
-        REFERENCES Location (LocationID)
+        REFERENCES Location (LocationID) ON DELETE CASCADE
 );
 
 CREATE TABLE Album (
@@ -31,7 +31,7 @@ CREATE TABLE Song (
     AlbumID INT NOT NULL,
     PRIMARY KEY (SongID),
     FOREIGN KEY (AlbumID)
-        REFERENCES Album (AlbumID)
+        REFERENCES Album (AlbumID) ON DELETE CASCADE
 );
 
 CREATE TABLE Genre (
@@ -45,9 +45,9 @@ CREATE TABLE SongGenreList (
     SongID INT NOT NULL,
     PRIMARY KEY (GenreName , SongID),
     FOREIGN KEY (GenreName)
-        REFERENCES Genre (GenreName),
+        REFERENCES Genre (GenreName) ON DELETE CASCADE,
     FOREIGN KEY (SongID)
-        REFERENCES Song (SongID)
+        REFERENCES Song (SongID) ON DELETE CASCADE
 );
 
 CREATE TABLE Artist (
@@ -66,9 +66,9 @@ CREATE TABLE MemberOf (
     IndividualID INT NOT NULL,
     PRIMARY KEY (GroupID , IndividualID),
     FOREIGN KEY (GroupID)
-        REFERENCES Artist (ArtistID),
+        REFERENCES Artist (ArtistID) ON DELETE CASCADE,
     FOREIGN KEY (IndividualID)
-        REFERENCES Artist (ArtistID)
+        REFERENCES Artist (ArtistID) ON DELETE CASCADE
 );
 
 CREATE TABLE Inventory (
@@ -77,9 +77,9 @@ CREATE TABLE Inventory (
     Amount INT NOT NULL,
     PRIMARY KEY (AlbumID , LocationID),
     FOREIGN KEY (AlbumID)
-        REFERENCES Album (AlbumID),
-    FOREIGN KEY (LocationID)
-        REFERENCES Location (LocationID)
+        REFERENCES Album (AlbumID) ON DELETE CASCADE,
+    FOREIGN KEY (LocationID) 
+        REFERENCES Location (LocationID) ON DELETE CASCADE
 );
 
 CREATE TABLE SongFeatureList (
@@ -87,7 +87,7 @@ CREATE TABLE SongFeatureList (
     ArtistID INT NOT NULL,
     PRIMARY KEY (SongID , ArtistID),
     FOREIGN KEY (SongID)
-        REFERENCES Song (SongID),
+        REFERENCES Song (SongID) ON DELETE CASCADE,
     FOREIGN KEY (ArtistID)
-        REFERENCES Artist (ArtistID)
+        REFERENCES Artist (ArtistID) ON DELETE CASCADE
 );
