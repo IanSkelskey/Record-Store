@@ -1,14 +1,11 @@
 package util;
 
-import util.DBConnection;
-import util.SQLHelper;
-
 /**
  *
  */
 public class DBInitializer {
 
-	private static final String SCRIPTS_DIR = "scripts/init/";
+	private static final String SCRIPTS_DIR = "sql/init/";
 
 	public static void main(String[] args){
 		DBConnection dbCon = DBConnection.getInstance();

@@ -155,19 +155,12 @@ public class SQLHelper {
 	 *@param value Value in row
 	 */
 	public static void delete(String table, String columnName, String value){
-		
-		String statement = "DELETE FROM " + table + " Where " +
-			columnName + "=" + "'" + value + "'" + ";";
-			
+		String statement = "DELETE FROM " + table + makeWhereClause(columnName, value) + ";";
 		runStatement(statement);
 	}
 
     public void update(String table){
         System.out.println("Updating" + table);
-    }
-
-    public void delete(String table){
-        System.out.println("Not sure about this one yet");
     }
 
     /**
@@ -178,7 +171,7 @@ public class SQLHelper {
      * @return A String representation of a where clause.
      */
     public static String makeWhereClause(String attribute, String value) {
-        return String.format("\nWHERE %s = %s", attribute, value);
+        return String.format("\nWHERE %s = '%s'", attribute, value);
     }
 
     /**
