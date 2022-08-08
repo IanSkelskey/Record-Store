@@ -8,8 +8,8 @@ import java.util.ArrayList;
 import org.json.*;
 
 import util.DBConnection;
-import util.QueryLogic;
 import util.Query;
+import util.SQLHelper;
 
 /**
  * ui.UI
@@ -65,7 +65,7 @@ public class UI {
         }
         String query = q.query;
 
-        jsonArray = QueryLogic.queryToJSON(query, params);
+        jsonArray = SQLHelper.getQueryResultsAsJSON(query, params);
         if (jsonArray.length() == 0) {
             System.out.println("Your search returned no results. Please check inputs and try again.");
         } else {

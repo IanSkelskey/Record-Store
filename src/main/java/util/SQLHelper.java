@@ -1,11 +1,16 @@
 package util;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
 import java.io.File;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
 import java.nio.file.Paths;
 import java.sql.*;
+import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
@@ -150,15 +155,67 @@ public class SQLHelper {
 	 *@param value Value in row
 	 */
 	public static void delete(String table, String columnName, String value){
-		
-		String statement = "DELETE FROM " + table + " Where " +
-			columnName + "=" + "'" + value + "'" + ";";
-			
+		String statement = "DELETE FROM " + table + makeWhereClause(columnName, value) + ";";
 		runStatement(statement);
 	}
 
-    public static String makeWhereClause(String column, String value) {
-        return String.format("\nWHERE %s = %s", column, value);
+    public void update(String table){
+        System.out.println("Updating" + table);
+    }
+
+    /**
+     * Creates a where clause given an attribute and a value for comparison.
+     *
+     * @param attribute Attribute to check.
+     * @param value Value to compare attribute to.
+     * @return A String representation of a where clause.
+     */
+    public static String makeWhereClause(String attribute, String value) {
+        return String.format("\nWHERE %s = '%s'", attribute, value);
+    }
+
+    /**
+     * Gets a JSONArray representation of the query results.
+     *
+     * @param query String representation of SQL query. Parameterized queries are allowed.
+     * @param params An ArrayList of Strings to represent parameters.
+     * @return JSONArray
+     */
+    public static JSONArray getQueryResultsAsJSON(String query, ArrayList<String> params) {
+        try (PreparedStatement pStatement = con.prepareStatement(query)){
+            for (int q = 0; q < params.size(); q++) {
+                pStatement.setString(q + 1, params.get(q));
+            }
+            try (ResultSet resultSet = pStatement.executeQuery()) {
+                return convertResultSetToJSON(resultSet);
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return new JSONArray();
+    }
+
+    /**
+     * @param rs ResultSet to convert to JSON
+     * @return JSONArray
+     */
+    public static JSONArray convertResultSetToJSON(ResultSet rs) {
+        JSONArray json = new JSONArray();
+        try {
+            ResultSetMetaData metaData = rs.getMetaData();
+            while(rs.next()) {
+                int numColumns = metaData.getColumnCount();
+                JSONObject obj = new JSONObject();
+                for (int i = 1; i <= numColumns; i++) {
+                    String column_name = metaData.getColumnName(i);
+                    obj.put(column_name, rs.getObject(column_name));
+                }
+                json.put(obj);
+            }
+        } catch (JSONException | SQLException e) {
+            e.printStackTrace();
+        }
+        return json;
     }
 
 }
