@@ -91,8 +91,9 @@ public class UI {
         String pwd = args[2];
 
         dbCon.setConnection(url, user, pwd);
-
+		
         showQueryMenu();
+		
         dbCon.closeConnection();
     }
 }
