@@ -39,12 +39,11 @@
 <?import javafx.scene.control.MenuBar?>
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextArea?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.FXMLController">
+<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="910.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AppController">
    <children>
       <MenuBar>
         <menus>
@@ -55,7 +54,13 @@
           </Menu>
           <Menu mnemonicParsing="false" text="Edit">
             <items>
-              <MenuItem mnemonicParsing="false" text="Delete" />
+                  <Menu mnemonicParsing="false" text="Insert">
+                    <items>
+                    <MenuItem mnemonicParsing="false" onAction="#openNewEmployeeDialog" text="Employee" />
+                        <MenuItem mnemonicParsing="false" text="Location" />
+                        <MenuItem mnemonicParsing="false" text="Album" />
+                    </items>
+                  </Menu>
             </items>
           </Menu>
           <Menu mnemonicParsing="false" text="Help">
@@ -65,18 +70,20 @@
           </Menu>
         </menus>
       </MenuBar>
-      <Label text="Write a SQL SELECT statement here:" />
-      <TextArea fx:id="queryField" prefHeight="165.0" prefWidth="600.0" />
-      <HBox prefHeight="100.0" prefWidth="200.0">
+      <VBox prefHeight="46.0" prefWidth="910.0">
          <children>
-            <Label text="Search: " />
-            <TextField fx:id="searchBar" />
-            <Label text="Query Type: " />
-            <ChoiceBox fx:id="queryChoice" prefWidth="150.0" />
-            <Button fx:id="runQueryButton" mnemonicParsing="false" onAction="#runQueryButtonPressed" text="Run Query" />
-            <Button fx:id="clearQueryButton" mnemonicParsing="false" onAction="#clearQuery" text="Clear Query" />
+            <HBox prefHeight="27.0" prefWidth="600.0">
+               <children>
+                  <Label text="Search: " />
+                  <TextField fx:id="searchBar" />
+                  <Label text="Query Type: " />
+                  <ChoiceBox fx:id="queryChoice" prefHeight="25.0" prefWidth="396.0" />
+                  <Button fx:id="runQueryButton" mnemonicParsing="false" onAction="#runQueryButtonPressed" text="Run Query" />
+               </children>
+            </HBox>
+            <Label fx:id="tableHeader" text="Results:" />
          </children>
-      </HBox>
-      <TableView fx:id="resultTable" prefHeight="239.0" prefWidth="600.0" />
+      </VBox>
+      <TableView fx:id="resultTable" prefHeight="611.0" prefWidth="910.0" />
    </children>
 </VBox>
