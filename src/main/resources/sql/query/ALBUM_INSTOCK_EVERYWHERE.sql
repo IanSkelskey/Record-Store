@@ -1,11 +1,11 @@
 SELECT
-    inventory.Amount AS 'Album Amount', location.LocationName AS 'Located At'
+    I.Amount AS 'Quantity', L.LocationName AS 'Location', M.cost as 'Cost'
 FROM
-    album,
-    inventory,
-    location
+	Album AS M
+		INNER JOIN
+	Inventory AS I ON M.AlbumID = I.AlbumID
+		INNER JOIN
+	Location AS L ON I.LocationID = L.LocationID
 WHERE
-    album.AlbumTitle = ?
-        AND album.AlbumID = inventory.AlbumID
-        AND inventory.LocationID = location.LocationID
-ORDER BY inventory.amount DESC;
+	M.AlbumTitle = ?
+ORDER BY I.Amount DESC;

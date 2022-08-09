@@ -13,5 +13,5 @@ FROM
 		inner join
 	Album As M on S.AlbumID = M.AlbumID
 WHERE
-    A1.StageName = 'Miley Cyrus'
-        AND A2.StageName = 'Lil Nas X';
+    A1.StageName = ?
+        AND A2.StageName = ?;
