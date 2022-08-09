@@ -16,8 +16,8 @@ public enum DialogType {
     NEW_LOCATION("Add New Location", "insert-location.fxml"),
     DELETE_ALBUM("Delete Album", "delete-album.fxml");
 
-    public final String title;
-    public DialogPane pane = new DialogPane();
+    private final String title;
+    private DialogPane pane = new DialogPane();
     private final String FXMLFileName;
 
     DialogType(String title, String FXMLFileName) {

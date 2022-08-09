@@ -81,7 +81,7 @@ public class AppController {
             TableColumn col = new TableColumn(columnName);
             col.setCellValueFactory(
                     (Callback<TableColumn.CellDataFeatures<ObservableList<Object>, String>, ObservableValue<String>>)
-                            param -> new SimpleStringProperty(param.getValue().get(j).toString()));
+                            param -> new SimpleStringProperty(String.valueOf(param.getValue().get(j))));
             this.resultTable.getColumns().add(col);
         }
         while (rs.next()) {
@@ -119,7 +119,7 @@ public class AppController {
         }
     }
 
-    public void runQueryButtonPressed() {
+    public void searchButtonPressed() {
         clearResults();
         String[] params = this.searchBar.getText().split(",");
         for (int i = 0; i < params.length; i++) {

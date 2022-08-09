@@ -21,9 +21,11 @@ Navigate to the record-store root directory in a terminal window and run the fol
 `gradle createDB -Purl="jdbc:mysql://localhost:3306/record-store?userSSL=false&useOldAliasMetadataBehavior=true" -Puser="root" -Ppwd="pass"`
 
 ### Parameters
+You will need to replace the above parameters to match your own database connections parameters.
 
 1. **URL** - The URL for the database that you would like to interact with including host and port.
-You must set userSSL to false as shown in the example in order to log in properly.
+   - You must set userSSL to false as shown in the example in order to log in properly.
+   - You must also set useOldAliasMetadataBehavior to true as shown.
 2. **Username** - The name of the user to connect with.
 3. **Password** - The specified user's password.
 
@@ -31,21 +33,49 @@ You must set userSSL to false as shown in the example in order to log in properl
 Running the above task will execute four initialization scripts in order:
 
 1. **Drop** - Drops preexisting tables that have names that exist in our schema.
-   This ensures that when you run this task duplication does not occur.
-2. **Create** - Creates all tables in our schema:
+   - This ensures that when you run this task duplication does not occur.
+2. **Create** - Creates all tables in our schema.
 3. **Insert** - Populates the tables with the initial data provided.
 4. **Lyrics** - Updates certain songs with their lyrics. This was done with a separate script to enhance readability.
 
 ## Environment
 
-- MySQL 5.6
-- Java 11.0.13
-- Gradle 6.6.1
-- JDBC 8.0.29
+- MySQL 5.6 (Query Language)
+- Java 11.0.13 (JDK)
+- Gradle 6.6.1 ()
+- JDBC 8.0.29 ()
 
 ## Steps for Execution
 
-1. 
+Navigate to the record-store root directory in a terminal window and run the following command:
+
+`gradle runGUI -Purl="jdbc:mysql://localhost:3306/record-store?userSSL=false&useOldAliasMetadataBehavior=true" -Puser="root" -Ppwd="pass"`
+
+The parameters for this task are the same as for the `createDB` task. See above descriptions.
+
+If execution is a success, you will see the following screen:
+
+![Screenshot of main application](diagrams/main-app-screenshot.png)
+
+### Running a Query
+
+![img.png](diagrams/search-controls-screenshot.png)
+
+1. Select a search type from the drop-down.
+2. If the query requires parameters, enter them into the *Search Parameters* text field.
+   - If multiple parameters are required, they should be separated by commas.
+   - For example: ![img.png](diagrams/search-parameters-screenshot.png)
+3. Press the *Search* button.
+   - The results will populate the table view.
+
+### Adding a New Employee
+
+![img.png](diagrams/new-employee-screenshot.png)
+
+1. In the menu bar, navigate to Edit > Insert > Employee
+2. A new employee dialog will appear. Enter the new employee's name into the text field provided, 
+select a location from the drop-down and press OK.
+3. You may run query 1 in the main app window to check if your new employee is stored correctly.
 
 ## Video Presentations
 
@@ -115,9 +145,17 @@ The members of group 18 are listed below along with their individual contributio
 - Wrote the DBInitializer class
 - Wrote the SQLHelper class and documentation
 - Wrote a dynamic query menu for the terminal UI
+- Contributed to GUI design:
+  - Created DialogType enum to simplify creation of many similar dialogs.
+  - Created About Dialog
+  - Created Insert Employee Dialog
+  - Created Insert Location Dialog
+  - Added GitHub repo link to the help menu
+  - Added icons to enhance design and clarity.
 
 ## Assets
 
 - [Add Employee Icon](https://www.flaticon.com/free-icons/add-user)
 - [App Icon](https://www.flaticon.com/free-icons/vinyl)
 - [Location Icon](https://www.flaticon.com/free-icons/shop)
+- [Album Icon](https://www.flaticon.com/free-icons/album)

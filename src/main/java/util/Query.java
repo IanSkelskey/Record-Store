@@ -14,6 +14,14 @@ public enum Query {
             "ALBUMS_INFO.sql",
             "none",
             "Get information for all albums in the system."),
+    SONGS_INFO(
+            "SONGS_INFO.sql",
+            "none",
+            "Get information for all songs in the system."),
+    ARTISTS_INFO(
+            "ARTISTS_INFO.sql",
+            "none",
+            "Get information for all artists in the system."),
     ARTIST_COLLABORATION(
             "ARTIST_COLLABORATION.sql",
             "artist",
@@ -83,8 +91,7 @@ public enum Query {
         return this.id + "\t- " + this.description;
     }
 
-    private static class Counter
-    {
+    private static class Counter {
         private static int count = 1;
     }
 
