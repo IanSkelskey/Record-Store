@@ -1,5 +1,6 @@
 package util;
 
+import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.control.Dialog;
 import javafx.scene.control.DialogPane;
@@ -17,17 +18,24 @@ public enum DialogType {
 
     public final String title;
     public DialogPane pane = new DialogPane();
+    private final String FXMLFileName;
 
     DialogType(String title, String FXMLFileName) {
         this.title = title;
+        this.FXMLFileName = FXMLFileName;
+        resetPane();
+    }
+
+    private void resetPane() {
         try {
-            this.pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/" + FXMLFileName)));
+            this.pane = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/" + this.FXMLFileName)));
         } catch (IOException e) {
             e.printStackTrace();
         }
     }
 
     public void show() {
+        resetPane();
         Dialog<Void> dialog = new Dialog<>();
         dialog.setTitle(this.title);
         dialog.setDialogPane(this.pane);

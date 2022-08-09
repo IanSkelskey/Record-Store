@@ -1,5 +1,5 @@
 SELECT
-    inventory.Amount AS 'Album Amount', location.LocationName AS 'Located At'
+    inventory.Amount AS 'Stock Quantity', AlbumTitle AS 'Album', location.LocationName AS 'Located At', location.Address, Cost
 FROM
     album,
     inventory,
