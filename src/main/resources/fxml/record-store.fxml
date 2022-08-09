@@ -52,7 +52,7 @@
                           <items>
                             <MenuItem mnemonicParsing="false" text="Employee" />
                               <MenuItem mnemonicParsing="false" text="Location" />
-                              <MenuItem mnemonicParsing="false" text="Album" />
+                              <MenuItem mnemonicParsing="false" onAction="#openDeleteAlbumDialog" text="Album" />
                           </items>
                         </Menu>
                   </items>

@@ -106,6 +106,10 @@ public class AppController {
         DialogType.ABOUT.show();
     }
 
+    public void openDeleteAlbumDialog() {
+        DialogType.DELETE_ALBUM.show();
+    }
+
     public void queryChoiceChanged() {
         if (this.queryChoice.getValue().paramCount == 0) {
             this.searchBar.clear();
