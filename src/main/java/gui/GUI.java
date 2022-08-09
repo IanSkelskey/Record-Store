@@ -7,7 +7,6 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import util.DBConnection;
-
 import java.io.IOException;
 import java.util.Objects;
 
