@@ -13,7 +13,7 @@
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<BorderPane prefHeight="705.0" prefWidth="1174.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.AppController">
+<BorderPane prefHeight="705.0" prefWidth="1174.0" style="-fx-font-family: sans-serif;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.AppController">
    <bottom>
       <Label fx:id="resultsInfoLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Awaiting new result set..." BorderPane.alignment="CENTER">
          <padding>
