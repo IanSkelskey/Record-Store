@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.geometry.Insets?>
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
@@ -8,65 +9,90 @@
 <?import javafx.scene.control.MenuItem?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.BorderPane?>
 <?import javafx.scene.layout.HBox?>
 <?import javafx.scene.layout.VBox?>
 
-<VBox maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="592.0" prefWidth="910.0" style="-fx-font-family: sans-serif;" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.AppController">
-   <children>
-      <MenuBar>
-        <menus>
-          <Menu mnemonicParsing="false" text="File">
-            <items>
-                  <MenuItem mnemonicParsing="false" text="Preferences..." />
-              <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Edit">
-            <items>
-                  <Menu mnemonicParsing="false" text="Insert">
-                    <items>
-                    <MenuItem mnemonicParsing="false" onAction="#openNewEmployeeDialog" text="Employee" />
-                        <MenuItem mnemonicParsing="false" text="Location" />
-                        <MenuItem mnemonicParsing="false" text="Album" />
-                    </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Update">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Employee" />
-                        <MenuItem mnemonicParsing="false" text="Location" />
-                        <MenuItem mnemonicParsing="false" text="Album" />
-                    </items>
-                  </Menu>
-                  <Menu mnemonicParsing="false" text="Delete">
-                    <items>
-                      <MenuItem mnemonicParsing="false" text="Employee" />
-                        <MenuItem mnemonicParsing="false" text="Location" />
-                        <MenuItem mnemonicParsing="false" text="Album" />
-                    </items>
-                  </Menu>
-            </items>
-          </Menu>
-          <Menu mnemonicParsing="false" text="Help">
-            <items>
-              <MenuItem mnemonicParsing="false" onAction="#openAboutDialog" text="About" />
-            </items>
-          </Menu>
-        </menus>
-      </MenuBar>
-      <VBox prefHeight="46.0" prefWidth="910.0">
+<BorderPane prefHeight="705.0" prefWidth="1174.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.controllers.AppController">
+   <bottom>
+      <Label fx:id="resultsInfoLabel" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" text="Awaiting new result set..." BorderPane.alignment="CENTER">
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </Label>
+   </bottom>
+   <top>
+      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="52.0" prefWidth="1174.0" style="-fx-font-family: sans-serif;" BorderPane.alignment="CENTER">
          <children>
-            <HBox prefHeight="27.0" prefWidth="600.0">
+            <MenuBar maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+              <menus>
+                <Menu mnemonicParsing="false" text="Session">
+                  <items>
+                        <MenuItem mnemonicParsing="false" text="Preferences..." />
+                    <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Edit">
+                  <items>
+                        <Menu mnemonicParsing="false" text="Insert">
+                          <items>
+                          <MenuItem mnemonicParsing="false" onAction="#openNewEmployeeDialog" text="Employee" />
+                              <MenuItem mnemonicParsing="false" onAction="#openNewLocationDialog" text="Location" />
+                              <MenuItem mnemonicParsing="false" text="Album" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Update">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Employee" />
+                              <MenuItem mnemonicParsing="false" text="Location" />
+                              <MenuItem mnemonicParsing="false" text="Album" />
+                          </items>
+                        </Menu>
+                        <Menu mnemonicParsing="false" text="Delete">
+                          <items>
+                            <MenuItem mnemonicParsing="false" text="Employee" />
+                              <MenuItem mnemonicParsing="false" text="Location" />
+                              <MenuItem mnemonicParsing="false" onAction="#openDeleteAlbumDialog" text="Album" />
+                          </items>
+                        </Menu>
+                  </items>
+                </Menu>
+                <Menu mnemonicParsing="false" text="Help">
+                  <items>
+                        <MenuItem mnemonicParsing="false" onAction="#openGitRepoInBrowser" text="Git Repo" />
+                    <MenuItem mnemonicParsing="false" onAction="#openAboutDialog" text="About" />
+                  </items>
+                </Menu>
+              </menus>
+            </MenuBar>
+            <HBox alignment="CENTER_LEFT" spacing="10.0">
                <children>
-                  <Label text="Search: " />
-                  <TextField fx:id="searchBar" />
-                  <Label text="Query Type: " />
-                  <ChoiceBox fx:id="queryChoice" prefHeight="25.0" prefWidth="396.0" />
+                  <Label text="Search Parameters: " />
+                  <TextField fx:id="searchBar" accessibleText="Enter search parameters separated by commas." prefHeight="23.0" prefWidth="183.0" promptText="p1, p2, p3, ..." />
+                  <Button mnemonicParsing="false" onAction="#clearButtonPressed" text="Clear" />
+                  <Label text="Search Type:" />
+                  <ChoiceBox fx:id="queryChoice" onAction="#queryChoiceChanged" prefHeight="25.0" prefWidth="396.0" />
                   <Button fx:id="runQueryButton" mnemonicParsing="false" onAction="#runQueryButtonPressed" text="Run Query" />
                </children>
+               <padding>
+                  <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+               </padding>
             </HBox>
-            <Label fx:id="tableHeader" text="Results:" />
          </children>
       </VBox>
-      <TableView fx:id="resultTable" prefHeight="611.0" prefWidth="910.0" />
-   </children>
-</VBox>
+   </top>
+   <center>
+      <TableView fx:id="resultTable" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" tableMenuButtonVisible="true" BorderPane.alignment="CENTER" />
+   </center>
+   <left>
+      <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
+         <children>
+            <Button mnemonicParsing="false" text="Advanced Query" textAlignment="CENTER" wrapText="true" />
+            <Button mnemonicParsing="false" onAction="#clearResults" text="Clear Results" textAlignment="CENTER" wrapText="true" />
+         </children>
+         <padding>
+            <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+         </padding>
+      </VBox>
+   </left>
+</BorderPane>

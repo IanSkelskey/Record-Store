@@ -2,13 +2,11 @@ package gui;
 
 import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
-import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.image.Image;
-import javafx.scene.layout.VBox;
+import javafx.scene.layout.BorderPane;
 import javafx.stage.Stage;
 import util.DBConnection;
-
 import java.io.IOException;
 import java.util.Objects;
 
@@ -36,18 +34,27 @@ public class GUI extends Application {
 
     @Override
     public void start(Stage primaryStage) {
+        setStage(primaryStage);
+        primaryStage.show();
+        bringStageToFront(primaryStage);
+    }
 
+    private void setStage(Stage stage) {
         try {
-            VBox root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/record-store.fxml")));
-            root.setAlignment(Pos.CENTER);
+            BorderPane root = FXMLLoader.load(Objects.requireNonNull(getClass().getResource("/fxml/record-store.fxml")));
             Scene scene = new Scene(root);
-            primaryStage.setTitle("Record Store");
-            primaryStage.setResizable(false);
-            primaryStage.setScene(scene);
-            primaryStage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/vinyl.png"))));
-            primaryStage.show();
+            stage.setScene(scene);
+            stage.setMinWidth(root.getPrefWidth());
+            stage.setMinHeight(root.getPrefHeight());
         } catch (IOException e) {
             e.printStackTrace();
         }
+        stage.getIcons().add(new Image(Objects.requireNonNull(this.getClass().getResourceAsStream("/icons/vinyl.png"))));
+        stage.setTitle("Record Store Database Application");
+    }
+
+    private void bringStageToFront(Stage stage) {
+        stage.setAlwaysOnTop(true);
+        stage.setAlwaysOnTop(false);
     }
 }
