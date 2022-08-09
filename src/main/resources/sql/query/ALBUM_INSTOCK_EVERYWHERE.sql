@@ -1,5 +1,5 @@
 SELECT
-    inventory.Amount AS 'Stock Quantity', AlbumTitle AS 'Album', location.LocationName AS 'Located At', location.Address, Cost
+    I.Amount AS 'Stock Quantity', AlbumTitle AS 'Album', L.LocationName AS 'Located At', L.Address, Cost
 FROM
 	Album AS M
 		INNER JOIN
