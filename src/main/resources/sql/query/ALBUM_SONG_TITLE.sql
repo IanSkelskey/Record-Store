@@ -1,5 +1,5 @@
 SELECT
-	albumtitle AS 'Album'
+	song.SongTitle as 'Song', albumtitle AS 'Album', cost as 'Cost'
 FROM
 	album
 		INNER JOIN

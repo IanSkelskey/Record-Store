@@ -1,13 +1,15 @@
-SELECT
-    albumtitle, stagename
+SELECT 
+    A.stagename AS 'Artist',
+    M.albumtitle AS 'Album',
+    M.cost AS 'Cost'
 FROM
-    album
+    Album AS M
         INNER JOIN
-    song ON song.albumid = album.albumid
+    song AS S ON M.albumID = S.AlbumID
         INNER JOIN
-    songfeaturelist ON songfeaturelist.SongID = song.songid
+    songfeaturelist AS SFL ON SFL.SongID = S.songid
         INNER JOIN
-    artist ON artist.artistid = songfeaturelist.artistid
+    artist AS A ON A.artistid = SFL.artistid
 WHERE
     StageName = ?
 GROUP BY albumtitle;
