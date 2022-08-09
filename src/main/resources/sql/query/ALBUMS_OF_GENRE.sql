@@ -1,13 +1,14 @@
 SELECT DISTINCT
-	Genre.GenreName as 'Genre',
-	AlbumTitle as 'Album'
-FROM 
-	Album, Genre, Song, SongGenreList
+    G.GenreName AS 'Genre',
+    M.AlbumTitle AS 'Album',
+    M.Cost AS 'Cost'
+FROM
+    Genre AS G
+        INNER JOIN
+    SongGenreList AS SGL ON G.GenreName = SGL.GenreName
+        INNER JOIN
+    Song AS S ON SGL.SongID = S.SongID
+        INNER JOIN
+    Album AS M ON S.AlbumID = M.AlbumID
 WHERE
-	Album.AlbumID = Song.AlbumID
-AND
-	Song.SongID = SongGenreList.SongID
-AND
-	SongGenreList.GenreName = Genre.GenreName
-AND
-	Genre.GenreName = ?;
+    G.GenreName = ?;

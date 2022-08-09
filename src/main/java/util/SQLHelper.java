@@ -159,7 +159,7 @@ public class SQLHelper {
 		runStatement(statement);
 	}
 
-    public void update(String table){
+    public static void update(String table){
         System.out.println("Updating" + table);
     }
 
