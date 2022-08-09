@@ -170,4 +170,3 @@ AND
 	SongGenreList.GenreName = Genre.GenreName
 AND
 	Genre.GenreName = 'Pop';
-    
