@@ -12,6 +12,7 @@ import javafx.stage.Stage;
 import javafx.util.Callback;
 import util.DBConnection;
 import util.Query;
+import gui.dialogs.DeleteAlbumDialog;
 
 import java.sql.*;
 import java.util.Arrays;
@@ -115,7 +116,12 @@ public class AppController {
     public void activateDarkMode() {
         this.resultTable.getScene().getStylesheets().add(String.valueOf(getClass().getResource("/css/dark.css")));
     }
-
+	
+	public void openDeleteAlbumDialog() {
+		DeleteAlbumDialog deleteAlbumDialog = new DeleteAlbumDialog();
+		deleteAlbumDialog.show();
+	}
+	
     public void close() {
         Stage stage = (Stage) this.resultTable.getScene().getWindow();
         stage.close();
