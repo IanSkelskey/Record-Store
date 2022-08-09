@@ -11,5 +11,5 @@ FROM
         INNER JOIN
     artist AS A ON A.artistid = SFL.artistid
 WHERE
-    StageName = 'Lil Nas X'
+    StageName = ?
 GROUP BY albumtitle;
