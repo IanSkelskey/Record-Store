@@ -119,7 +119,7 @@ public class AppController {
         }
     }
 
-    public void runQueryButtonPressed() {
+    public void searchButtonPressed() {
         clearResults();
         String[] params = this.searchBar.getText().split(",");
         for (int i = 0; i < params.length; i++) {

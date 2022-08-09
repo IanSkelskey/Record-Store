@@ -14,6 +14,10 @@ public enum Query {
             "ALBUMS_INFO.sql",
             "none",
             "Get information for all albums in the system."),
+    SONGS_INFO(
+      "SONGS_INFO.sql",
+      "none",
+      "Get information for all songs in the system."),
     ARTIST_COLLABORATION(
             "ARTIST_COLLABORATION.sql",
             "artist",
