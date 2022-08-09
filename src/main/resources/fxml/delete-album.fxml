@@ -7,7 +7,7 @@
 <?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.RowConstraints?>
 
-<DialogPane fx:id="deletepane" headerText="Delete Album" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.dialogs.DeleteAlbumController">
+<DialogPane fx:id="deletepane" headerText="Delete Album" prefHeight="75.0" prefWidth="220.0" xmlns="http://javafx.com/javafx/18" xmlns:fx="http://javafx.com/fxml/1" fx:controller="gui.dialogs.DeleteAlbumController">
    <buttonTypes>
       <ButtonType fx:constant="OK" />
       <ButtonType fx:constant="CANCEL" />
@@ -24,7 +24,7 @@
             <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
         </rowConstraints>
          <children>
-            <TextField fx:id="albumField" GridPane.rowIndex="1" />
+            <TextField fx:id="albumField" prefHeight="25.0" prefWidth="241.0" GridPane.columnSpan="2" GridPane.rowIndex="1" />
          </children>
       </GridPane>
    </content>
