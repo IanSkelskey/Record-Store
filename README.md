@@ -117,3 +117,4 @@ The members of group 18 are listed below along with their individual contributio
 
 - [Add Employee Icon](https://www.flaticon.com/free-icons/add-user)
 - [App Icon](https://www.flaticon.com/free-icons/vinyl)
+- [Location Icon](https://www.flaticon.com/free-icons/shop)

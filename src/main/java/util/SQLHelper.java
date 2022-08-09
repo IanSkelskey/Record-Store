@@ -141,8 +141,8 @@ public class SQLHelper {
         String[] values = columnValueMap.values().toArray(new String[0]);
 
         String statement = "INSERT INTO " + table + " (" +
-                String.join(", ", keys) + ") " + "VALUES ('" +
-                String.join("', '", values) + "'" + ");";
+                String.join(", ", keys) + ") " + "VALUES (\"" +
+                String.join("\", \"", values) + "\"" + ");";
 
         runStatement(statement);
     }
@@ -171,7 +171,7 @@ public class SQLHelper {
      * @return A String representation of a where clause.
      */
     public static String makeWhereClause(String attribute, String value) {
-        return String.format("\nWHERE %s = '%s'", attribute, value);
+        return String.format("\nWHERE %s = \"%s\"", attribute, value);
     }
 
     /**

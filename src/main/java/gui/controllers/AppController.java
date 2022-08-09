@@ -1,29 +1,31 @@
-package gui;
+package gui.controllers;
 
-import gui.dialogs.AboutDialog;
-import gui.dialogs.InsertEmployeeDialog;
 import javafx.beans.property.SimpleStringProperty;
 import javafx.beans.value.ObservableValue;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.fxml.FXML;
 import javafx.scene.control.*;
+import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Callback;
 import util.DBConnection;
+import util.DialogType;
 import util.Query;
-
+import java.awt.*;
+import java.io.IOException;
+import java.net.URI;
+import java.net.URISyntaxException;
 import java.sql.*;
 import java.util.Arrays;
 
 public class AppController {
 
-    private final DBConnection dbCon = DBConnection.getInstance();
-    private final ObservableList<Object> data = FXCollections.observableArrayList();
-    private final Connection con = dbCon.getConnection();
+    private final Connection con = DBConnection.getInstance().getConnection();
 
     @FXML
-    private Label tableHeader;
+    private Label resultsInfoLabel;
 
     @FXML
     private TextField searchBar;
@@ -38,11 +40,6 @@ public class AppController {
         populateQueryChoices();
     }
 
-    public void openNewEmployeeDialog() {
-        InsertEmployeeDialog dialog = new InsertEmployeeDialog();
-        dialog.show();
-    }
-
     public void populateQueryChoices() {
         ObservableList<Query> choices = FXCollections.observableArrayList();
         choices.addAll(Arrays.asList(Query.values()));
@@ -50,19 +47,8 @@ public class AppController {
         queryChoice.setValue(Query.getQueryByID(1));
     }
 
-    public void runQueryButtonPressed() {
-        clearResults();
-        String[] params = searchBar.getText().split(",");
-        for (int i = 0; i < params.length; i++) {
-            params[i] = params[i].trim();
-        }
-        String query = queryChoice.getValue().query;
-        processInputs(query, params);
-        tableHeader.setText("Results from: " + queryChoice.getValue());
-    }
-
     public void clearResults() {
-        this.data.clear();
+        this.resultsInfoLabel.setText("Awaiting new result set...");
         this.resultTable.getColumns().clear();
         this.resultTable.getItems().clear();
     }
@@ -86,6 +72,7 @@ public class AppController {
     }
 
     private void populateTable(ResultSet rs) throws SQLException {
+        ObservableList<Object> data = FXCollections.observableArrayList();
         ResultSetMetaData meta = rs.getMetaData();
         int columnCount = meta.getColumnCount();
         for (int i = 0; i < columnCount; i++) {
@@ -102,23 +89,58 @@ public class AppController {
             for (int i = 1; i <= columnCount; i++) {
                 row.add(rs.getString(i));
             }
-            this.data.add(row);
+            data.add(row);
         }
-        this.resultTable.setItems(this.data);
+        this.resultTable.setItems(data);
+    }
+
+    public void openNewEmployeeDialog() {
+        DialogType.NEW_EMPLOYEE.show();
+    }
+
+    public void openNewLocationDialog() {
+        DialogType.NEW_LOCATION.show();
     }
 
     public void openAboutDialog() {
-        AboutDialog aboutDialog = new AboutDialog();
-        aboutDialog.show();
+        DialogType.ABOUT.show();
     }
 
-    public void activateDarkMode() {
-        this.resultTable.getScene().getStylesheets().add(String.valueOf(getClass().getResource("/css/dark.css")));
+    public void queryChoiceChanged() {
+        if (this.queryChoice.getValue().paramCount == 0) {
+            this.searchBar.clear();
+            this.searchBar.setEditable(false);
+        } else {
+            this.searchBar.setEditable(true);
+        }
+    }
+
+    public void runQueryButtonPressed() {
+        clearResults();
+        String[] params = this.searchBar.getText().split(",");
+        for (int i = 0; i < params.length; i++) {
+            params[i] = params[i].trim();
+        }
+        String query = this.queryChoice.getValue().query;
+        processInputs(query, params);
+        this.resultsInfoLabel.setText("Results from: " + this.queryChoice.getValue());
+    }
+
+    public void clearButtonPressed() {
+        this.searchBar.clear();
+    }
+
+    public void openGitRepoInBrowser() {
+        Desktop desk = Desktop.getDesktop();
+        try {
+            desk.browse(new URI("https://github.com/IanSkelskey/Record-Store"));
+        } catch (IOException | URISyntaxException e) {
+            e.printStackTrace();
+        }
     }
 
     public void close() {
         Stage stage = (Stage) this.resultTable.getScene().getWindow();
         stage.close();
     }
-
 }
