@@ -159,8 +159,10 @@ public class SQLHelper {
 		runStatement(statement);
 	}
 
-    public static void update(String table){
-        System.out.println("Updating" + table);
+    public static void update(String table, String updateAttribute, String updateValue, String columnName, String columnValue){
+        String statement = "UPDATE " + table + " SET " + updateAttribute + " = " + "\"" + updateValue + "\"" + makeWhereClause(columnName, columnValue) + ";";
+		System.out.println(statement);
+		runStatement(statement);
     }
 
     /**
