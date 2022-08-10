@@ -1,6 +1,7 @@
 plugins {
 	id 'java'
-	
+	id 'application'
+	id 'org.openjfx.javafxplugin' version '0.0.8'
 }
 
 repositories {
@@ -9,12 +10,60 @@ repositories {
 
 dependencies {
     compile group: 'mysql', name: 'mysql-connector-java', version: '8.0.29'
-    //runtime "mysql: mysql-connector-java-8.0.29"
+    compile group: 'org.json', name: 'json', version: '20200518'
+}
+
+javafx {
+	version = "11.0.2"
+	modules = [ 'javafx.controls', 'javafx.fxml']
+}
+
+def url = 'jdbc:mysql://localhost:3306/record-store?userSSL=false&useOldAliasMetadataBehavior=true'
+def user = 'root'
+def pwd = 'root'
+
+task arguments {
+	if (project.hasProperty("url")) {
+		url = project.getProperty("url")
+	}
+	if (project.hasProperty("user")) {
+		user = project.getProperty("user")
+	}
+	if (project.hasProperty("pwd")) {
+		pwd = project.getProperty("pwd")
+	}
+}
+
+task createDB(type: JavaExec){
+	description 'Creates tables for record store database.'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'util.DBInitializer'
+
+	args url
+	args user
+	args pwd
 }
 
 task runApp(type: JavaExec){
 	description 'Runs db app'
 	
 	classpath = sourceSets.main.runtimeClasspath
-	main = 'UI'
+	main = 'ui.UI'
+	standardInput = System.in
+
+	args url
+	args user
+	args pwd
+}
+
+task runGUI(type: JavaExec){
+	description 'Runs db app GUI'
+
+	classpath = sourceSets.main.runtimeClasspath
+	main = 'gui.GUILauncher'
+
+	args url
+    args user
+    args pwd
 }
