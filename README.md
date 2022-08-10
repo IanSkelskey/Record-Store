@@ -39,11 +39,12 @@ Running the above task will execute four initialization scripts in order:
 4. **Lyrics** - Updates certain songs with their lyrics. This was done with a separate script to enhance readability.
 
 ## Environment
+To maximize compatibility, we recommend running our application in the environment detailed below.
 
-- MySQL 5.6 (Query Language)
+- MySQL 8.0.29 (Query Language)
 - Java 11.0.13 (JDK)
-- Gradle 6.6.1 ()
-- JDBC 8.0.29 ()
+- Gradle 6.6.1 (Build Tool)
+- JDBC 8.0.29 (Database API)
 
 ## Steps for Execution
 
@@ -55,7 +56,7 @@ The parameters for this task are the same as for the `createDB` task. See above 
 
 If execution is a success, you will see the following screen:
 
-![Screenshot of main application](diagrams/main-app-screenshot.png)
+![img.png](diagrams/main-app-screenshot.png)
 
 ### Running a Query
 
@@ -76,6 +77,36 @@ If execution is a success, you will see the following screen:
 2. A new employee dialog will appear. Enter the new employee's name into the text field provided, 
 select a location from the drop-down and press OK.
 3. You may run query 1 in the main app window to check if your new employee is stored correctly.
+
+### Adding a New Location
+
+![img.png](diagrams/add-location-screenshot.png)
+
+1. In the menu bar, navigate to Edit > Insert > Location
+2. A new location dialog will appear. Enter the new location's name, address, and phone number 
+into the text fields provided.
+3. Press OK
+4. You may run query 2 in the main app window to check if your new location is stored correctly.
+
+### Updating an Existing Location
+
+![img.png](diagrams/update-location-screenshot.png)
+
+1. In the menu bar, navigate to Edit > Update > Location
+2. An update location dialog will appear. Select the location to update from the drop-down.
+3. Select which field you'd like to update from other drop-down.
+4. Enter the value you'd like to change it in the new value text field.
+5. Press OK
+6. You may run query 2 in the main app window to check if your new location is updated correctly.
+
+### Deleting an Album
+
+![img.png](diagrams/delete-album-screenshot.png)
+
+1. In the menu bar, navigate to Edit > Delete > Album
+2. A delete album dialog will appear. Enter the album title you'd like to delete.
+3. Press OK
+4. You may run query 3 in the main app window to check if your new album is removed correctly.
 
 ## Video Presentations
 
@@ -151,6 +182,7 @@ The members of group 18 are listed below along with their individual contributio
   - Created About Dialog
   - Created Insert Employee Dialog
   - Created Insert Location Dialog
+  - Created Update Location Dialog
   - Added GitHub repo link to the help menu
   - Added icons to enhance design and clarity.
 
