@@ -14,6 +14,7 @@ public enum DialogType {
     ABOUT("About Record Store", "about.fxml"),
     NEW_EMPLOYEE("Add New Employee", "insert-employee.fxml"),
     NEW_LOCATION("Add New Location", "insert-location.fxml"),
+    UPDATE_LOCATION("Update Location", "update-location.fxml"),
     DELETE_ALBUM("Delete Album", "delete-album.fxml");
 
     private final String title;

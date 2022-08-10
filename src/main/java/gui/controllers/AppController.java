@@ -102,6 +102,10 @@ public class AppController {
         DialogType.NEW_LOCATION.show();
     }
 
+    public void openUpdateLocationDialog() {
+        DialogType.UPDATE_LOCATION.show();
+    }
+
     public void openAboutDialog() {
         DialogType.ABOUT.show();
     }

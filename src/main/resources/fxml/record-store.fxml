@@ -44,7 +44,7 @@
                         <Menu mnemonicParsing="false" text="Update">
                           <items>
                             <MenuItem mnemonicParsing="false" text="Employee" />
-                              <MenuItem mnemonicParsing="false" text="Location" />
+                              <MenuItem mnemonicParsing="false" onAction="#openUpdateLocationDialog" text="Location" />
                               <MenuItem mnemonicParsing="false" text="Album" />
                           </items>
                         </Menu>
