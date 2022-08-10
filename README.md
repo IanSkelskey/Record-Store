@@ -126,6 +126,7 @@ The members of group 18 are listed below along with their individual contributio
 - Wrote 1/4 of the initial queries
 - Implemented insert method
 - Implemented delete method
+- Implemented update method
 - Implemented delete album dialog
 - Reviewed github pull-requests
 
