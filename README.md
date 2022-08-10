@@ -72,6 +72,7 @@ The members of group 18 are listed below along with their individual contributio
 - Contributed to database design before generating SQL from the relational schema
 - Wrote 1/4 of the insert statements
 - Wrote 1/4 of the initial queries
+- Created screencast for Deliverable 3
 - Tested cross-functionality
 
 ### [Nathanael Swecker](https://github.com/ndswecker)
