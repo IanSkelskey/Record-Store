@@ -28,7 +28,6 @@
               <menus>
                 <Menu mnemonicParsing="false" text="Session">
                   <items>
-                        <MenuItem mnemonicParsing="false" text="Preferences..." />
                     <MenuItem mnemonicParsing="false" onAction="#close" text="Close" />
                   </items>
                 </Menu>
@@ -38,20 +37,15 @@
                           <items>
                           <MenuItem mnemonicParsing="false" onAction="#openNewEmployeeDialog" text="Employee" />
                               <MenuItem mnemonicParsing="false" onAction="#openNewLocationDialog" text="Location" />
-                              <MenuItem mnemonicParsing="false" text="Album" />
                           </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Update">
                           <items>
-                            <MenuItem mnemonicParsing="false" text="Employee" />
                               <MenuItem mnemonicParsing="false" onAction="#openUpdateLocationDialog" text="Location" />
-                              <MenuItem mnemonicParsing="false" text="Album" />
                           </items>
                         </Menu>
                         <Menu mnemonicParsing="false" text="Delete">
                           <items>
-                            <MenuItem mnemonicParsing="false" text="Employee" />
-                              <MenuItem mnemonicParsing="false" text="Location" />
                               <MenuItem mnemonicParsing="false" onAction="#openDeleteAlbumDialog" text="Album" />
                           </items>
                         </Menu>
@@ -87,7 +81,6 @@
    <left>
       <VBox alignment="TOP_CENTER" prefHeight="200.0" prefWidth="100.0" spacing="10.0" BorderPane.alignment="CENTER">
          <children>
-            <Button mnemonicParsing="false" text="Advanced Query" textAlignment="CENTER" wrapText="true" />
             <Button mnemonicParsing="false" onAction="#clearResults" text="Clear Results" textAlignment="CENTER" wrapText="true" />
          </children>
          <padding>
