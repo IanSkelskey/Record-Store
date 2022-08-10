@@ -111,7 +111,7 @@ into the text fields provided.
 ## Video Presentations
 
 - [Deliverable 3](https://www.youtube.com/watch?v=8NFbX4rywlE)
-- Deliverable 4
+- [Deliverable 4](https://youtu.be/5xeyTcmJx5s)
 
 ## Contributors 
 
@@ -135,6 +135,10 @@ The members of group 18 are listed below along with their individual contributio
 - Contributed to proposal
 - Contributed to creation of ERD
 - Contributed to database design before generating SQL from the relational schema
+- Wrote 1/4 of the insert statements
+- Wrote 1/4 of the initial queries
+- Created screencast for Deliverable 3
+- Tested cross-functionality
 
 ### [Nathanael Swecker](https://github.com/ndswecker)
 
